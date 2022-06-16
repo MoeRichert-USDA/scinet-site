@@ -41,7 +41,13 @@ intro:
     title: "Get Started with SCINet"
     text: "ARS scientists/collaborators: </br> Register for an account"
     button: Get Started
-    href: /quickstart/
+    href: /guide/quickstart
+
+calendar:
+  title: "Upcoming Training and Events"
+  button: "See the Full Calendar"
+  href: /events/upcoming
+
 
 research:
   title: "Find out how SCINet can enable your Research"

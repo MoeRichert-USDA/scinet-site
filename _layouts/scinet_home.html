@@ -5,30 +5,6 @@ class:
 ---
 
 <div>
-    <!--<div class="grid-row usa-section">
-        <div class="mm-card-grid">
-            <div class="mm-grid-blocks">
-                <div class="subcategory row">
-                    <div class="mm-grid-item">
-                        <div>
-                            <a href="/" aria-label="sublinktext">
-                                <span class="mm-link-container-header">
-                                    sublinktext</span>
-
-                                <div
-                                    class="field field--name-field-mm-text field--type-string-long field--label-hidden field__item">
-                                    sublinkdesc
-                                </div>
-
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="mm-submenu-bottom-section">
-                </div>
-            </div>
-            </div>
-    </div>-->
     <div class="grid-row sci-container">
         <div class="desktop:grid-col-auto">
             {% include sci-card.html highlight = page.intro %}
@@ -36,7 +12,7 @@ class:
         <div class="desktop:grid-col-fill">
             <div class="grid-row grid-gap">
                 <div class="width-full margin-4">
-                    <h3 class="site-preview-heading">Upcoming Training and Events</h3>
+                    <h3 class="site-preview-heading">{{ page.calendar.title }}</h3>
 
                     {% assign featured_cal = site.events | where: 'future', 'show' %}
                     {% assign filtered_posts = featured_cal | where_exp: "post", "post.date >= site.time" %}
@@ -46,7 +22,9 @@ class:
                     {% endfor %}
 
                 </div>
-                <button class="usa-button margin-x-auto margin-y-2">See the Full Calendar</button>
+                <a class="usa-button margin-x-auto margin-y-2"" href="{{ page.calendar.href | relative_url }}">
+                    {{ page.calendar.button }}
+                </a>
             </div>
         </div>
     </div>
