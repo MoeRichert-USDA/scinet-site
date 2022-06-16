@@ -3,7 +3,7 @@ title: Free Online Computational Training Resources
 description: course links for common training meeds
 permalink: /training/free-online-training
 author: various
-layout: post
+layout: page
 
  
 sidenav: Training and Events

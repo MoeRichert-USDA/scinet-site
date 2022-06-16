@@ -3,7 +3,7 @@ title: SCINet Policy Committee
 description: summary of the working group
 permalink: /working-groups/policy
 author: Kerrie Geil
-layout: post
+layout: page
 
  
 sidenav: Working Groups

@@ -15,7 +15,7 @@ main: foo, bar, qaz
   <script>0</script>
 </head>
 
-<body class="{{ layout.class }} {{ page.class }} {% if site.site_width %}site-{{ site.site_width }}{% endif %}">
+<body class="{% if site.site_width %}site-{{ site.site_width }}{% endif %}">
 
   {% include skipnav.html %}
   {% include header.html %}
@@ -49,12 +49,14 @@ main: foo, bar, qaz
   {{ _graphics }}
   {% endif %}
 
-  {% if page.layout == 'post' %}
-  {{ content }}
-  {% else %}
+  {% if page.layout == 'scinet_home' %}
   <main id="main-content" {% for _attr in layout.main %} {{ _attr[0] }}="{{ _attr[1] }}" {% endfor %}>
     {{ content }}
   </main>
+  {% else %}
+  
+  {{ content }}
+
   {% endif %}
 
   {% if page.graphics_position == 'after' %}

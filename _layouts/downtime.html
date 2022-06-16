@@ -1,9 +1,10 @@
 ---
-layout: post
+layout: page
 title: Downtime
+main:
+  class: usa-layout-docs usa-layout-docs__main usa-prose 
 ---
 
-<div class="usa-width-three-fourths usa-layout-docs-main_content">
     {{content}}
 
     {% if page.type == "future" %}
@@ -69,5 +70,3 @@ title: Downtime
     {% include components/collection.html %}
     {% endfor %}
     {% endif %}
-
-    </div>

@@ -1,9 +1,11 @@
 ---
-layout: post
+layout: page
 title: Training and Events
+main:
+  class: usa-layout-docs usa-layout-docs__main usa-prose 
 ---
 
-<div class="usa-width-three-fourths usa-layout-docs-main_content">
+
   {{content}}
 
   {% assign tags = site.events | map: 'tags' | uniq %}
@@ -34,4 +36,3 @@ title: Training and Events
   {% include components/collection.html %}
   {% endfor %}
   {% endif %}
-</div>

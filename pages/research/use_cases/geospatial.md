@@ -3,7 +3,7 @@ title: SCINet for geospatial research
 description: SCINet has a number of tools available for geospatial research
 permalink: /research/geospatial/
 author: Rowan Gaffney and Pat Clark
-layout: post
+layout: page
 
  
 sidenav: Research
