@@ -6,7 +6,7 @@ main:
 
 <div class="usa-section">
   <div class="grid-container{% if page.sidenav %} main-side{% endif %}">
-    <div class="grid-row grid-gap flex-align-start">
+    
       {% if page.sidenav_other %}
         {% assign sidenav = site.data.navigation[page.sidenav] | default: page.sidenav %}
       {% else %}
@@ -24,6 +24,7 @@ main:
         {% endif %}
       {% endif %}
       {% if sidenav %}
+      <div class="grid-row grid-gap flex-align-start">
         <div class="usa-layout-docs__sidenav desktop:grid-col-3{% if page.sticky_sidenav %} usa-sticky-sidenav{% endif %}">
           {% include sidenav.html links=sidenav %}
         </div>
@@ -35,6 +36,8 @@ main:
         {% endif %}
         {{ content }}
       </main>
+      {% if sidenav %}
     </div>
+    {% endif %}
   </div>
 </div>
