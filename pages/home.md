@@ -8,19 +8,8 @@ post_type: calendar
 
 featured:
   title: "Featured Stories"
-  button-href: /news/
+  button-href: /newsletter/
   button-text: "See More SCINet News"
-  features:
-    - card:
-      heading: "Guidemaker: software for CRISPR based gene function discovery"
-      excerpt: "CRISPR-Cas is a powerful tool for gene editing. CRISPR can also be used to discover gene function by disrupting every gene in the genome and screening millions of cells in parallel."
-      img-src: /assets/uswds/img/circle-124.png
-      img-alt: Temp
-    - card:
-      heading: "Guidemaker: software for CRISPR based gene function discovery"
-      excerpt: "CRISPR-Cas is a powerful tool for gene editing. CRISPR can also be used to discover gene function by disrupting every gene in the genome and screening millions of cells in parallel."
-      img-src: /assets/uswds/img/circle-124.png
-      img-alt: Temp
 
 hero:
   image: /assets/img/hero.png
@@ -29,7 +18,7 @@ hero:
     Training. </br>
     Network improvements."
   button:
-    href: /callout/
+    href: /about/compute
     text: Learn More
 
 
