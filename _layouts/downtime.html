@@ -21,7 +21,7 @@ title: Downtime
 
     {% if page.show_table %}
 
-    <div class="usa-table-container--scrollable" tabindex="0"></div>
+    <div class="usa-table-container--scrollable" tabindex="0">
     <table class="usa-table usa-table--striped">
         <caption>
             {{ table_title | default: "SciNet Outages" }}
@@ -53,6 +53,7 @@ title: Downtime
         {% endfor %}
     </table>
     <div class="usa-sr-only usa-table__announcement-region" aria-live="polite"></div>
+</div>
 
     <p></p>
 
