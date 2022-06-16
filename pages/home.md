@@ -18,7 +18,7 @@ hero:
     Training. </br>
     Network improvements."
   button:
-    href: /callout/
+    href: /about/compute
     text: Learn More
 
 
