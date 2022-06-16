@@ -1,0 +1,218 @@
+<button class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="{{ _section_id }}">
+    <span>{{ _section.text }}</span>
+  </button>
+    <div class="usa-nav__submenu usa-megamenu">
+
+        <div class="mega-dropdown-inner">
+            <div class="tb-megamenu-row row-fluid">
+                <div class="tb-megamenu-column span12 mega-col-nav row" data-width="12" data-hidewcol="0">
+                    <div class="tb-megamenu-column-inner mega-inner clearfix">
+                        <ul class="tb-megamenu-subnav mega-nav level-1 items-{{ section_links.size }} sidemenu">
+
+                            {% for _link in section_links %}
+
+                            {% assign _link_handle = _link.text | handleize %}
+                            {% assign _link_id = _link_handle | prepend: _section_id %}
+                            {% assign _block_id = _link_id | prepend: 'block-' %}
+                            {% assign _navarrow = _link_handle | prepend: _section_id %}
+
+                            {% if _link.sublinks %}
+                            
+
+                            <li class="tb-megamenu-item level-2 mega dropdown-submenu"
+                                data-id="{{ _link_id }}" data-level="2" data-type="menu_item" data-group="0"
+                                data-hidewcol="0" data-hidesub="0" data-label="{{ _link.text }}">
+                                <a class="dropdown-toggle tb-megamenu-no-link" aria-expanded="false" data-label=""
+                                    tabindex="0" aria-label="Section: {{ _link.text }}"
+                                    data-category="{{ _link.text }}">
+                                    <div class="mm-nav-link">
+                                        <div class="mm-top-level-title">{{ _link.text }}</div>
+                                        <div id="{{ _navarrow }}" class="nav-arrow">
+                                        </div>
+                                    </div>
+                                </a>
+                                {% else %}
+                                <a href="{% if _link.external %}{{ _link.href }}{% else %}{{ _link.href | relative_url }}{% endif %}"
+                                    class="active-trail page-link {% if _link.href == page.permalink %} mm-active{% endif %}"
+                                    data-category="{{ _link.text }}">
+                                    <div class="mm-nav-link">
+                                        <div class="mm-top-level-title">{{ _link.text }}</div>
+                                    </div>
+                                </a>
+                                {% endif %}
+                                <div class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child nav-submenu">
+                                    <div class="mega-dropdown-inner">
+                                        <div class="tb-megamenu-row row-fluid">
+                                            <div class="tb-megamenu-column span12 mega-col-nav row minh-card-lg"
+                                                data-width="12">
+                                                <div class="tb-megamenu-column-inner mega-inner clearfix">
+                                                    <div class="tb-block tb-megamenu-block" data-type="block"
+                                                        data-block="{{ _link_id }}">
+                                                        <div class="block-inner">
+                                                            <div id="_block_id"
+                                                                class="block block-block-content block-{{ _link.text | handleize }}">
+
+                                                                <div
+                                                                    class="field field--name-field-mm-link-text-reference field--type-entity-reference-revisions field--label-hidden field__item">
+
+                                                                    <div class="mm-card-grid">
+                                                                        <div class="mm-grid-blocks">
+                                                                            <div class="subcategory row">
+                                                                                {% if _link.sublinks %}
+                                                                                {% assign link_sublinks =
+                                                                                site.data.navigation[_link.sublinks] |
+                                                                                default: _link.sublinks %}
+                                                                                {% for _sublink in link_sublinks %}
+                                                                                <div class="mm-grid-item">
+                                                                                    <div>
+                                                                                        <a href="{% if _sublink.external %}{{ _sublink.href }}{% else %}{{ _sublink.href | relative_url }}{% endif %}"
+                                                                                            tabindex="0"
+                                                                                            aria-label="{{ _sublink.text }}">
+                                                                                            <span
+                                                                                                class="mm-link-container-header">
+                                                                                                {{ _sublink.text }}</span>
+
+                                                                                            <div
+                                                                                                class="field field--name-field-mm-text field--type-string-long field--label-hidden field__item">
+                                                                                                {{ _sublink.desc }}
+                                                                                            </div>
+
+                                                                                        </a>
+                                                                                    </div>
+                                                                                </div>
+                                                                                {% endfor %}
+                                                                                {% endif %}
+                                                                            </div>
+                                                                            <div class="mm-submenu-bottom-section">
+                                                                            </div>
+                                                                        </div>
+                                                                        <!--<div class="mm-grid-featured">
+                                                                        <div
+                                                                            class="mm-featured-header">
+                                                                            Featured</div>
+                                                                        <div id="block-workingwithusfeaturedsection--2"
+                                                                            class="block block-block-content block-block-contentfb7925e4-599c-4ad6-81da-64effc4b9370">
+
+
+
+                                                                            <div
+                                                                                class="field field--name-field-featured-image field--type-image field--label-visually_hidden">
+                                                                                <div
+                                                                                    class="field__label visually-hidden">
+                                                                                    Featured
+                                                                                    Image</div>
+                                                                                <div
+                                                                                    class="field__item">
+                                                                                    <img src="/sites/default/files/2021-07/translations-0.jpg"
+                                                                                        alt="Man standing in a plowed field"
+                                                                                        loading="lazy"
+                                                                                        typeof="foaf:Image"
+                                                                                        width="284"
+                                                                                        height="144">
+
+                                                                                </div>
+                                                                            </div>
+                                                                            <a href="/translations"
+                                                                                tabindex="0"
+                                                                                aria-label="Featured Link: Translated Resources">
+                                                                                Translated
+                                                                                Resources
+                                                                            </a>
+                                                                            <div
+                                                                                class="field field--name-field-f field--type-string-long field--label-visually_hidden">
+                                                                                <div
+                                                                                    class="field__label visually-hidden">
+                                                                                    Featured
+                                                                                    Text</div>
+                                                                                <div
+                                                                                    class="field__item">
+                                                                                    Get USDA
+                                                                                    materials
+                                                                                    that have
+                                                                                    been
+                                                                                    translated
+                                                                                    to languages
+                                                                                    other than
+                                                                                    English.
+                                                                                </div>
+                                                                            </div>
+
+
+                                                                        </div>
+
+                                                                    </div>-->
+                                                                    </div>
+                                                                </div>
+
+
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!--
+
+<div id="{{ _section_id }}" class="usa-nav__submenu usa-megamenu">
+    <ul class="usa-nav__primary usa-accordion">
+        {% for _link in section_links %}
+        <li class="usa-nav__primary-item">
+            {% if _link.sublinks %}
+            {% assign link_sublinks = site.data.navigation[_link.sublinks] | default: _link.sublinks %}
+
+            {% assign _link_handle = _link.text | handleize %}
+            {% assign _link_id = _link_handle | prepend: _section_id %}
+
+            <button class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="{{ _link_id }}">
+                <span>{{ _link.text }}</span>
+            </button>
+
+            <ul id="{{ _link_id }}" class="usa-nav__submenu">
+                <ul id="{{ _link_id }}" class="usa-nav__submenu">
+
+
+                    {% for _sublink in link_sublinks %}
+
+                    <li class="usa-nav__submenu-item">
+                        <a
+                            href="{% if _sublink.external %}{{ _sublink.href }}{% else %}{{ _sublink.href | relative_url }}{% endif %}">{{
+                            _sublink.text }}</a>
+                    </li>
+
+                    {% endfor %}
+                </ul>
+
+                {% else %}
+                <a class="{% if _link.class %}{{ _link.class }}{% else %} usa-nav__link {% endif %} {% if _link.href == page.permalink %} usa-current{% endif %}"
+                    href="{% if _link.external %}{{ _link.href }}{% else %}{{ _link.href | relative_url }}{% endif %}">
+                    <span>{{ _link.text }}</span>
+                </a>
+                {% endif %}
+        </li>
+        {% endfor %}
+
+    </ul>
+</div>
+
+    -->
+

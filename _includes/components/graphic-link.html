@@ -1,0 +1,20 @@
+{% assign graphics = include.graphics %}
+{% if graphics %}
+    <div class="grid-row grid-gap">
+    {% for graphic in graphics %}
+      <div class="usa-media-block maxw-mobile graphic-link">
+        {% if graphic.image.link %}
+        <a href="{{ graphic.image.link }}">
+        {% endif %}
+        {% include {{ graphic.image.src | prepend: 'svg'  }} %}
+        <div class="usa-media-block__body">
+          {% if graphic.title %}<h2 class="usa-graphic-list__heading no-decor">{{ graphic.title }}</h2>{% endif %}
+          <span class="no-decor">{{ graphic.description | markdownify }}</span>
+        </div>
+        {% if graphic.image.link %}
+        </a>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}

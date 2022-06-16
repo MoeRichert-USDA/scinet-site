@@ -1,0 +1,50 @@
+<div class="grid-row grid-gap-4">
+    <ul class="usa-sidenav desktop:grid-col-3">
+        {% for _link in section_links %}
+        <li class="usa-sidenav__item">
+            {% if _link.sublinks %}
+            <a class="dropdown-toggle tb-megamenu-no-link" aria-expanded="false"
+                aria-label="Section: {{ _link.text }}" aria-controls="nav-{{ _link.text | handleize }}">
+                <div class="mm-nav-link">
+                    <div class="mm-top-level-title">{{ _link.text }}</div>
+                    <div id="nav-arrow-{{ _link.text | handleize }}" class="nav-arrow"></div>
+                </div>
+            </a>
+            {% else %}
+            <a href="{% if _link.external == true %}{{ _link.href }}{% else %}{{ _link.href | relative_url }}{% endif %}"
+                {% if _current %} class="usa-current" {% endif %} {% if _link.class %}class="{{ _link.class }}" {%
+                endif %}>
+                {{ _link.text }}
+            </a>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+    <div class="desktop:grid-col-9">
+        {% for _link in section_links %}
+        <div class="grid-row grid-gap-4" id="nav-{{ _link.text | handleize }}">
+            {% assign link_sublinks =
+                site.data.navigation[_link.sublinks] |
+                default: _link.sublinks %}
+            {% for _sublink in section_sublinks %}
+            <!-- wrap every 3 links in a usa-megamenu-col div -->
+            {% capture modulo %}{{ forloop.index | modulo: 3 }}{% endcapture %}
+            {% if modulo == '1' %}
+            <div class="desktop:grid-col-3">
+                <ul class="usa-nav__submenu-list">
+                    {% endif %}
+                    <li class="usa-nav__submenu-item">
+                        <a
+                            href="{% if _sublink.external %}{{ _sublink.href }}{% else %}{{ _sublink.href | relative_url }}{% endif %}">{{
+                            _sublink.text }}</a>
+                    </li>
+                    {% if modulo == '0' or forloop.last %}
+                </ul>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div><!-- /grid-row -->
+        {% endfor %}
+    </div><!-- /grid-col -->
+
+</div><!-- /grid-row -->

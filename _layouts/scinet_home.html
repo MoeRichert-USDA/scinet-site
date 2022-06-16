@@ -1,0 +1,108 @@
+---
+layout: default
+main:
+class:
+---
+
+<div>
+    <!--<div class="grid-row usa-section">
+        <div class="mm-card-grid">
+            <div class="mm-grid-blocks">
+                <div class="subcategory row">
+                    <div class="mm-grid-item">
+                        <div>
+                            <a href="/" aria-label="sublinktext">
+                                <span class="mm-link-container-header">
+                                    sublinktext</span>
+
+                                <div
+                                    class="field field--name-field-mm-text field--type-string-long field--label-hidden field__item">
+                                    sublinkdesc
+                                </div>
+
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mm-submenu-bottom-section">
+                </div>
+            </div>
+            </div>
+    </div>-->
+    <div class="grid-row sci-container">
+        <div class="desktop:grid-col-auto">
+            {% include sci-card.html highlight = page.intro %}
+        </div>
+        <div class="desktop:grid-col-fill">
+            <div class="grid-row grid-gap">
+                <div class="width-full margin-4">
+                    <h3 class="site-preview-heading">Upcoming Training and Events</h3>
+
+                    {% assign featured_cal = site.events | where: 'future', 'show' %}
+                    {% assign filtered_posts = featured_cal | where_exp: "post", "post.date >= site.time" %}
+                    {% for post in filtered_posts limit:3 %}
+                    {% assign post_type = 'calendar' %}
+                    {% include components/collection.html %}
+                    {% endfor %}
+
+                </div>
+                <button class="usa-button margin-x-auto margin-y-2">See the Full Calendar</button>
+            </div>
+        </div>
+    </div>
+    <div class="grid-row bg-primary-lighter margin-y-4 padding-2">
+        <div class="grid-container sci-container">
+
+            {% if page.featured %}
+            {% assign featured_main = site.posts | where: 'featured', 'home' %}
+            <div class="">
+                <h2>{{ page.featured.title}}</h2>
+                <ul class="usa-card-group">
+                    
+                    {% for post in featured_main limit:3 %}
+
+                    {% include feature.html %}
+                    
+                    {% endfor %}
+
+                </ul>
+                <a class="usa-button" href="{{ featured.button-href | relative_url }}">
+                    {{ page.featured.button-text }}
+                </a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="grid-row margin-y-4 padding-2">
+        <div class="grid-container sci-container">
+            
+            <div class="">
+                <h2>{{ page.research.title }}</h2>
+            <section class="grid-row">
+                {% if page.opportunities %}
+                {% for card in page.opportunities %}
+                {% include components/select-card.html card=card %}
+                {% endfor %}
+                {% endif %}
+            </section>
+            </div>
+        </div>
+    </div>
+    <div class="grid-row usa-section--dark">
+        <div class="grid-container sci-container">
+            <section class="usa-section {% if page.icons %} graphic-links {% endif %} grid-container">
+                <h3>{{ page.research.alter }}</h3>
+                {% include graphic-links.html graphics=page.icons %}
+            </section>
+            <!--SCINet funded Research fellowship opportunities-->
+        </div>
+    </div>
+    <div class="grid-row sci-container">
+        <!--Support-->
+    </div>
+    <div class="grid-row">
+        <div class="tablet:grid-col">
+            {{ content }}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+
+<div class="grid-row grid-gap">
+    <div class="width-full">
+        {% if page.collection_title %}
+        <h3 class="site-preview-heading">{{ page.collection_title }}</h3>
+        {% endif %}
+        <ul class="usa-collection">
+            {% for post in entries %} 
+              {% if post.categories contains page.title or page.event == true %}
+                {% if page.archive %}
+                  {% capture nowdate %}{{'now' | date: '%s'}}{% endcapture %}
+                  {% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
+                  {% if posttime < nowdate %}
+                    {% include components/collection.html %}
+                  {% endif %}
+                {% elsif page.current %}
+                  {% capture nowdate %}{{'now' | date: '%s'}}{% endcapture %}
+                  {% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
+                  {% if posttime > nowdate %}
+                    {% include components/collection.html %}
+                  {% endif %}
+                {% else %}
+                  {% include components/collection.html %}
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+</div>

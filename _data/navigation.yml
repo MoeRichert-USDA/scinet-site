@@ -1,0 +1,223 @@
+# This is the configuration for the site navigation.
+
+sidenav-breakpoint: 'desktop'
+
+# This file defines the structure of various named navigational
+# listings, any of which can be used (with some caveats) as the
+# links in your header, footer, and per-page side navigation.
+#
+# For instance, if you have a "primary" navigation list here, you
+# can use that as your header's primary navigation by setting
+# `primary.links` to "primary":
+#
+# primary:
+#   links: primary
+#
+primary:
+  - text: Home
+    href: /
+  - text: About
+    links:
+      - text: Sign up for an account
+        href: /about/signup
+      - text: Computer Systems
+        href: /about/compute
+#     - text: Networking
+#       href: /about/networking
+      - text: Organization
+        href: /about/organization
+      - text: Contact
+        href: /about/contact
+  - text: News
+    links:
+      - text: System Downtime
+        href: /downtime/
+      - text: Announcements
+        href: /announcements/
+      - text: User Stories
+        href: /stories/
+      - text: Newsletter
+        href: /newsletter/
+      - text: SCINet-X
+        href: /scinet-x/
+  - text: User Guides
+    sublinks: true
+    links:
+      - text: Quick Start
+        href: /guide/quickstart
+      - text: Job Submission
+        href: /guide/job-submission
+      - text: User Manuals
+        sublinks:
+        - text: Ceres HPC User manual
+          href: /guide/ceres
+        - text: Atlas HPC User Guide
+          href: https://www.hpc.msstate.edu/computing/atlas
+          external: true
+        - text: Transitioning from Ceres to Atlas
+          href: /guide/ceres2atlas
+        - text: Set up multifactor authentication
+          href: /guide/multifactor
+        - text: SCINet Storage Guide
+          href: /guide/storage
+      - text: Software Guides
+        sublinks:
+        - text: Software Overview
+          href: /guide/software
+        - text: Installing Packages and Software
+          href: /guide/install
+        - text: Specific Software Guides
+        - text: Transferring files
+          href: /guide/file-transfer
+        - text: SCINet VPN
+          href: /guide/vpn
+  - text: Research
+    sublinks: true
+    links:
+      - text: Overview
+        href: /working-groups
+      - text: Working Groups
+        href: /working-groups
+        sublinks:
+        - text: Ag100Pest
+          href: /working-groups/ag100pest
+        - text: Arthropod Genomics
+          href: /working-groups/arthropods
+        - text: Geospatial Research
+          href: /working-groups/geospatial
+        - text: Microbiome
+          href: /working-groups/microbiome
+        - text: LTAR Phenology
+          href: /working-groups/LTARphenology
+        - text: SCINet Policy Committee
+          href: /working-groups/policy
+        - text: SCINet Website Developers
+          href: /working-groups/webdev
+        - text: Workbook Developers
+          href: /working-groups/workbooks
+        - text: Pollinator
+          href: /working-groups/pollinator\
+      - text: Use Cases
+        sublinks:
+        - text: Genomics
+          href: /research/genomics/
+        - text: Plant breeding
+          href: /research/plant-breeding/
+        - text: Geospatial
+          href: /research/geospatial/
+        - text: Hydrology
+          href: /research/hydrology/
+      
+  - text: Training and Events
+    links:
+#     - text: Overview
+#       href: /training/overview
+#     - text: ARS Science Tutorials
+#       href: /training/tutorials/
+      - text: Learning Pathway
+        href: /training/learningpath
+      - text: Free Online Training
+        href: /training/free-online-training
+#     - text: Videos
+#       href: /training/video/
+      - text: Upcoming Events
+        href: /events/upcoming
+      - text: Event Archive
+        href: /events/archive
+      - text: Bioinformatics Workbook
+        href: /training/bioinformatics-workbook
+#     - text: Useful Links
+#       href: /training/useful-links
+      - text: Coursera
+        href: /training/coursera
+  - text: Support
+    links:
+      - text: Virtual Research Support Core (VSRC)
+        href: /support/vrsc/
+      - text: FAQ's
+        href: /support/faq/
+      - text: USDA-ARS SCINet Forum
+        href: https://forum.scinet.usda.gov
+      - text: Request Project Storage
+        href: /support/request-storage
+      - text: Request Software
+        href: /support/request-software
+      - text: Request AWS
+        href: /support/request-AWS
+      - text: Ceres Job Script Generator
+        href: /support/ceres-job-script
+  - text: Opportunities
+    links:
+      - text: SAC Membership
+        href: /opportunities/SAC
+      - text: Request a Workshop
+        href: /opportunities/request-workshop
+      - text: Fellowships (PhD & MS)
+        href: /opportunities/postdocs
+      - text: AI Innovation Fund
+        href: /opportunities/ai-innovation
+      - text: SCINet and AI-COE fellowship proposals
+        href: /opportunities/scinet-aicoe-fellowships
+#      - text: Open Positions
+#        href: /opportunities/open_positions
+
+secondary:
+#   - text: Documentation
+#     href: /docs/
+#   - text: Theme
+#     href: /theme/
+
+#secondary:
+#  - text: Contents
+#    href: /guide/
+
+
+# Uncomment the items below and comment the items above in the `footer` list
+# to use footer link columns in the 'big' footer style.
+footer:
+  - text: RESOURCES
+    links: 
+    - text: Feedback
+      href: mailto:scinet_vrsc@usda.gov
+      external: true
+    - text: Sign Up
+      href: /about/signup
+    - text: Contact
+      href: /about/contact
+    - text: Fellowships
+      href: /opportunities/postdocs
+  - text: USDA
+    links:
+    - text: AskUSDA
+      href: https://ask.usda.gov/
+      external: true
+    - text: USDA.gov
+      href: https://usda.gov/
+      external: true
+    - text: USA.gov
+      href: https://www.usa.gov
+      external: true
+    - text: WhiteHouse.gov
+      href: https://www.whitehouse.gov
+      external: true
+    - text: Plain Writing
+      href: https://usda.gov/plain-writing
+      external: true
+  - text: LEGAL
+    links:
+    - text: Accessibility Statement
+      href: https://usda.gov/accessibility-statement
+      external: true
+    - text: Non-Discrimination Statement
+      href: https://usda.gov/non-discrimination-statement
+      external: true
+    - text: Privacy Policy
+      href: https://usda.gov/privacy-policy
+      external: true
+    - text: FOIA
+      href: https://www.dm.usda.gov/foia/
+      external: true
+    - text: Information Quality
+      href: https://www.ocio.usda.gov/policy-directives-records-forms/information-quality-activities
+      external: true
+

@@ -1,0 +1,44 @@
+//intro card
+
+.rounded-box {
+  @include u-padding(3);
+  @include u-margin(4);
+  @include u-radius('lg');
+}
+
+.sci-card {
+  @extend .rounded-box;
+  @include u-text('center');
+  @include u-bg('primary-lighter');
+  @include at-media("desktop") {
+    @include u-maxw('mobile-lg');
+  }
+  @include at-media("tablet") {
+    @include grid-row;
+  }
+
+  h1{
+    @include typeset('ui', 'xl');
+  }
+  p{
+    @include typeset('ui', 'md', 6);
+  }
+
+  .sci-select {
+    @extend .rounded-box;
+    @include u-text('center');
+    @include u-maxw('mobile-lg');
+    @include u-bg('primary-light');
+    p{
+      @include typeset('ui', 'xs', 3);
+    }
+  }
+  .sci-flex {
+    @include u-margin-x(2);
+    @include at-media("tablet") {
+      @include u-margin-y('auto');
+      @include grid-col;
+    }
+  
+  }
+}

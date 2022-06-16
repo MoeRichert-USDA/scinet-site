@@ -1,0 +1,63 @@
+/*
+----------------------------------------
+USWDS with settings overrides
+----------------------------------------
+Uncomment the following lines and add a list of changed settings
+in the form $setting: value,
+----------------------------------------
+*/
+
+//
+@use "uswds-core" with (
+  $theme-image-path: "../uswds/img",
+  $theme-font-path: "../uswds/fonts",
+  $theme-show-compile-warnings: true,
+  $theme-banner-max-width: "none",
+  $theme-utility-breakpoints: ("card": true,
+    "card-lg": true,
+    "mobile": true,
+    "mobile-lg": true,
+    "tablet": true,
+    "tablet-lg": true,
+    "desktop": true,
+    "desktop-lg": true,
+    "widescreen": true
+    )
+    );
+
+
+// Add white color
+$theme-white: #FFFFFF;
+
+.back-white {
+  background-color: $theme-white;
+}
+
+.white-txt {
+  color: $theme-white;
+}
+
+//
+
+// Add my breakpoints
+$grid__columns: 12;
+$grid__gutter: 20px;
+
+$name--X: xs-;
+$name--S: small-;
+$name--M: medium-;
+$name--L: large-;
+$name--XL: xlarge-;
+
+$break--S: 480px;
+$break--M: 768px;
+$break--L: 1140px;
+$break--XL: 1440px;
+
+$screen--S: $break--S + 1;
+$screen--M: $break--M + 1;
+$screen--L: $break--L + 1;
+$screen--XL: $break--XL + 1;
+
+// Set the main container with for the grid. This is applied to .container
+//$container_width: 1080px;

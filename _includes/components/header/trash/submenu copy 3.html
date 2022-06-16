@@ -1,0 +1,40 @@
+<div id="{{ _section_id }}" class="usa-nav__submenu usa-megamenu">
+    <ul class="usa-nav__primary usa-accordion">
+        {% for _link in section_links %}
+        <li class="usa-nav__primary-item">
+            {% if _link.sublinks %}
+            {% assign link_sublinks = site.data.navigation[_link.sublinks] | default: _link.sublinks %}
+
+            {% assign _link_handle = _link.text | handleize %}
+            {% assign _link_id = _link_handle | prepend: _section_id %}
+
+            <button class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="{{ _link_id }}">
+                <span>{{ _link.text }}</span>
+            </button>
+
+            <ul id="{{ _link_id }}" class="usa-nav__submenu">
+                <ul id="{{ _link_id }}" class="usa-nav__submenu">
+
+
+                    {% for _sublink in link_sublinks %}
+
+                    <li class="usa-nav__submenu-item">
+                        <a
+                            href="{% if _sublink.external %}{{ _sublink.href }}{% else %}{{ _sublink.href | relative_url }}{% endif %}">{{
+                            _sublink.text }}</a>
+                    </li>
+
+                    {% endfor %}
+                </ul>
+
+                {% else %}
+                <a class="{% if _link.class %}{{ _link.class }}{% else %} usa-nav__link {% endif %} {% if _link.href == page.permalink %} usa-current{% endif %}"
+                    href="{% if _link.external %}{{ _link.href }}{% else %}{{ _link.href | relative_url }}{% endif %}">
+                    <span>{{ _link.text }}</span>
+                </a>
+                {% endif %}
+        </li>
+        {% endfor %}
+
+    </ul>
+</div>
