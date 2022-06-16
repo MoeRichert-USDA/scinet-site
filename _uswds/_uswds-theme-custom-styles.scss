@@ -26,6 +26,10 @@ i.e.
   @include u-maxw('desktop-lg');
 }
 
+pre { 
+   overflow-x: auto; 
+}
+
 .usa-megamenu.usa-nav__submenu::after,.usa-megamenu.usa-nav__submenu::before{
    opacity: 0;
 }
