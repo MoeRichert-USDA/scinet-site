@@ -16,3 +16,8 @@ Edits made to _sass/styles.css will not be retained when the site is built.  It 
 
 USWDS location settings are in the gulpfile
 
+## Collections
+
+Collections are now stored in sn_collections and sorted by type
+
+If an additional category is needed, a new folder should be made and its information should be added to the _config.yml under 'collections'
