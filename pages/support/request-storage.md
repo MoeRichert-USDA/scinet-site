@@ -3,7 +3,7 @@ title: Request Additional SCINet Storage
 description: link to request project allocation
 permalink: /support/request-storage
 author: Kerrie Geil
-layout: post
+layout: page
 
  
 sidenav: Support

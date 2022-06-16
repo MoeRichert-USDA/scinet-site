@@ -3,7 +3,7 @@ title: A Quick Guide to getting started with SCINet
 description: A Quick Guide to getting started with SCINet
 permalink: /guide/quickstart
 author:
-layout: post
+layout: page
 
 #sidenav:
 # - text: What is SCINet
@@ -78,6 +78,9 @@ For security, SCINet requires multifactor authentication. See the setup instruct
 
 # HPC Clusters on SCINet
 
+<div class="usa-table-container--scrollable" tabindex="0" markdown="block">
+
+{: .usa-table .usa-table--striped }
 Cluster name | Location | Login Nodes | Transfer Nodes
 -------------|----------|-------------|---------------
 Ceres        |Ames, IA  |ceres.scinet.usda.gov | ceres-dtn.scinet.usda.gov
@@ -85,6 +88,7 @@ Atlas        |Starkville, MS| atlas-login.hpc.msstate.edu |atlas-dtn.hpc.msstate
 TBD          |Beltsville, MD| TBD|TBD
 -------------|---|---|
 
+</div>
 
 # Accessing SCINet
 

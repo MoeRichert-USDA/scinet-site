@@ -22,10 +22,12 @@ i.e.
 
 @use "uswds-core" as *;
 
+//side nav formatting
 .main-side {
   @include u-maxw('desktop-lg');
 }
 
+//code block scroll
 pre { 
    overflow-x: auto; 
 }

@@ -3,7 +3,7 @@ title: SCINet Networking
 description: SCINet Networking plan
 permalink: /about/networking
 author:
-layout: post
+layout: page
 
  
 sidenav: About

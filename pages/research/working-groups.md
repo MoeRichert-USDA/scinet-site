@@ -3,7 +3,7 @@ title: SCINet Working Groups Overview
 description: summary of current working groups
 permalink: /working-groups
 author: 
-layout: post
+layout: page
 
  
 sidenav: Research
