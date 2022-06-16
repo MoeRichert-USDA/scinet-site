@@ -27,7 +27,9 @@ We congratulate the 19 ARS scientists who submitted successful proposals, and lo
 We expect to have another funding opportunity in FY23 so watch for that announcement in late 2022.
 
  
+<div class="usa-table-container--scrollable" tabindex="0" markdown="block">
 
+{: .usa-table .usa-table--striped }
 |Proposals Funded in 2022 | Mentor| Co-mentor(s)| 
 |------|------|------|
 | Developing tools for the real-time monitoring and query of all the world's publicly available sequence data. |	Adam Rivers		|	|
@@ -50,6 +52,7 @@ We expect to have another funding opportunity in FY23 so watch for that announce
 | Application of machine learning in livestock genomics|	George Liu	|
 | Determining the pervasiveness of hybridization and introgression in agriculture and the driving mechanisms	|Christopher Owen	||
 
+</div>
 
 <br>
 
