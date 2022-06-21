@@ -5,6 +5,7 @@ author: Heather Jones
 excerpt: An introduction to Atlas
 type: training
 provider: MSU
+tags: Atlas
 
 sessions:
   - session: 

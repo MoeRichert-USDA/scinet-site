@@ -4,6 +4,7 @@ title: "Data Wrangling Workshop"
 author: Heather Jones
 excerpt: Data wrangling with unmanned aerial system data
 type: training
+tags: UAS
 ---
 
 **03/22/2022 &middot;   Remote   &middot;   MSU**   

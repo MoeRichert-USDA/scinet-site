@@ -5,6 +5,7 @@ author: Heather Jones
 excerpt: Software Carpentries
 type: training
 provider: Data Carpentry
+tags: Unix Git Python
 ---
 
 **3/08/2022 &middot;   Remote   &middot;   Lead: Steven Schroeder**   
