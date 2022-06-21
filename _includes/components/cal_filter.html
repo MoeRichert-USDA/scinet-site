@@ -15,8 +15,8 @@
                 <div class="usa-combo-box">
                     <select class="usa-select" name="{{ typeid }}" id="{{ typeid }}">
                         <option value>Filter Events by Type</option>
-                        {% for tag in tags %}
-                        <option value="{{ tag }}">{{ tag | capitalize }}</option>
+                        {% for type in types %}
+                        <option value="{{ type }}">{{ type | capitalize }}</option>
                         {% endfor %}
                     </select>
                 </div>
@@ -35,7 +35,6 @@
         </div>
         <div class="usa-card__footer">
             <button class="usa-button" id="{{ buttonid }}">Filter</button>
-            <!--<button class="usa-button filter_button" onclick="filtered('{{ formid }}', '{{ typeid }}', '{{ providerid }}', '{{ cal_id }}')">Filter</button>-->
         </div>
     </div>
 </div>
@@ -58,7 +57,7 @@
                 if (mylist[i].classList.contains("no-display")) { }
                 else mylist[i].classList.add("no-display");
       
-                let thistype = mylist[i].getAttribute('tagged'),
+                let thistype = mylist[i].getAttribute('type'),
                     thisinstruct = mylist[i].getAttribute('instructor');
                     console.log(thistype, thisinstruct);
                     console.log(type, provider);

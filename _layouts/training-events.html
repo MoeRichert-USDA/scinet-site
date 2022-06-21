@@ -9,6 +9,7 @@ main:
   {{content}}
 
   {% assign tags = site.events | map: 'tags' | uniq %}
+  {% assign types = site.events | map: 'type' | uniq %}
   {% assign providers = site.events | map: 'provider' | uniq %}
   {% assign sort_list = true %}
 
