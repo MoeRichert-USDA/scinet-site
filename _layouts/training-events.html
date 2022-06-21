@@ -7,33 +7,41 @@ main:
 
 
   {{content}}
-
-  {% assign tags = site.events | map: 'tags' | uniq %}
-  {% assign types = site.events | map: 'type' | uniq %}
-  {% assign providers = site.events | map: 'provider' | uniq %}
-  {% assign sort_list = true %}
-
-  {% assign pagetitle = page.title | slugify %}
-  
-  {% assign cal_id = pagetitle | prepend: "cal-" %}
-
-  {% include components/cal_filter.html %}
   
 
-  {% if page.type == "future" %}
+{% if page.type == "future" %}
   {% assign all_events = site.events | where: 'future', 'show' %}
-  {% assign upcoming = all_events | where_exp: "post", "post.date >= site.time" %}
+  {% assign myevents = all_events | where_exp: "post", "post.date >= site.time" %}
   {% assign post_type = 'calendar' %}
-  {% for post in upcoming %}
-  {% include components/collection.html %}
+  {% assign flow = 'normal' %}
+
+{% elsif page.type == "archive" %}
+  {% assign myevents = site.events | where_exp: "post", "post.date < site.time" %}
+  {% assign flow = 'reverse' %}
+
+{% else %}
+  {% assign myevents = site.events %}
+  {% assign flow = 'reverse' %}
+{% endif %}
+
+
+{% assign tags = myevents | map: 'tags' | uniq %}
+{% assign types = myevents | map: 'type' | uniq %}
+{% assign providers = myevents | map: 'provider' | uniq %}
+{% assign sort_list = true %}
+
+{% assign pagetitle = page.title | slugify %}
+  
+{% assign cal_id = pagetitle | prepend: "cal-" %}
+
+{% include components/cal_filter.html %}
+
+{% if flow == 'normal' %}
+  {% for post in myevents %}
+    {% include components/collection.html %}
   {% endfor %}
-  {% elsif page.type == "archive" %}
-  {% assign archive_events = site.events | where_exp: "post", "post.date < site.time" %}
-  {% for post in archive_events reversed %}
-  {% include components/collection.html %}
+{% else %}
+  {% for post in myevents reversed %}
+    {% include components/collection.html %}
   {% endfor %}
-  {% else %}
-  {% for post in site.events reversed %}
-  {% include components/collection.html %}
-  {% endfor %}
-  {% endif %}
+{% endif %}
