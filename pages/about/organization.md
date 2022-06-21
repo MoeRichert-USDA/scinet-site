@@ -3,9 +3,9 @@ title: Organization of the SCINet project
 description: Organization and Management of the SCINet project
 permalink: /about/organization
 author: 'Adam Rivers Kerrie Geil'
-layout: page
+layout: nav
 
-sidenav: About
+
 subnav:
   - text: About
     href: '#about-scinet'
@@ -19,8 +19,8 @@ subnav:
     href: '#scinet-policy-committee'
   - text: Scientific points of contact
     href: '#scientific-points-of-contact'
-sticky_sidenav: true
-sticky_element: true
+
+
 ---
 
 

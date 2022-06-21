@@ -3,17 +3,17 @@ title: Request a SCINet-funded Self-led or SCINet-led Workshop or Training
 description: Apply to SCINet to develop a training meeting
 permalink: /opportunities/request-workshop
 author:
-layout: page
+layout: nav
 
-sidenav: Opportunities
+
 subnav:
   - text: Proposals for Self-led SCINet-funded Workshops or Training 
     href: '#proposals-for-self-led-scinet-funded-workshops-or-training-'
   - text: Suggestions for SCINet-led Workshops or Training
     href: '#suggestions-for-scinet-led-workshops-or-training'
 
-sticky_sidenav: true
-sticky_element: true
+
+
 ---
 
 Each year, the SCINet initiative accepts two types of requests:

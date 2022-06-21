@@ -3,10 +3,8 @@ title: Geospatial Research Working Group
 description: summary of the working group
 permalink: /working-groups/geospatial
 author: Kerrie Geil
-layout: page
+layout: nav
 
- 
-sidenav: Working Groups
 subnav:
   - text: Workshops
     href: '#workshops'

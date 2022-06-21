@@ -3,13 +3,13 @@ title: Request Software Installation on SCINet
 description: software installation info and link to application form
 permalink: /support/request-software
 author:
-layout: page
+layout: nav
 
  
-sidenav: Support
 
-sticky_sidenav: true
-sticky_element: true
+
+
+
 ---
 
 ## Before sending VRSC a software request do the following:

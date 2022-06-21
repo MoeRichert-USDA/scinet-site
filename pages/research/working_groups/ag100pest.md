@@ -3,10 +3,8 @@ title: Ag100Pest Initiative Working Group
 description: summary of the working group
 permalink: /working-groups/ag100pest
 author: Anna Childers
-layout: page
+layout: nav
 
- 
-sidenav: Working Groups
 ---
 
 

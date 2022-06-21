@@ -5,7 +5,7 @@ redirect_from:
   - https://scinet.usda.gov/signup
 permalink: /about/signup
 author:
-layout: page
+layout: nav
 
 graphics:
   - image:
@@ -20,15 +20,13 @@ graphics:
     description: Other scientists can sign up for SCINet if sponsored by an ARS employee
 graphics_position: after
 
-# sidenav_other: true #if NOT pulling from the original primary list
-sidenav: About #match the original primary list OR add 'sidenav_other: true' and make a new link list in navigation.yml
+# sidenav_other: if NOT pulling from the original primary list - name of new link list in navigation.yml
 subnav: #match navigation in page or add external links
   - text: ARS Employees
     href: '#ars-employees'
   - text: Non-ARS Employees
     href: '#non-ars-employees'
-sticky_sidenav: true #makes sidenav sticky. Leave off if sidenav is long
-sticky_element: true #needed to make any sticky components work
+
 ---
 
 ## ARS Employees

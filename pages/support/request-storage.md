@@ -3,18 +3,18 @@ title: Request Additional SCINet Storage
 description: link to request project allocation
 permalink: /support/request-storage
 author: Kerrie Geil
-layout: page
+layout: nav
 
  
-sidenav: Support
+
 subnav:
   - text: Modify Existing Project Allocation
     href: '#to-modify-an-existing-scinet-project-allocation'
   - text: Request New Project Allocation
     href: '#to-request-a-new-project-allocation'
 
-sticky_sidenav: true
-sticky_element: true
+
+
 
 ---
 
