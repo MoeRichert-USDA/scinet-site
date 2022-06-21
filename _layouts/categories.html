@@ -5,13 +5,29 @@ main:
   class: usa-layout-docs usa-layout-docs__main usa-prose 
 ---
 
-<div class="usa-width-three-fourths usa-layout-docs-main_content">
+
   {{ content }}
 
-  {% for post in site.posts %} 
-    {% if post.categories contains page.title %}
-    {% include components/collection.html %}
-    {% endif %}
-  {% endfor %}
+  {% assign myfilter = page.collect %}
+  {% case myfilter %}
+    {% when "announcements" %}
+      {% assign myposts = site.announcements %}
+      {% assign flow = 'reverse' %}
+      {% assign post_type = 'calendar' %}
+    {% when "downtime" %}
+      {% assign myposts = site.downtime %}
+    {% when "events" %}
+      {% assign myposts = site.events %}
+    {% else %}
+      {% assign myposts = site.posts %}
+  {% endcase %}
 
-</div>
+{% if flow == 'reverse' %}
+  {% for post in myposts reversed %} 
+      {% include collection.html %}
+  {% endfor %}
+{% else %}
+  {% for post in myposts %} 
+      {% include collection.html %}
+  {% endfor %}
+{% endif %}
