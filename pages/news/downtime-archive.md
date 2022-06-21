@@ -1,10 +1,11 @@
 ---
 title: Downtime
 layout: downtime
-permalink: /downtime-archive/
+permalink: /downtime-archive
 
 type: archive
-show_table: true
+
+sidenav_other: News
 
 ---
 
