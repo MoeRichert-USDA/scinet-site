@@ -96,7 +96,7 @@ primary:
         - text: Workbook Developers
           href: /working-groups/workbooks
         - text: Pollinator
-          href: /working-groups/pollinator\
+          href: /working-groups/pollinator
       - text: Use Cases
         sublinks:
         - text: Genomics
@@ -170,6 +170,26 @@ secondary:
 #secondary:
 #  - text: Contents
 #    href: /guide/
+
+WorkingGroups:
+  - text: Ag100Pest
+    href: /working-groups/ag100pest
+  - text: Arthropod Genomics
+    href: /working-groups/arthropods
+  - text: Geospatial Research
+    href: /working-groups/geospatial
+  - text: Microbiome
+    href: /working-groups/microbiome
+  - text: LTAR Phenology
+    href: /working-groups/LTARphenology
+  - text: SCINet Policy Committee
+    href: /working-groups/policy
+  - text: SCINet Website Developers
+    href: /working-groups/webdev
+  - text: Workbook Developers
+    href: /working-groups/workbooks
+  - text: Pollinator
+    href: /working-groups/pollinator
 
 
 # Uncomment the items below and comment the items above in the `footer` list
