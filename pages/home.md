@@ -8,7 +8,7 @@ post_type: calendar
 
 featured:
   title: "Featured Stories"
-  button-href: /newsletter/
+  button-href: /newsletter
   button-text: "See More SCINet News"
 
 hero:

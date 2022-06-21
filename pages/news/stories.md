@@ -1,7 +1,7 @@
 ---
 title: Stories
 layout: categories
-permalink: /stories/
+permalink: /stories
 
  
 

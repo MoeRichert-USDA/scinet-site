@@ -1,7 +1,7 @@
 ---
 title: Announcements
-layout: categories
-permalink: /announcements/
+layout: nav
+permalink: /announcements
 
  
 

@@ -1,7 +1,7 @@
 ---
 title: Quarterly Newsletter Archive
 layout: nav
-permalink: /newsletter/
+permalink: /newsletter
 
  
 
