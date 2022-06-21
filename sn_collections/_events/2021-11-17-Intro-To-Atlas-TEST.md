@@ -3,7 +3,7 @@
 title: "Introduction to Atlas"
 author: Delanie Johnson
 excerpt: An introduction to Atlas
-tags: training
+type: training
 provider: MSU
 
 sessions:

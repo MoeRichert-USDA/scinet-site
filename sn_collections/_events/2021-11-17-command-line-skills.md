@@ -4,7 +4,7 @@ title: "Command-line Skills for Scientific Computing"
 author: Brian Stucky
 excerpt: Hands-on introduction to the Unix command line
 provider: SCINet
-tags: training
+type: training
 ---
 
 **11/17/2021**

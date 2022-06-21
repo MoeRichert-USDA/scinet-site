@@ -3,7 +3,7 @@
 title: "Software Carpentries"
 author: Heather Jones
 excerpt: Software Carpentries
-tags: training
+type: training
 provider: Data Carpentry
 ---
 

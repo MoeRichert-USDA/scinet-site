@@ -3,7 +3,7 @@
 title: "Advanced Topics in Deep Learning"
 author: Heather Jones
 excerpt: Advanced Topics in Deep Learning
-tags: training
+type: training
 provider: SCINet
 ---
 

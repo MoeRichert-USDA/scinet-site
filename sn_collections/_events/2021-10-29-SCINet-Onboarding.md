@@ -4,7 +4,7 @@ title: "SCINet Onboarding"
 author: Delanie Johnson
 excerpt: SCINet Onboarding Assistance 
 provider: SCINet
-tags: training
+type: training
 ---
 
 **10/29/2021 &middot;   Remotely Through Zoom**   

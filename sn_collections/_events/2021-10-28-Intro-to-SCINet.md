@@ -4,7 +4,7 @@ title: "Introduction to SCINet"
 author: Delanie Johnson
 excerpt: Hear a brief overview of SCINet
 provider: SCINet
-tags: training
+type: training
 ---
 
 **10/28/2021 &middot;   Remotely/ISU**   
