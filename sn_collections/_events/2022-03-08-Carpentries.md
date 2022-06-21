@@ -3,8 +3,8 @@
 title: "Software Carpentries"
 author: Heather Jones
 excerpt: Software Carpentries
-
 tags: training
+provider: Data Carpentry
 ---
 
 **3/08/2022 &middot;   Remote   &middot;   Lead: Steven Schroeder**   

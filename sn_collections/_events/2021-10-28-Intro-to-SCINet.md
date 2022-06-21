@@ -3,7 +3,7 @@
 title: "Introduction to SCINet"
 author: Delanie Johnson
 excerpt: Hear a brief overview of SCINet
-
+provider: SCINet
 tags: training
 ---
 

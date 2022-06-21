@@ -3,7 +3,7 @@
 title: Software Carpentry Workshop on Shell, Git, and Python for USDA
 author: Kerrie Geil
 excerpt: Instructors from The Carpentries with the help of ARS scientists Kathy Yeater, Anna Childers, and Steve Schroeder held a 2-day Software Carpentry workshop covering Shell, Git, and Python for 20 USDA participants.
-
+provider: Data Carpentry
 tags: training
 ---
 

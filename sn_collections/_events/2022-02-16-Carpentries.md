@@ -3,8 +3,8 @@
 title: "Data Carpentries"
 author: Heather Jones
 excerpt: Data Carpentries
-
 tags: training
+provider: Data Carpentry
 ---
 
 **2/16/2022 &middot;   Remote   &middot;   lead: Kathleen Yeater**   

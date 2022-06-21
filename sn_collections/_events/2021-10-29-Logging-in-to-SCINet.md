@@ -3,7 +3,7 @@
 title: "Logging Into SCINet"
 author: Delanie Johnson
 excerpt: Get hands-on support to help walk you through the process of logging into SCINet
-
+provider: SCINet
 tags: training
 ---
 

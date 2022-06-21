@@ -3,7 +3,7 @@
 title: Introduction to Atlas
 author: Marina Kraeva
 excerpt: Dr. Adam Thrash held a 90-mintue information session about USDA’s supercomputer Atlas.
-
+provider: MSU
 tags: training
 ---
 

@@ -3,7 +3,7 @@
 title: "SCINet Onboarding"
 author: Delanie Johnson
 excerpt: SCINet Onboarding Assistance 
-
+provider: SCINet
 tags: training
 ---
 

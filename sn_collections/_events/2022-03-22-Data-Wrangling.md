@@ -3,7 +3,6 @@
 title: "Data Wrangling Workshop"
 author: Heather Jones
 excerpt: Data wrangling with unmanned aerial system data
-#picture: /assets/img/
 tags: training
 ---
 

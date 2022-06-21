@@ -3,8 +3,12 @@
 title: "Introduction to Atlas"
 author: Heather Jones
 excerpt: An introduction to Atlas
-
 tags: training
+provider: MSU
+
+sessions:
+  - session: 
+    instructor: Dr. Adam Thrash
 ---
 
 **12/15/2021 &middot;   Remotely/MSU   &middot;   lead: Adam Thrash**   

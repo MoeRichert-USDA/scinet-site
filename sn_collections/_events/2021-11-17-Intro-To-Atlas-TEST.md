@@ -3,9 +3,8 @@
 title: "Introduction to Atlas"
 author: Delanie Johnson
 excerpt: An introduction to Atlas
-
 tags: training
-provider: MSU VRSC
+provider: MSU
 
 sessions:
   - session: 

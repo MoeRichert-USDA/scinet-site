@@ -3,8 +3,18 @@
 title: Software Carpentry Workshop on Shell, Git, and R for USDA
 author: Kerrie Geil
 excerpt: ARS scientists Jonathan Shao and Amanda Hulse-Kemp, along with two other non-ARS instructors (Jacob Deppen, Preethy Nair), held a 2-day Software Carpentry workshop covering Shell, Git, and R for 20 USDA participants.
-
+provider: Data Carpentry
 tags: training
+
+sessions:
+  - session: 
+    instructor: Jonathan Shao - ARS
+  - session: 
+    instructor: Amanda Hulse-Kemp - ARS
+  - session: 
+    instructor: Jacob Deppen
+  - session: 
+    instructor: Preethy Nair
 ---
 
 **07/22/2020 - 7/23/2020  &middot;   remotely on Zoom   &middot;   lead: Jonathan Shao, Amanda Hulse-Kemp**   

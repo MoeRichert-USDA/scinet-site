@@ -3,7 +3,7 @@
 title: "SCINet and AI COE Fellows Conference 2021"
 author: Heather Jones
 excerpt: SCINet and AI COE Fellows Conference 2021
-
+provider: AI COE
 tags: event
 ---
 
