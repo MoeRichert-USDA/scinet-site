@@ -1,10 +1,14 @@
 ---
-layout: post
+
 title: "Introduction to Atlas"
 author: Delanie Johnson
 excerpt: An introduction to Atlas
-#picture: /assets/img/
-tags: training
+provider: MSU
+type: training
+
+sessions:
+  - session: 
+    instructor: Dr. Adam Thrash
 ---
 
 **09/28/2021 &middot;   Remotely/MSU   &middot;   lead: Adam Thrash**   

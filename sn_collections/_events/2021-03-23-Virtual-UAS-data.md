@@ -1,10 +1,11 @@
 ---
-layout: post
+
 title: UAS Data Wrangling Workshop
 author: Kerrie Geil
 excerpt: Fifty ARS researchers and university collaborators participated in a UAS Data Wrangling Workshop hosted by Mississippi State University Geosystems Research Institute
 picture: /assets/img/training-archive-pics/UASDataWranglingWorkshopPix4DSoftware.png
-tags: training
+type: training
+provider: MSU
 ---
 ![Screenshot of Pix4D Mapper software](/assets/img/training-archive-pics/UASDataWranglingWorkshopPix4DSoftware.png)
 

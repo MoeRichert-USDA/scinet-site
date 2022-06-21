@@ -1,13 +1,13 @@
 ---
-layout: post
+
 title: "AI and Machine Learning SCINet Conference: Current Uses and Potential to Solve Complex Problems in Agriculture"
 # location: Beltsville, MD
 # dates: "09/19/2019 - 09/20/2019"
 # lead: Deb Peters
 author: Kerrie Geil
 excerpt: In September 2019, approximately 40 ARS research leaders, administrators, and scientists met at the George Washington Carver Center in Beltsville, MD for a SCINet-funded conference focused on the use of artificial intelligence
-picture:
-tags: event
+provider: ARS
+type: event
 ---
 ![Beltsville conference attendees posing on the stairs inside the USDA George Washington Carver Center](/assets/img/Workshop-Beltsville-09-2019_1280px.jpg)
 

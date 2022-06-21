@@ -1,10 +1,10 @@
 ---
-layout: post
+
 title: "Introduction to SCINet"
 author: Delanie Johnson
 excerpt: Hear a brief overview of SCINet
-#picture: /assets/img/
-tags: training
+provider: SCINet
+type: training
 ---
 
 **10/28/2021 &middot;   Remotely/ISU**   

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Spatial Disease Modelling on the Ceres HPC"
 categories: [Stories]
 excerpt: "A fundamental need to meet USDA ARS’s Grand Challenge initiative is to improve agricultural production while reducing the impact of the emerging pests, pathogens, and invasive species that threaten US livestock."

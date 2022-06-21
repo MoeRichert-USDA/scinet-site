@@ -1,10 +1,11 @@
 ---
-layout: post
+
 title: "Software Carpentries"
 author: Heather Jones
 excerpt: SCINet sponsored a Software Carpentry workshop covering the Unix Shell, version control with Git, and plotting and programming with Python.  
-#picture: /assets/img/
-tags: training
+type: training
+provider: Data Carpentry
+tags: Unix Git Python
 ---
 
 **03/24/2022 &middot;   Remote   &middot;   lead: Steven Schroeder**   

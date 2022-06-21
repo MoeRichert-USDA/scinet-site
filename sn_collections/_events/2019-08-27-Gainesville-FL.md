@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Artificial Intelligence and Machine Learning Training
 # location: Gainesville, FL
 # dates: "08/27/2019 - 08/28/2019"
@@ -7,7 +7,8 @@ title: Artificial Intelligence and Machine Learning Training
 author: Kerrie Geil
 excerpt: A group of 30 ARS researchers and 20 researchers from the University of Florida (UF) met in Gainesville, FL in August 2019 to gain experience with various machine learning research techniques through interactive training modules
 picture: /assets/img/group_photo_1280px.jpg
-tags: training
+provider: ARS
+type: training
 ---
 ![Attendees posing in a stairwell at the University of Florida](/assets/img/group_photo_1280px.jpg)
 

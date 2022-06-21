@@ -1,10 +1,11 @@
 ---
-layout: post
+
 title: "Software Carpentries"
 author: Heather Jones
 excerpt: Software Carpentries
-#picture: /assets/img/
-tags: training
+type: training
+provider: Data Carpentry
+tags: Unix Git Python
 ---
 
 **3/08/2022 &middot;   Remote   &middot;   Lead: Steven Schroeder**   

@@ -1,10 +1,10 @@
 ---
-layout: post
+
 title: "SCINet Onboarding"
 author: Delanie Johnson
 excerpt: SCINet Onboarding Assistance 
-#picture: /assets/img/
-tags: training
+provider: SCINet
+type: training
 ---
 
 **11/04/2021 &middot;   Remotely Through Zoom**   

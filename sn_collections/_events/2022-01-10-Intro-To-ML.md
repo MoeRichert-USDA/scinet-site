@@ -1,10 +1,10 @@
 ---
-layout: post
+
 title: "Introduction to Image Processing and Classical Machine Learning"
 author: Heather Jones
 excerpt: Introduction to Image Processing and Classical Machine Learning
-#picture: /assets/img/
-tags: training
+type: training
+provider: SCINet
 ---
 
 **01/10/2022 &middot;   Remote   &middot;    MSU**   

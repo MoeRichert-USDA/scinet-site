@@ -1,10 +1,10 @@
 ---
-layout: post
+
 title: "Data Carpentries"
 author: Heather Jones
 excerpt: Data Carpentries
-#picture: /assets/img/
-tags: training
+type: training
+provider: Data Carpentry
 ---
 
 **3/07/2022 &middot;   Remote   &middot;   Lead: Kathleen Yeater**   

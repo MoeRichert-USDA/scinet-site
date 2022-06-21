@@ -1,10 +1,10 @@
 ---
-layout: post
+
 title: "Command-line Skills for Scientific Computing"
 author: Brian Stucky
 excerpt: Hands-on introduction to the Unix command line
-#picture: /assets/img/
-tags: training
+provider: SCINet
+type: training
 ---
 
 **11/17/2021**

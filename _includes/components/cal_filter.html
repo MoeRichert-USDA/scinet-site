@@ -1,6 +1,7 @@
 {% assign formid = pagetitle | prepend: "form-" %}
 {% assign typeid = formid | prepend: "type-" %}
 {% assign providerid = formid | prepend: "provider-" %}
+{% assign topicsid = formid | prepend: "topics-" %}
 {% assign yearid = formid | prepend: "year-" %}
 {% assign monthid = formid | prepend: "month-" %}
 {% assign buttonid = formid | prepend: "button-" %}
@@ -15,8 +16,8 @@
                 <div class="usa-combo-box">
                     <select class="usa-select" name="{{ typeid }}" id="{{ typeid }}">
                         <option value>Filter Events by Type</option>
-                        {% for tag in tags %}
-                        <option value="{{ tag }}">{{ tag | capitalize }}</option>
+                        {% for type in types %}
+                        <option value="{{ type }}">{{ type | capitalize }}</option>
                         {% endfor %}
                     </select>
                 </div>
@@ -33,9 +34,21 @@
                 </div>
             </div>
         </div>
+        <div class="usa-card__body grid-row tablet-lg:grid-gap-2">
+            <div class="tablet-lg:grid-col">
+                <label class="usa-label" for="{{ topicsid }}">Topics:</label>
+                <div class="usa-combo-box">
+                    <select class="usa-select" name="{{ topicsid }}" id="{{ topicsid }}">
+                        <option value>Filter Events by Topics</option>
+                        {% for tag in tags %}
+                        <option value="{{ tag }}">{{ tag | capitalize }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+        </div>
         <div class="usa-card__footer">
             <button class="usa-button" id="{{ buttonid }}">Filter</button>
-            <!--<button class="usa-button filter_button" onclick="filtered('{{ formid }}', '{{ typeid }}', '{{ providerid }}', '{{ cal_id }}')">Filter</button>-->
         </div>
     </div>
 </div>
@@ -47,9 +60,11 @@
           console.log("clicked");
           var types = document.getElementById("{{ typeid }}");
           var providers = document.getElementById("{{ providerid }}");
+          var topics = document.getElementById("{{ topicsid }}");
       
             let type = types.value.toLowerCase(),
                 provider = providers.value.toLowerCase();
+                topic = topics.value.toLowerCase();
       
             var mylist = document.getElementsByClassName("{{ cal_id }}");
 
@@ -58,12 +73,13 @@
                 if (mylist[i].classList.contains("no-display")) { }
                 else mylist[i].classList.add("no-display");
       
-                let thistype = mylist[i].getAttribute('tagged'),
+                let thistype = mylist[i].getAttribute('type'),
                     thisinstruct = mylist[i].getAttribute('instructor');
+                    thistopic = mylist[i].getAttribute('tagged')
                     console.log(thistype, thisinstruct);
                     console.log(type, provider);
       
-                if (thistype.toLowerCase().includes(type) && thisinstruct.toLowerCase().includes(provider)) {
+                if (thistype.toLowerCase().includes(type) && thisinstruct.toLowerCase().includes(provider) && thistopic.toLowerCase().includes(topic)) {
                     mylist[i].classList.remove("no-display")
                 }
             }

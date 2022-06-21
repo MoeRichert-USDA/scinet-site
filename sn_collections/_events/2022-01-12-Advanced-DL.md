@@ -1,10 +1,10 @@
 ---
-layout: post
+
 title: "Advanced Topics in Deep Learning"
 author: Heather Jones
 excerpt: Advanced Topics in Deep Learning
-#picture: /assets/img/
-tags: training
+type: training
+provider: SCINet
 ---
 
 **01/12/2022 &middot;   Remote   &middot;   MSU**   

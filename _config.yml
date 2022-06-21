@@ -76,12 +76,28 @@ defaults:
       type: "events"
     values:
       future: "show"
+      layout: "post"
   -
     scope:
       path: ""
       type: "downtime"
     values:
       future: "show"
+      layout: "post"
+      categories: [Downtime]
+  -
+    scope:
+      path: ""
+      type: "announcements"
+    values:
+      future: "show"
+      layout: "post"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
 
 # allow posts with dates in the future to be published now
 future: true

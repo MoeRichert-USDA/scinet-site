@@ -1,11 +1,10 @@
 ---
-layout: post
+
 title: "Introduction to Atlas"
 author: Delanie Johnson
 excerpt: An introduction to Atlas
-#picture: /assets/img/
-tags: training
-provider: MSU VRSC
+type: training
+provider: MSU
 
 sessions:
   - session: 

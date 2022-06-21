@@ -1,10 +1,15 @@
 ---
-layout: post
+
 title: NMSU-USDA-ARS AI Workshop
 author: Yasasvy Nanyam
 excerpt: Presented by Laura Boucheron from New Mexico State University. 
-#picture: /assets/img/
-tags: training
+provider: NMSU
+type: training
+
+
+sessions:
+  - session: 
+    instructor: Dr. Laura Boucheron
 ---
 
 **07/23/2021 &middot;   remotely on Zoom  &middot;   lead: Laura Boucheron, Brian Stuckey**   
