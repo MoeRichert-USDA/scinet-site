@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: No SCINet priority node purchases this year
 categories: [Announcements]
 excerpt: We will not be making priority node purchases through the SCINet Program this year.

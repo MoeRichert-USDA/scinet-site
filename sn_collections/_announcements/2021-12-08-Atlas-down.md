@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Atlas Downtime
 categories: [Announcements]
 excerpt: The HPC2 Computing Office has scheduled maintenance for the Atlas compute cluster.

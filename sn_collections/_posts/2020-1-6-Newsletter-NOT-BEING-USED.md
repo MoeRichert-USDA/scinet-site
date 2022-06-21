@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "USDA ARS SCINet Newsletter: January 2020"
 categories: [newsletter]
 excerpt:

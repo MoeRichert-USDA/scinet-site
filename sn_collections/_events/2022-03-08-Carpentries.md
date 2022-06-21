@@ -1,9 +1,9 @@
 ---
-layout: post
+
 title: "Software Carpentries"
 author: Heather Jones
 excerpt: Software Carpentries
-#picture: /assets/img/
+
 tags: training
 ---
 

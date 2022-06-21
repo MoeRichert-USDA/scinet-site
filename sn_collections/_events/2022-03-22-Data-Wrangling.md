@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: "Data Wrangling Workshop"
 author: Heather Jones
 excerpt: Data wrangling with unmanned aerial system data

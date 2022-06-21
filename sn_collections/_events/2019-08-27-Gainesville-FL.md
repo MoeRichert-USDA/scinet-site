@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Artificial Intelligence and Machine Learning Training
 # location: Gainesville, FL
 # dates: "08/27/2019 - 08/28/2019"

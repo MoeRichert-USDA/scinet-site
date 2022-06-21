@@ -1,9 +1,9 @@
 ---
-layout: post
+
 title: "Data Carpentries"
 author: Heather Jones
 excerpt: Data Carpentries
-#picture: /assets/img/
+
 tags: training
 ---
 

@@ -1,9 +1,9 @@
 ---
-layout: post
+
 title: "Advanced Topics in Deep Learning"
 author: Heather Jones
 excerpt: Advanced Topics in Deep Learning
-#picture: /assets/img/
+
 tags: training
 ---
 

@@ -1,5 +1,5 @@
 ---
-layout: post
+
 title: Planned connectivity outages
 categories: [Announcements]
 excerpt: GNOC plans to upgrade the OS on the SCINet gear at the 6 locations. This will result in connectivity interruptions during the upgrade.

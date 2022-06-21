@@ -1,9 +1,9 @@
 ---
-layout: post
+
 title: "Introduction to Atlas"
 author: Heather Jones
 excerpt: Introduction to Atlas
-#picture: /assets/img/
+
 tags: training
 ---
 

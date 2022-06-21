@@ -1,9 +1,9 @@
 ---
-layout: post
+
 title: "SCINet Onboarding"
 author: Delanie Johnson
 excerpt: SCINet Onboarding Assistance 
-#picture: /assets/img/
+
 tags: training
 ---
 
