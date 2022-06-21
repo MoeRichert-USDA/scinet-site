@@ -3,10 +3,8 @@ title: SCINet-Longterm Agroecosystem Research (LTAR) Phenology Working Group
 description: summary of the working group
 permalink: /working-groups/LTARphenology
 author: Dawn Browning
-layout: page
+layout: nav
 
- 
-sidenav: Working Groups
 subnav:
   - text: Workshops
     href: '#workshops'

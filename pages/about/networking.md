@@ -3,12 +3,12 @@ title: SCINet Networking
 description: SCINet Networking plan
 permalink: /about/networking
 author:
-layout: page
+layout: nav
 
  
-sidenav: About
-sticky_sidenav: true
-sticky_element: true
+
+
+
 
 ---
 

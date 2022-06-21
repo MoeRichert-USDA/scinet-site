@@ -3,10 +3,8 @@ title: Workbook Developers
 description: summary of the working group
 permalink: /working-groups/workbooks
 author: Kerrie Geil
-layout: page
+layout: nav
 
- 
-sidenav: Working Groups
 ---
 
 

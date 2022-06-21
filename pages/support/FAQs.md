@@ -3,10 +3,10 @@ title: FAQ's
 description: Frequently asked Questions
 permalink: /support/faq/
 author: VRSC
-layout: page
+layout: nav
 
  
-sidenav: Support
+
 subnav:
   - text: General Information
     href: '#general-information'
@@ -28,8 +28,8 @@ subnav:
     href: '#all-faqs'
 
 
-sticky_sidenav: true
-sticky_element: true
+
+
 
 ---
 

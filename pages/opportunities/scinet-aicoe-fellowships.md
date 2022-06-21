@@ -3,12 +3,12 @@ title: ARS SCINet and AI Center of Excellence Postdoctoral Fellows Program (FY20
 description: Internal USDA-ARS funding for SCINet and AI-COE postdoctoral fellowships.
 permalink: /opportunities/scinet-aicoe-fellowships
 author: Brian Stucky 
-layout: page
+layout: nav
 
-sidenav: Opportunities
 
-sticky_sidenav: true
-sticky_element: true
+
+
+
 ---
 
 

@@ -3,17 +3,17 @@ title: USDA ARS Postdoctoral Fellowship Program in Big Data Science and AI Resea
 description: current listing of SCINet-funded postdocs, administered through ORISE and partner universities
 permalink: /opportunities/fellowships
 author: Kerrie Geil
-layout: page
+layout: nav
 
-sidenav: Opportunities
+
 subnav:
   - text: Postdoc and Masters Fellowships
     href: '#postdoc-and-masters-fellowships'
   - text: Other Opportunities
     href: '#other-opportunities:'
 
-sticky_sidenav: true
-sticky_element: true
+
+
 ---
 
 The  U.S. Department of Agriculture (USDA), Agricultural Research Service (ARS) SCINet and AI Center of Excellence offer exciting collaborative research opportunities to motivated participants interested in solving agricultural-natural resource related problems. One of the goals of the ORISE Fellowship program is to develop and apply new and emerging technologies including artificial intelligence (AI) and machine learning. Many of these questions rely on the synthesis, integration, and analysis of large,  diverse datasets that benefit from high performance computers (HPC) or a cloud computing environment. Fellows will have the opportunity to collaboration on problems of high priority to the USDA ARS, while being trained across a range of skills including AI, machine learning, deep learning, data science, and/or statistical software as needed for the success of the position.

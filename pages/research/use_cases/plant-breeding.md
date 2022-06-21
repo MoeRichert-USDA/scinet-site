@@ -3,15 +3,15 @@ title: SCINet for plant breeding research
 description: SCINet plant breeding research use case
 permalink: /research/plant-breeding/
 author:
-layout: page
+layout: nav
 
  
 sidenav: Research
 subnav:
   - text: Use Case
     href: '#use-case'
-sticky_sidenav: true
-sticky_element: true
+
+
 ---
 
 By: Justin Vaughn

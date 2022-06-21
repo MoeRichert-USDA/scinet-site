@@ -3,18 +3,18 @@ title: Request SCINet AWS
 description: link to request AWS for a SCINet project
 permalink: /support/request-AWS
 author: Kerrie Geil
-layout: page
+layout: nav
 
  
-sidenav: Support
+
 subnav:
   - text: Add/Modify AWS Resources 
     href: '#to-add/modify-aws-resources-for-an-existing-scinet-project'
   - text: Request a New AWS Project 
     href: '#to-request-a-new-scinet-funded-aws-project'
 
-sticky_sidenav: true
-sticky_element: true
+
+
 ---
 
 SCINet provides AWS at no cost to SCINet users with suitable workloads. A limited amount of funding is available annually. Interested SCINet users must submit a SCINet AWS Project Request to be considered for AWS funding.

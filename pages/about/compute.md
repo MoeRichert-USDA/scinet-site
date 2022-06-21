@@ -3,10 +3,10 @@ title: SCINet High-Performance Computer Systems
 description: SCINet High-Performance Computer Systems
 permalink: /about/compute
 author: Kerrie Geil
-layout: page
+layout: nav
 
  
-sidenav: About
+
 subnav:
   - text: Ceres HPC Cluster
     href: '#ceres-hpc-cluster--ames-ia'
@@ -14,8 +14,8 @@ subnav:
     href: '#atlas-hpc-cluster--starkville-ms'
   - text: SCINet Cloud Computing Services
     href: '#scinet-cloud-computing-services'
-sticky_sidenav: true
-sticky_element: true
+
+
 ---
 
 ## Ceres HPC Cluster | Ames, IA

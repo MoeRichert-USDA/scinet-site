@@ -1,13 +1,13 @@
 ---
 title: Announcements
-layout: categories
-permalink: /announcements/
+layout: nav
+permalink: /announcements
 
  
-sidenav: News
 
-sticky_sidenav: true
-sticky_element: true
+
+
+
 ---
 
 

@@ -3,30 +3,77 @@ title: A Quick Guide to getting started with SCINet
 description: A Quick Guide to getting started with SCINet
 permalink: /guide/quickstart
 author:
-layout: page
+layout: nav
 
-#sidenav:
-# - text: What is SCINet
-#   href: '#what-is-scinet'
-# - text: Multi-Factor Authentication
-#   href: '#setup-multi-factor-authentication'
-# - text: Windows 10 Instructions
-#   href: '#from-windows-10'
-# - text: Older Windows Instructions
-#   href: '#from-older-windows-versions'
-# - text: Mac and Linux Instructions
-#   href: '#from-mac-and-linux'
-# - text: Storage
-#   href: '#data-storage'
-# - text: Data Transfer
-#   href: '#data-transfer'
-# - text: Running Software Applications
-#   href: '#running-applications'
+sidenav: unstick
+subnav:
+  - text: What is SCINet?
+    href: '#what-is-scinet'
+  - text: Multi-Factor Authentication
+    href: '#set-up-multi-factor-authentication'
+  - text: HPC Clusters on SCINet
+    href: '#hpc-clusters-on-scinet'
+  - text: Accessing SCINet
+    href: '#accessing-scinet'
+  - text: Windows 10 Instructions
+    href: '#from-windows-10'
+  - text: Older Windows Instructions
+    href: '#from-older-windows-versions'
+  - text: Mac and Linux Instructions
+    href: '#from-mac-and-linux'
+  - text: Password Requirements
+    href: '#password-requirements'
+  - text: Frequently Asked Questions
+    href: '#frequently-asked-questions'
+  - text: Linux Command Line Interface
+    href: '#linux-command-line-interface'
+  - text: Storage
+    href: '#data-storage'
+  - text: Quotas
+    href: '#quotas'
+  - text: Home Directories
+    href: '#home-directories'
+  - text: Project Directories
+    href: '#project-directories'
+  - text: Data Transfer
+    href: '#data-transfer'
+  - text: Globus
+    href: '#globus-data-transfers'
+  - text: Small Files
+    href: '#small-data-transfers'
+  - text: Shipping Hard Drives
+    href: '#shipping-hard-drives'
+  - text: Tools and Software
+    href: '#tools-and-software'
+  - text: Available Software
+    href: '#available-software'
+  - text: Reference Genome Assemblies
+    href: '#reference-genome-assemblies'
+  - text: Text Editors
+    href: '#text-editors'
+  - text: Running Applications
+    href: '#running-applications'
+  - text: Compute Nodes
+    href: '#compute-nodes'
+  - text: Interactive Mode
+    href: '#interactive-mode'
+  - text: Batch Mode
+    href: '#batch-mode'
+  - text: Job Script Generator
+    href: '#job-script-generator'
+  - text: Useful SLURM Commands
+    href: '#useful-slurm-commands'
+  - text: Building Your Own Tools
+    href: '#building-your-own-tools'
+  - text: SCINet Acknowledgement in Publications
+    href: '#scinet-citationacknowledgment-in-publications'
+  
 
 ---
 
 [No account? Signup here.](/about/signup){: .usa-button .usa-button-big }
 
+<!---
 #### Table of Contents
 * [What is SCINet?](#what-is-scinet)
 * [Multi-Factor Authentication](#set-up-multi-factor-authentication)
@@ -58,6 +105,7 @@ layout: page
   * [Useful SLURM Commands](#useful-slurm-commands)
 * [Building Your Own Tools](#building-your-own-tools)
 * [SCINet Acknowledgement in Publications](#scinet-citationacknowledgment-in-publications)
+--->
 
 
 # What is SCINet?

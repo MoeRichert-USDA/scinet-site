@@ -6,11 +6,11 @@ author: Moe Richert
 layout: training-events
 
  
-sidenav: Training and Events
+
 type: future
 
-sticky_sidenav: true
-sticky_element: true
+
+
 ---
 
 SCINet, the AI-COE, and other providers regularly host a variety of events and trainings. Information on how to attend these events will be posted on this page closer to the event date.  You might want to [take a look at events we've hosted in the past](/events/archive), too.

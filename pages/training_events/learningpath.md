@@ -3,10 +3,10 @@ title: Overview of SCINet Training Opportunities
 description: One of SCINet's missions is training scientists in computational methods to empower agricultural research.
 permalink: /training/learningpath
 author: Heather Jones
-layout: page
+layout: nav
 
  
-sidenav: Training and Events
+
 subnav:
   - text: Get Started with SCINet Learning Pathway
     href: '#get-started-with-scinet-learning-pathway'
@@ -15,8 +15,8 @@ subnav:
   - text: Useful Links
     href: '#useful-links'
 
-sticky_sidenav: true
-sticky_element: true
+
+
 
 ---
 

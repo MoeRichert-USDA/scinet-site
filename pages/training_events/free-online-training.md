@@ -3,10 +3,9 @@ title: Free Online Computational Training Resources
 description: course links for common training meeds
 permalink: /training/free-online-training
 author: various
-layout: page
+layout: nav
 
- 
-sidenav: Training and Events
+sidenav: unstick
 subnav:
   - text: How to Access Training on Different Platforms
     href: '#how-to-access-training-on-different-platforms'

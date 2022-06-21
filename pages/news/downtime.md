@@ -6,10 +6,10 @@ permalink: /downtime
 type: future
 show_table: true
  
-sidenav: News
 
-sticky_sidenav: true
-sticky_element: true
+
+
+
 ---
 
 
