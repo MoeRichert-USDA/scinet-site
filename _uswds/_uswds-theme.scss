@@ -25,7 +25,10 @@ in the form $setting: value,
     ),
     $theme-font-type-sans: "open-sans",
     $theme-global-paragraph-styles: true,
-    $theme-text-measure: 6
+    $theme-text-measure: 6,
+    $theme-site-margins-width:          6,
+    $theme-site-margins-mobile-width:   4,
+    $theme-site-margins-breakpoint: 'tablet'
     );
 
 

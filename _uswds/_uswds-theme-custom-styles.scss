@@ -25,7 +25,7 @@ i.e.
 .usa-header + .usa-hero {
    border-top: 0;
  }
-
+ 
 //side nav formatting
 .main-side {
   @include u-maxw('desktop-lg');
@@ -47,10 +47,6 @@ pre {
    @include at-media("tablet") {
       max-width: units("tablet");
    }
-}
-
-.no-display {
-   display: none !important;
 }
 
 .usa-hero {
