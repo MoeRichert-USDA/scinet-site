@@ -22,6 +22,10 @@ i.e.
 
 @use "uswds-core" as *;
 
+.usa-header + .usa-hero {
+   border-top: 0;
+ }
+
 //side nav formatting
 .main-side {
   @include u-maxw('desktop-lg');

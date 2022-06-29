@@ -22,7 +22,10 @@ in the form $setting: value,
     "desktop": true,
     "desktop-lg": true,
     "widescreen": true
-    )
+    ),
+    $theme-font-type-sans: "open-sans",
+    $theme-global-paragraph-styles: true,
+    $theme-text-measure: 6
     );
 
 
@@ -36,28 +39,3 @@ $theme-white: #FFFFFF;
 .white-txt {
   color: $theme-white;
 }
-
-//
-
-// Add my breakpoints
-$grid__columns: 12;
-$grid__gutter: 20px;
-
-$name--X: xs-;
-$name--S: small-;
-$name--M: medium-;
-$name--L: large-;
-$name--XL: xlarge-;
-
-$break--S: 480px;
-$break--M: 768px;
-$break--L: 1140px;
-$break--XL: 1440px;
-
-$screen--S: $break--S + 1;
-$screen--M: $break--M + 1;
-$screen--L: $break--L + 1;
-$screen--XL: $break--XL + 1;
-
-// Set the main container with for the grid. This is applied to .container
-//$container_width: 1080px;

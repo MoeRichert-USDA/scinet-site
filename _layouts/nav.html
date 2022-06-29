@@ -46,14 +46,14 @@ main:
 
 
 <div class="grid-row grid-gap flex-align-start">
-    <div class="usa-layout-docs__sidenav desktop:grid-col-3 {% if page.sidenav %}{% else %} usa-sticky-sidenav{% endif %}">
+    <div class="usa-layout-docs__sidenav desktop:grid-col-3 desktop:padding-y-8{% if page.sidenav %}{% else %} usa-sticky-sidenav{% endif %}">
         {% include sidenav.html links=sidenav %}
     </div>
     
     <main class="{{ layout.main.class }}{% if sidenav %} desktop:grid-col-9{% endif %}" id="main-content">
         {% if bc_sectionlink %}{% include components/breadcrumb.html %}{% endif %}
         {% if page.title %}
-            <h1>{{ page.title }}</h1>
+            <h1 class="top-header">{{ page.title }}</h1>
         {% endif %}
         {{ content }}
     </main>
