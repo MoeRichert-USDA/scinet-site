@@ -7,7 +7,6 @@ categories: [Geospatial Workshop]
 provider: Geospatial Working Group
 type: workshop
 tags: Geospatial
-layout: page
 
 sessions:
   - session: 
@@ -17,7 +16,7 @@ sessions:
 alerts: 
   - alert: 
     type: warning
-    text: We will stop approving new registrations about an hour before each session. Please register in advance of that cutoff so you don’t get left out!
+    text: We will stop approving new registrations about an hour before each session. </br>Please register in advance of that cutoff so you don’t get left out!
   - alert: 
     type: error
     text: If you have issues accessing Ceres (either thru SSH or JupyterHub) please attend Session 0 - Pre-meeting SCINet Account Login Assistance on 8/19/2020 at 11am MDT. We cannot provide individual assistance for login issues in any other session.
@@ -39,7 +38,7 @@ Please complete this pre-meeting checklist ahead of time if you plan to particip
 
 
 
-<div class="usa-card maxw-tablet">
+<div class="usa-card max-tablet">
     <div class="usa-card__container">
       <div class="usa-card__header bg-primary-lighter">
         <h2 class="usa-card__heading">PreMeeting Checklist</h2>

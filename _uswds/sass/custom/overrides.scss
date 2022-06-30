@@ -1,3 +1,5 @@
+@use "uswds-core" as *;
+
 .top-header {
     margin-top: .5em !important;
 }
@@ -8,4 +10,8 @@
 
 .no-display {
     display: none !important;
+ }
+
+ .max-tablet {
+    max-width: 40em !important;
  }
