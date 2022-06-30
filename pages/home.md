@@ -36,6 +36,18 @@ calendar:
   title: "Upcoming Training and Events"
   button: "See the Full Calendar"
   href: /events/upcoming
+  alt-title: "Training and Events"
+  alt-text: "SCINet, the AI-COE, and other providers regularly host a variety of events and trainings.  </br></br>There are no upcoming events currently in our calendar."
+  alt-buttons:
+    - text: "View the available online training resources"
+      href: training/free-online-training
+    - text: "Add your name to the waitlist for future events"
+      href: https://forms.office.com/g/tVtE8wEgAt
+      external: true
+    - text: "Take a look at events we have hosted in the past"
+      href: /events/archive
+    - text: "Explore how our collaborators currently use SCINet"
+      href: /working-groups
 
 
 research:
