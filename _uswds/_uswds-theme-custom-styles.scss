@@ -22,6 +22,14 @@ i.e.
 
 @use "uswds-core" as *;
 
+//theme sizes
+ 
+.sci-container {
+   @include u-maxw('desktop-lg');
+   @include u-margin-x('auto');
+}
+
+
 .usa-header + .usa-hero {
    border-top: 0;
  }

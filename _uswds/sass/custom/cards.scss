@@ -4,8 +4,10 @@
 
 .rounded-box {
     @include u-padding(3);
-    @include u-margin(4);
     @include u-radius('lg');
+    @include at-media("mobile-lg") {
+      @include u-margin(4);
+   }
  }
  
  .sci-card {
@@ -30,14 +32,8 @@
     }
  
     .sci-select {
-       @extend .rounded-box;
-       @include u-text('center');
-       @include u-maxw('mobile-lg');
-       @include u-bg('primary-light');
- 
-       p {
-          @include typeset('ui', 'xs', 3);
-       }
+      @include u-maxw('mobile-lg');
+      @include u-bg('primary-light');
     }
  
     .sci-flex {
@@ -52,13 +48,18 @@
  }
  
  .sci-select {
-    @extend .rounded-box;
     @include u-text('center');
     @include u-maxw('mobile');
- 
-    p {
-       @include typeset('ui', 'xs', 3);
+    @include u-radius('lg');
+    @include u-padding(3);
+    @include u-margin(2);
+    @include at-media("mobile-lg") {
+       @include u-margin(4);
     }
+
+     p {
+        @include typeset('ui', 'xs', 3);
+     }
  }
  
  //icon lists
@@ -118,14 +119,6 @@
  .usa-graphic-list__heading {
     @include typeset-h3;
  }
- 
- //theme sizes
- 
- .sci-container {
-    @include u-maxw('desktop-lg');
-    @include u-margin-x('auto');
- }
- 
  
  //featured posts
  
