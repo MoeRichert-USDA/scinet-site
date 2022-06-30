@@ -100,13 +100,13 @@ primary:
       - text: Use Cases
         sublinks:
         - text: Genomics
-          href: /research/genomics/
+          href: /research/genomics
         - text: Plant breeding
-          href: /research/plant-breeding/
+          href: /research/plant-breeding
         - text: Geospatial
-          href: /research/geospatial/
+          href: /research/geospatial
         - text: Hydrology
-          href: /research/hydrology/
+          href: /research/hydrology
       
   - text: Training and Events
     links:
@@ -133,9 +133,9 @@ primary:
   - text: Support
     links:
       - text: Virtual Research Support Core (VSRC)
-        href: /support/vrsc/
+        href: /support/vrsc
       - text: FAQ's
-        href: /support/faq/
+        href: /support/faq
       - text: USDA-ARS SCINet Forum
         href: https://forum.scinet.usda.gov
       - text: Request Project Storage

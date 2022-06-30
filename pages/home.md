@@ -47,7 +47,7 @@ opportunities:
     title: "Working Groups"
     text: "Explore how our collaborators currently use SCINet"
     button: Read More
-    href: /working-groups/
+    href: /working-groups
   - card:
     title: Fellowship Opportunities
     text: "Check out our SCINet-funded research fellowship opportunities for PhD and MS level graduates"
@@ -60,25 +60,25 @@ icons:
   - image:
       src: /genomics.svg
       alt: ""
-      link: /research/genomics/
+      link: /research/genomics
     title: Genomics
     description: Explore the Ag100Pest Initiative
   - image:
       src: /geospatial.svg
       alt: ""
-      link: /research/plant-breeding/
+      link: /research/plant-breeding
     title: Geospatial
     description: SCINet for geospatial research
   - image:
       src: /hydrology.svg
       alt: ""
-      link: /research/geospatial/
+      link: /research/geospatial
     title: Hydrology
     description: Advanced computing capabilities to run watershed, erosion, and hydrodyanmic simulation models.
   - image:
       src: /plant.svg
       alt: ""
-      link: /research/hydrology/
+      link: /research/hydrology
     title: Plant Breeding.
     description: The USDA’s National Plant Germplasm System maintains the world’s foremost collection of crop diversity.
 
