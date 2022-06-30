@@ -2,6 +2,12 @@
 title: Home
 permalink: /
 
+alerts:
+  - alert:
+    title: Ceres is currently down
+    type: warning
+    text: This is a demo alert </br> See <a herf="https://forum.scinet.usda.gov/c/announcements/6">the SCINet Forum Announcements page</a> for more information.
+
 layout: scinet_home
 
 post_type: calendar

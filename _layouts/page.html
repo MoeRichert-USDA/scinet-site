@@ -6,11 +6,6 @@ main:
 
 <div class="usa-section">
   <main class="grid-container" id="main-content">
-    {% if page.alerts %}
-    {% for _alert in page.alerts %}
-      {% include alert.html alert=_alert %}
-    {% endfor %}
-  {% endif %}
       <div class="{{ layout.main.class }}">
         {% if page.title %}
           <h1>{{ page.title }}</h1>
