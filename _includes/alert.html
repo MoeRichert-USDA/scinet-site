@@ -2,11 +2,11 @@
 
 {% case alert.type %}
     {% when "warning" %}
-        {% assign typeclass = "usa-alert--warning"}
+        {% assign typeclass = "usa-alert--warning" %}
     {% when "error" %}
-        {% assign typeclass = "usa-alert--error"}
+        {% assign typeclass = "usa-alert--error" %}
     {% when "success" %}
-        {% assign typeclass = "usa-alert--success"}
+        {% assign typeclass = "usa-alert--success" %}
     {% else %}
         {% assign typeclass = usa-alert--info %}
 {% endcase %}

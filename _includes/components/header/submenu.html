@@ -4,7 +4,7 @@
             {% assign next_i = forloop.index0 | plus: 1 %}
             {% assign prev_i = forloop.index0 | minus: 1 %}
             {% if _link.sublinks %}
-                <li class="usa-nav__submenu-item desktop:grid-col-3">
+                <li class="usa-nav__submenu-item desktop:grid-col-3 m-top-0">
                     {% assign link_sublinks = site.data.navigation[_link.sublinks] | default: _link.sublinks %}
 
                     {% assign _link_handle = _link.text | handleize %}

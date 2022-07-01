@@ -2,6 +2,12 @@
 title: Home
 permalink: /
 
+# alerts:
+#  - alert:
+#     title: Ceres is currently down
+#     type: warning
+#     text: This is a demo alert </br> See <a herf="https://forum.scinet.usda.gov/c/announcements/6">the SCINet Forum Announcements page</a> for more information.
+
 layout: scinet_home
 
 post_type: calendar
@@ -36,6 +42,18 @@ calendar:
   title: "Upcoming Training and Events"
   button: "See the Full Calendar"
   href: /events/upcoming
+  alt-title: "Training and Events"
+  alt-text: "SCINet, the AI-COE, and other providers regularly host a variety of events and trainings.  </br></br>There are no upcoming events currently in our calendar."
+  alt-buttons:
+    - text: "View the available online training resources"
+      href: training/free-online-training
+    - text: "Add your name to the waitlist for future events"
+      href: https://forms.office.com/g/tVtE8wEgAt
+      external: true
+    - text: "Take a look at events we have hosted in the past"
+      href: /events/archive
+    - text: "Explore how our collaborators currently use SCINet"
+      href: /working-groups
 
 
 research:
@@ -47,7 +65,7 @@ opportunities:
     title: "Working Groups"
     text: "Explore how our collaborators currently use SCINet"
     button: Read More
-    href: /working-groups/
+    href: /working-groups
   - card:
     title: Fellowship Opportunities
     text: "Check out our SCINet-funded research fellowship opportunities for PhD and MS level graduates"
@@ -60,25 +78,25 @@ icons:
   - image:
       src: /genomics.svg
       alt: ""
-      link: /research/genomics/
+      link: /research/genomics
     title: Genomics
     description: Explore the Ag100Pest Initiative
   - image:
       src: /geospatial.svg
       alt: ""
-      link: /research/plant-breeding/
+      link: /research/plant-breeding
     title: Geospatial
     description: SCINet for geospatial research
   - image:
       src: /hydrology.svg
       alt: ""
-      link: /research/geospatial/
+      link: /research/geospatial
     title: Hydrology
     description: Advanced computing capabilities to run watershed, erosion, and hydrodyanmic simulation models.
   - image:
       src: /plant.svg
       alt: ""
-      link: /research/hydrology/
+      link: /research/hydrology
     title: Plant Breeding.
     description: The USDA’s National Plant Germplasm System maintains the world’s foremost collection of crop diversity.
 

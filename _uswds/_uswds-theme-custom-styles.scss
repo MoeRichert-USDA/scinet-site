@@ -22,6 +22,18 @@ i.e.
 
 @use "uswds-core" as *;
 
+//theme sizes
+ 
+.sci-container {
+   @include u-maxw('desktop-lg');
+   @include u-margin-x('auto');
+}
+
+
+.usa-header + .usa-hero {
+   border-top: 0;
+ }
+ 
 //side nav formatting
 .main-side {
   @include u-maxw('desktop-lg');
@@ -32,10 +44,6 @@ pre {
    overflow-x: auto; 
 }
 
-.usa-megamenu.usa-nav__submenu::after,.usa-megamenu.usa-nav__submenu::before{
-   opacity: 0;
-}
-
 //hero adjustments
 
 .usa-hero__callout {
@@ -43,10 +51,6 @@ pre {
    @include at-media("tablet") {
       max-width: units("tablet");
    }
-}
-
-.no-display {
-   display: none !important;
 }
 
 .usa-hero {
@@ -64,234 +68,6 @@ pre {
       }
    }
 }
-
-//intro card
-
-.rounded-box {
-   @include u-padding(3);
-   @include u-margin(4);
-   @include u-radius('lg');
-}
-
-.sci-card {
-   @extend .rounded-box;
-   @include u-text('center');
-   @include u-bg('primary-lighter');
-
-   @include at-media("desktop") {
-      @include u-maxw('mobile-lg');
-   }
-
-   @include at-media("tablet") {
-      @include grid-row;
-   }
-
-   h1 {
-      @include typeset('ui', 'xl');
-   }
-
-   p {
-      @include typeset('ui', 'md', 6);
-   }
-
-   .sci-select {
-      @extend .rounded-box;
-      @include u-text('center');
-      @include u-maxw('mobile-lg');
-      @include u-bg('primary-light');
-
-      p {
-         @include typeset('ui', 'xs', 3);
-      }
-   }
-
-   .sci-flex {
-      @include u-margin-x(2);
-
-      @include at-media("tablet") {
-         @include u-margin-y('auto');
-         @include grid-col;
-      }
-
-   }
-}
-
-.sci-select {
-   @extend .rounded-box;
-   @include u-text('center');
-   @include u-maxw('mobile');
-
-   p {
-      @include typeset('ui', 'xs', 3);
-   }
-}
-
-//icon lists
-
-.icon-light {
-   fill: color("primary-lighter");
-}
-
-.icon-dark {
-   fill: color("primary-dark");
-}
-
-.graphic-link {
-   @include u-margin-x('auto');
-
-   @include at-media(desktop) {
-      @include grid-col(3);
-   }
-
-   a {
-      @include u-padding(3);
-      @include u-radius('lg');
-      @include u-margin-x('auto');
-      @include u-text('center');
-      color: color("primary-darker");
-
-      &:hover {
-         color: color("primary-darker");
-         background-color: color("base-darkest");
-
-         svg {
-            .icon-dark {
-               fill: color("primary-darker");
-            }
-
-            .icon-h {
-               fill: color("accent-cool");
-            }
-         }
-      }
-   }
-
-}
-
-.graphic-links {
-   @include typeset;
-   @include border-box-sizing;
-
-   .usa-media-block__body {
-      > :first-child {
-         margin-top: 0;
-      }
-   }
-
-}
-
-.usa-graphic-list__heading {
-   @include typeset-h3;
-}
-
-//theme sizes
-
-.sci-container {
-   @include u-maxw('desktop-lg');
-   @include u-margin-x('auto');
-}
-
-
-//featured posts
-
-.featured_posts {
-
-   a:link {
-      text-decoration: none;
-   }
-
-   a:visited {
-      text-decoration: none;
-   }
-
-   a:hover {
-      text-decoration: none;
-   }
-
-   a:active {
-      text-decoration: none;
-   }
-
-   .usa-card__container {
-      text-decoration: none;
-
-      &:hover {
-         @include u-shadow(2)
-      }
-
-   }
-}
-
-//header fix
-
-.usa-header--extended {
-
-   .usa-logo {
-      @include at-media($theme-header-min-width) {
-         font-size: font-size($theme-header-font-family, "lg");
-         //margin: units(4) 0 units(3);
-         //max-width: 50%;
-
-         img {
-            @include u-maxh(9);
-            @include u-padding(1);
-         }
-      }
-
-      @include at-media-max($theme-header-min-width) {
-         font-size: font-size($theme-header-font-family, "xs");
-         line-height: line-height($theme-header-font-family, 1);
-         margin-left: units($theme-site-margins-mobile-width);
-
-         img {
-            @include u-maxh(6);
-            @include u-padding(1);
-         }
-      }
-
-      a.agency-logo-text {
-         text-decoration: none;
-         color: $theme-color-base-darker;
-
-         &:hover {
-            color: $theme-color-base-darker;
-            text-shadow: none;
-         }
-      }
-
-      .agency-logo {
-         display: flex;
-         margin-right: 12px;
-      }
-   }
-}
-
-.agency-identity {
-   display: flex;
-   flex-direction: column;
-   @include u-padding(1);
-
-   .agency-name {
-      float: left;
-   }
-
-   .tagline {
-      float: left;
-      font-weight: 200;
-      text-transform: uppercase;
-      margin-top: 4px;
-
-      @include at-media($theme-header-min-width) {
-         font-size: font-size($theme-header-font-family, "sm");
-      }
-
-      @include at-media-max($theme-header-min-width) {
-         font-size: font-size($theme-header-font-family, "3xs");
-      }
-   }
-}
-
-//header containers
 
 //temp footer test
 

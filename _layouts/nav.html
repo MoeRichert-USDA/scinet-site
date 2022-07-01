@@ -4,7 +4,7 @@ main:
   class: usa-layout-docs usa-layout-docs__main usa-prose 
 ---
 
-<div class="usa-section">
+
 <div class="grid-container main-side">
 
     {% assign header = site.data.header %}
@@ -46,17 +46,17 @@ main:
 
 
 <div class="grid-row grid-gap flex-align-start">
-    <div class="usa-layout-docs__sidenav desktop:grid-col-3 {% if page.sidenav %}{% else %} usa-sticky-sidenav{% endif %}">
+    <div class="usa-layout-docs__sidenav desktop:grid-col-3 desktop:padding-y-9{% if page.sidenav %}{% else %} usa-sticky-sidenav{% endif %}">
         {% include sidenav.html links=sidenav %}
     </div>
     
     <main class="{{ layout.main.class }}{% if sidenav %} desktop:grid-col-9{% endif %}" id="main-content">
-        {% if bc_sectionlink %}{% include components/breadcrumb.html %}{% endif %}
+        {% if bc_sectionlink %}{% include components/breadcrumb.html %}{% else %}<nav class="usa-breadcrumb usa-breadcrumb--wrap"><div class="padding-y-2"></div></nav>{% endif %}
         {% if page.title %}
-            <h1>{{ page.title }}</h1>
+            <h1 class="top-header">{{ page.title }}</h1>
         {% endif %}
         {{ content }}
     </main>
 </div>
 </div>
-</div>
+

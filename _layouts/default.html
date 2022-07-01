@@ -20,8 +20,10 @@ main: foo, bar, qaz
   {% include skipnav.html %}
   {% include header.html %}
 
-  {% if page.alert %}
-  {% include alert.html alert=page.alert %}
+  {% if page.alerts %}
+  {% for _alert in page.alerts %}
+    {% include alert.html alert=_alert %}
+  {% endfor %}
   {% endif %}
 
 
