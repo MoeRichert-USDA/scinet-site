@@ -8,7 +8,8 @@ github:
   repository: scinet-site
   default_branch: main
 
-baseurl: ""
+baseurl: /scinet-site
+url: "https://moerichert-usda.github.io"
 
 # Configure a separator for post excerpts
 excerpt_separator: "<!--end-excerpt-->"
@@ -108,8 +109,6 @@ sass:
 
 # Add code blocks to text
 highlighter: rouge
-
-url: "https://moerichert-usda.github.io/scinet-site" # the base hostname & protocol for your site
 
 plugins:
   - jekyll-last-modified-at
