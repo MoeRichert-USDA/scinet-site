@@ -9,7 +9,7 @@
 # determiner or other automated feature. If undefined, the default is .gov
 # government_tld: .mil
 
-title: SCINet - Demo Site. This is a test.
+title: SCINet - Demo Site
 tagline: This is not the official SCINET website
 
 # Defines the type of header.
