@@ -5,7 +5,7 @@
 {% assign yearid = formid | prepend: "year-" %}
 {% assign monthid = formid | prepend: "month-" %}
 {% assign buttonid = formid | prepend: "button-" %}
-<div class="usa-card">
+<div class="usa-card" aria-lablel="Filter {{ pagetitle }}">
     <div class="usa-card__container bg-base-lighter maxw-tablet" id="{{ formid }}">
         <div class="usa-card__header">
             <h2 class="usa-card__heading">Filter Events</h2>
