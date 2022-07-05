@@ -7,24 +7,30 @@ main:
 
 <div class="grid-container main-side">
 
+
+  {% if page.sidenav_link %}
+    {% assign pagelink = page.sidenav_link %}
+  {% else %}
+    {% assign pagelink = page.permalink %}
+  {% endif %}
+
     {% assign header = site.data.header %}
     {% assign _primary = header.primary.links %}
       {% assign primary_links = site.data.navigation[_primary] | default: _primary %}
       {% if primary_links %}
         {% for _section in primary_links %}
-          {% if _section.href == page.permalink %} 
-          {% else %}
+          {% unless _section.href == pagelink %} 
             {% if _section.links %}
                 {% assign section_links = site.data.navigation[_section.links] | default: _section.links %}
                 {% for _link in section_links %}
-                    {% if _link.href == page.permalink %} 
+                    {% if _link.href == pagelink %} 
                         {% assign bc_section = _section %}
                         {% assign bc_sidenav = section_links %}
                     {% else %}
                         {% if _section.sublinks %}
                         {% assign link_sublinks = site.data.navigation[_link.sublinks] | default: _link.sublinks %}
                           {% for _sublink in link_sublinks %}
-                            {% if _sublink.href == page.permalink %} 
+                            {% if _sublink.href == pagelink %} 
                                 {% assign bc_section = _section %}
                                 {% assign bc_sectionlink = _link %}
                                 {% assign bc_sidenav = link_sublinks %}
@@ -34,7 +40,7 @@ main:
                     {% endif %}
                 {% endfor %}
             {% endif %}
-          {% endif %}
+          {% endunless %}
         {% endfor %}
       {% endif %}
 
