@@ -162,31 +162,8 @@ primary:
 #      - text: Open Positions
 #        href: /opportunities/open_positions
 
-secondary:
-#   - text: Documentation
-#     href: /docs/
-#   - text: Theme
-#     href: /theme/
-
-#secondary:
-#  - text: Contents
-#    href: /guide/
-
-News:
-  - text: System Downtime
-    href: /news/downtime
-  - text: Announcements
-    href: /news/announcements
-  - text: User Stories
-    href: /news/stories
-  - text: Newsletter
-    href: /news/newsletter
-  - text: SCINet-X
-    href: /news/scinet-x
 
 
-# Uncomment the items below and comment the items above in the `footer` list
-# to use footer link columns in the 'big' footer style.
 footer:
   - text: RESOURCES
     links: 
