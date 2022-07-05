@@ -16,7 +16,7 @@
     </div>
     {% endif %}
     {% if post_type == 'media' %}
-    <img class="usa-collection__img" src="{{ post.mediasrc }}" alt="{{ post.mediaalt }}" />
+    <img class="usa-collection__img" src="{{ post.mediasrc | relative_url }}" alt="{{ post.mediaalt }}" />
     {% endif %}
     <div class="usa-collection__body">
         <h3 class="usa-collection__heading">

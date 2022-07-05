@@ -9,7 +9,7 @@
       {% if card.feature-img-src %}
       <div class="usa-card__media">
         <div class="usa-card__img padding-05    feature_img">
-          <img class="maxh-card" src="{{ card.feature-img-src }}" alt="{{ card.feature-img-alt }}" />
+          <img class="maxh-card" src="{{ card.feature-img-src | relative_url}}" alt="{{ card.feature-img-alt }}" />
         </div>
       </div>
       {% endif %}
