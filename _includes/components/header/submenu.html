@@ -9,18 +9,18 @@
 
                     {% assign _link_handle = _link.text | handleize %}
                     {% assign _link_id = _link_handle | prepend: _section_id %}
-                    <div class=""><b>
+                    <div class="">
                         <a href="{% if _link.external %}{{ _link.href }}{% else %}{{ _link.href | relative_url }}{% endif %}">
                             {{ _link.text }}
-                        </a></b>
+                        </a>
                     </div>
 
-                    <ul id="{{ _link_id }}" class="">
+                    <ul id="{{ _link_id }}" class="sublist">
 
 
                         {% for _sublink in link_sublinks %}
 
-                            <li class="">
+                            <li>
                                 <a href="{% if _sublink.external %}{{ _sublink.href }}{% else %}{{ _sublink.href | relative_url }}{% endif %}">
                                     {{ _sublink.text }}
                                 </a>
