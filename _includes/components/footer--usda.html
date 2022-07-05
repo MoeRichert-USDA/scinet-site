@@ -91,7 +91,7 @@
               <a class="usa-social-link" href="{% if _link.external == true %}{{ _link.href }}{% else %}{{ _link.href | relative_url }}{% endif %}"
               ><img
                 class="usa-social-link__icon"
-                src="/assets/uswds/img/usa-icons/{{ _link.type | default: 'generic' }}.svg"
+                src="{{ site.baseurl }}/assets/uswds/img/usa-icons/{{ _link.type | default: 'generic' }}.svg"
                 alt="{{ _link.text }}"
             /></a>
               {% endfor %}
