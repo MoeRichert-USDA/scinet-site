@@ -8,7 +8,7 @@ github:
   repository: scinet-site
   default_branch: main
 
-baseurl: /scinet-site
+baseurl: ""
 url: "https://moerichert-usda.github.io"
 
 # Configure a separator for post excerpts
