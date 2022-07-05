@@ -18,7 +18,7 @@ featured:
   button-text: "See More SCINet News"
 
 hero:
-  image: /assets/img/hero.png
+  image: {{ site.baseurl }}/assets/img/hero.png
   callout:
     text: "High Performance computing. </br> 
     Training. </br>
