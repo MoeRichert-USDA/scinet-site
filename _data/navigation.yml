@@ -31,15 +31,15 @@ primary:
   - text: News
     links:
       - text: System Downtime
-        href: /downtime
+        href: /news/downtime
       - text: Announcements
-        href: /announcements
+        href: /news/announcements
       - text: User Stories
-        href: /stories
+        href: /news/stories
       - text: Newsletter
-        href: /newsletter
+        href: /news/newsletter
       - text: SCINet-X
-        href: /scinet-x
+        href: /news/scinet-x
   - text: User Guides
     sublinks: true
     links:
@@ -174,15 +174,15 @@ secondary:
 
 News:
   - text: System Downtime
-    href: /downtime
+    href: /news/downtime
   - text: Announcements
-    href: /announcements
+    href: /news/announcements
   - text: User Stories
-    href: /stories
+    href: /news/stories
   - text: Newsletter
-    href: /newsletter
+    href: /news/newsletter
   - text: SCINet-X
-    href: /scinet-x
+    href: /news/scinet-x
 
 
 # Uncomment the items below and comment the items above in the `footer` list

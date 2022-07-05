@@ -1,7 +1,7 @@
 ---
 title: SCINet-X
 description: Overview of the SCINet-X initiative
-permalink: /scinet-x
+permalink: /news/scinet-x
 author: Brian Stucky
 layout: nav
 

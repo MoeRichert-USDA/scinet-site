@@ -1,7 +1,7 @@
 ---
 title: Downtime
 layout: downtime
-permalink: /downtime-archive
+permalink: /news/downtime-archive
 
 type: archive
 
