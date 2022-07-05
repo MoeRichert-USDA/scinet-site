@@ -1,5 +1,3 @@
-@use "uswds-core" as *;
-
 .top-header {
     margin-top: .5em !important;
 }
@@ -15,3 +13,7 @@
  .max-tablet {
     max-width: 40em !important;
  }
+
+ @mixin pad-05 {
+   padding: .5em !important;
+}
