@@ -109,7 +109,7 @@ sass:
 # Add code blocks to text
 highlighter: rouge
 
-url: "https://scinet.usda.gov" # the base hostname & protocol for your site
+url: "https://moerichert-usda.github.io/scinet-site" # the base hostname & protocol for your site
 
 plugins:
   - jekyll-last-modified-at
