@@ -4,7 +4,7 @@
     {% for graphic in graphics %}
       <div class="usa-media-block maxw-mobile graphic-link">
         {% if graphic.image.link %}
-        <a href="{{ graphic.image.link }}">
+        <a href="{{ graphic.image.link | relative_url }}">
         {% endif %}
         {% include {{ graphic.image.src | prepend: 'svg'  }} %}
         <div class="usa-media-block__body">
