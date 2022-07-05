@@ -1,4 +1,9 @@
 @use "uswds-core" as *;
+@use "overrides" as OR;
+
+.max-tablet {
+   @include OR.max-tablet
+}
 
 //intro card
 
