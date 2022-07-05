@@ -1,6 +1,6 @@
 <li class="usa-card {{ classes }} {% if card.url %}featured_posts{% endif %}">
     {% if card.url %}
-    <a href="{{ card.url }}">
+    <a href="{{ card.url | relative_url}}">
         {% endif %}
       <div class="usa-card__container">
       <div class="usa-card__header">
