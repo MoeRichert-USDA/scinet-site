@@ -6,7 +6,7 @@ description: SCINet is a USDA initiative to provide agricultural scientists acce
 github:
   organization: USDA-ARS-GBRU
   repository: scinet-site
-  default_branch: master
+  default_branch: main
 
 baseurl: ""
 
