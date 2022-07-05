@@ -1,7 +1,7 @@
 ---
 title: SCINet for genomics research
 description: SCINet has a number of tools available for genomics research
-permalink: /research/genomics
+permalink: /research/uses/genomics
 author: Erin Scully
 layout: nav
 

@@ -1,6 +1,6 @@
 ---
 
-title: "Geospatial Workshop - Orientation"
+title: "Geospatial Workshop - Orientation - DemoData"
 author: Moe Richert
 excerpt: Please complete this pre-meeting checklist ahead of time if you plan to participate in any of the interactive follow-along tutorials (Sessions 2-5). Pre-meeting SCINet Account Login Assistance.
 categories: [Geospatial Workshop]  

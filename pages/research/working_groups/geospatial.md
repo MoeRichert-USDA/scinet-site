@@ -1,7 +1,7 @@
 ---
 title: Geospatial Research Working Group
 description: summary of the working group
-permalink: /working-groups/geospatial
+permalink: /research/working-groups/geospatial
 author: Kerrie Geil
 layout: nav
 

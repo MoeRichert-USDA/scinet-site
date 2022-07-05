@@ -1,7 +1,7 @@
 ---
 title: Workbook Developers
 description: summary of the working group
-permalink: /working-groups/workbooks
+permalink: /research/working-groups/workbooks
 author: Kerrie Geil
 layout: nav
 
