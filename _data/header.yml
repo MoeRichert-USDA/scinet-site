@@ -20,7 +20,7 @@ type: extended
 # Configuration for site header logo
 # If the logo is external add external: true
 logo:
-  src: {{ site.baseurl }}/assets/img/site/usda-logo-color.svg
+  src: /assets/img/site/usda-logo-color.svg
   alt: USDA
 
 # this is a key into _data/navigation.yml
