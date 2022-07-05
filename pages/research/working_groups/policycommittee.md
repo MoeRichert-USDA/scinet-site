@@ -1,7 +1,7 @@
 ---
 title: SCINet Policy Committee
 description: summary of the working group
-permalink: /working-groups/policy
+permalink: /research/working-groups/policy
 author: Kerrie Geil
 layout: nav
 

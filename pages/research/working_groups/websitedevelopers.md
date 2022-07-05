@@ -1,7 +1,7 @@
 ---
 title: SCINet Website Developers
 description: summary of the working group
-permalink: /working-groups/webdev
+permalink: /research/working-groups/webdev
 author: Kerrie Geil
 layout: nav
 

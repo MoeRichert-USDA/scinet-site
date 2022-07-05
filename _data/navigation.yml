@@ -75,38 +75,39 @@ primary:
     sublinks: true
     links:
       - text: Overview
-        href: /working-groups
+        href: /research/overview
       - text: Working Groups
-        href: /working-groups
+        href: /research/working-groups
         sublinks:
         - text: Ag100Pest
-          href: /working-groups/ag100pest
+          href: /research/working-groups/ag100pest
         - text: Arthropod Genomics
-          href: /working-groups/arthropods
+          href: /research/working-groups/arthropods
         - text: Geospatial Research
-          href: /working-groups/geospatial
+          href: /research/working-groups/geospatial
         - text: Microbiome
-          href: /working-groups/microbiome
+          href: /research/working-groups/microbiome
         - text: LTAR Phenology
-          href: /working-groups/LTARphenology
+          href: /research/working-groups/LTARphenology
         - text: SCINet Policy Committee
-          href: /working-groups/policy
+          href: /research/working-groups/policy
         - text: SCINet Website Developers
-          href: /working-groups/webdev
+          href: /research/working-groups/webdev
         - text: Workbook Developers
-          href: /working-groups/workbooks
+          href: /research/working-groups/workbooks
         - text: Pollinator
-          href: /working-groups/pollinator
+          href: /research/working-groups/pollinator
       - text: Use Cases
+        href: /research/uses
         sublinks:
         - text: Genomics
-          href: /research/genomics
+          href: /research/uses/genomics
         - text: Plant breeding
-          href: /research/plant-breeding
+          href: /research/uses/plant-breeding
         - text: Geospatial
-          href: /research/geospatial
+          href: /research/uses/geospatial
         - text: Hydrology
-          href: /research/hydrology
+          href: /research/uses/hydrology
       
   - text: Training and Events
     links:
