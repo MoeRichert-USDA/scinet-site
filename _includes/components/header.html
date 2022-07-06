@@ -3,26 +3,7 @@
 <header class="usa-header usa-header--extended" role="banner">
 
   <div class="usa-navbar">
-    <div class="usa-logo">
-      {% if header.logo %}
-      <span class="agency-logo">
-        <a href="{% if header.href %}{{ header.href }}{% else %}{{ site.baseurl }}/{% endif %}">
-          <img class="usa-logo-img tablet:height-6 margin-1"
-            src="{% if header.logo.external %}{{ header.logo.src }}{% else %}{{ header.logo.src | relative_url }}{% endif %}"
-            alt="{{ header.logo.alt }}">
-        </a>
-      </span>
-      {% endif %}
-      <a class="agency-logo-text" href="{% if header.href %}{{ header.href }}{% else %}{{ site.baseurl }}/{% endif %}"
-        aria-label="{{ header.logo.alt }}">
-        <div class="agency-identity">
-          <div class="agency-name usa-logo__text">{{ header.title | default: site.title }}</div>
-          {% if header.tagline %}
-          <div class="tagline">{{ header.tagline }}</div>
-          {% endif %}
-        </div>
-      </a>
-    </div>
+      {% include components/header/logo.html signature=header %}
     <button class="usa-menu-btn">Menu</button>
   </div>
 

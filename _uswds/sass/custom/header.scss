@@ -83,7 +83,7 @@
       margin-top: 4px;
 
       @include at-media($theme-header-min-width) {
-         font-size: font-size($theme-header-font-family, "sm");
+         font-size: font-size($theme-header-font-family, "xs");
       }
 
       @include at-media-max($theme-header-min-width) {
@@ -94,7 +94,6 @@
 
 .usa-logo-img{
    @include u-height(4);
-   @include u-margin(1);
    @include at-media($theme-header-min-width) {
       @include u-height(6);
    }
