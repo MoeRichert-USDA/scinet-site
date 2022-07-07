@@ -21,7 +21,8 @@ main:
     {% else %}
       {% assign myposts = site.posts %}
   {% endcase %}
-
+  
+  <ul class="usa-list usa-list--unstyled">
 {% if flow == 'reverse' %}
   {% for post in myposts reversed %} 
       {% include collection.html %}
@@ -31,3 +32,4 @@ main:
       {% include collection.html %}
   {% endfor %}
 {% endif %}
+</ul>

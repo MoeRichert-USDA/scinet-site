@@ -61,6 +61,7 @@ main:
     <h5>Further detail for each outage is posted in the announcements below if availible.</h5>
     {% endif %}
 
+    <ul class="usa-list usa-list--unstyled">
     {% if reverse %}
     {% for post in dis_posts reversed %}
     {% include components/collection.html %}
@@ -70,3 +71,4 @@ main:
     {% include components/collection.html %}
     {% endfor %}
     {% endif %}
+    </ul>
