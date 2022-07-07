@@ -1,4 +1,4 @@
-<ul id="{{ _section_id }}" class="usa-nav__submenu usa-megamenu">
+<ul id="{{ _section_id }}" class="usa-nav__submenu usa-megamenu" hidden="">
     <div class="grid-row grid-gap-4">
         {% for _link in section_links %}
             {% assign next_i = forloop.index0 | plus: 1 %}
