@@ -36,11 +36,12 @@ class:
 
                 <div class="width-full margin-4">
                     <h3 class="site-preview-heading">{{ page.calendar.title }}</h3>
-
+                    <ul class="usa-list usa-list--unstyled">
                     {% for post in filtered_posts limit:3 %}
                     {% assign post_type = 'calendar' %}
                     {% include components/collection.html %}
                     {% endfor %}
+                </ul>
                 </div>
                 <a class="usa-button margin-x-auto margin-y-2"" href=" {{ page.calendar.href | relative_url }}">
                     {{ page.calendar.button }}

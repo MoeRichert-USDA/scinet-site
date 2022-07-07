@@ -36,6 +36,7 @@ main:
 
 {% include components/cal_filter.html %}
 
+<ul class="usa-list usa-list--unstyled">
 {% if flow == 'normal' %}
   {% for post in myevents %}
     {% include components/collection.html %}
@@ -45,3 +46,4 @@ main:
     {% include components/collection.html %}
   {% endfor %}
 {% endif %}
+</ul>
