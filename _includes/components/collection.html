@@ -76,15 +76,15 @@
             {% endif %}
 
             {% if post.register %}
-            {% if post.register_url %}
-            <a href="https://forms.office.com/g/tVtE8wEgAt">
-            {% endif %}
             <li class="usa-collection__meta-item">
+                {% if post.register_url %}
+                <a href="{{ post.register_url }}">
+                    {{ post.register }}
+                </a>
+                {% else %}
                 {{ post.register }}
+                {% endif %}
             </li>
-            {% if post.register_url %}
-        </a>
-            {% endif %}
             {% endif %}
 
           </ul>
