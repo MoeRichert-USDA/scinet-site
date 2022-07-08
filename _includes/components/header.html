@@ -50,7 +50,6 @@
 
     {% assign _secondary = header.secondary %}
     <div class="usa-nav__secondary">
-      
       {% if site.data.navigation[_secondary.links] %}
       <ul class="usa-unstyled-list usa-nav__secondary-links">
           {% assign secondary_links = site.data.navigation[_secondary.links] | default: _secondary.links %}
@@ -61,10 +60,9 @@
             {{ _link.text }}
           </a>
         </li>
-        {% endfor %}
 
       </ul>
-      
+      {% endfor %}
       {% endif %}
       {% if site.search_site_handle %}
       <form accept-charset="UTF-8" action="https://search.usa.gov/search" id="search_form" method="get"
