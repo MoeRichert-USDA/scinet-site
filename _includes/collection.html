@@ -1,4 +1,6 @@
-{% if post.categories contains page.title %}
+{% assign post = include.post %}
+
+{% if post.categories contains page.title or post.type contains page.posttype %}
   {% assign currentdate = post.date | date: "%Y" %}
   {% if currentdate != date %}
     {% unless forloop.first %}</ul>{% endunless %}

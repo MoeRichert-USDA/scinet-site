@@ -47,8 +47,9 @@
                 </div>
             </div>
         </div>
-        <div class="usa-card__footer">
-            <button class="usa-button" id="{{ buttonid }}">Filter</button>
+        <div class="usa-card__footer grid-row">
+            <button class="usa-button grid-col-3" id="{{ buttonid }}">Filter</button>
+            <div id="current-filters" class="current-filters grid-col margin-x-2 text-right"></div>
         </div>
     </div>
 </div>
@@ -56,33 +57,86 @@
 <script>
 
     const sub = document.getElementById("{{ buttonid }}");
-    sub.onclick = function(){
-          console.log("clicked");
-          var types = document.getElementById("{{ typeid }}");
-          var providers = document.getElementById("{{ providerid }}");
-          var topics = document.getElementById("{{ topicsid }}");
-      
-            let type = types.value.toLowerCase(),
-                provider = providers.value.toLowerCase();
-                topic = topics.value.toLowerCase();
-      
-            var mylist = document.getElementsByClassName("{{ cal_id }}");
+    sub.onclick = function () {
+        console.log("clicked");
+        var types = document.getElementById("{{ typeid }}");
+        var providers = document.getElementById("{{ providerid }}");
+        var topics = document.getElementById("{{ topicsid }}");
 
-            for (var i = 0; i < mylist.length; i++) {
-                console.log(mylist[i]);
-                if (mylist[i].classList.contains("no-display")) { }
-                else mylist[i].classList.add("no-display");
-      
-                let thistype = mylist[i].getAttribute('type'),
-                    thisinstruct = mylist[i].getAttribute('instructor');
-                    thistopic = mylist[i].getAttribute('tagged')
-                    console.log(thistype, thisinstruct);
-                    console.log(type, provider);
-      
-                if (thistype.toLowerCase().includes(type) && thisinstruct.toLowerCase().includes(provider) && thistopic.toLowerCase().includes(topic)) {
-                    mylist[i].classList.remove("no-display")
-                }
+        let type = types.value.toLowerCase(),
+            provider = providers.value.toLowerCase(),
+            topic = topics.value.toLowerCase();
+
+        filterList(type, provider, topic);
+    };
+
+    function filterList(type, provider, topic) {
+
+        var mylist = document.getElementsByClassName("{{ cal_id }}");
+
+        for (var i = 0; i < mylist.length; i++) {
+            if (mylist[i].classList.contains("no-display")) { }
+            else mylist[i].classList.add("no-display");
+
+            let thistype = mylist[i].getAttribute('type'),
+                thisinstruct = mylist[i].getAttribute('instructor'),
+                thistopic = mylist[i].getAttribute('tagged');
+
+            if (thistype.toLowerCase().includes(type) && thisinstruct.toLowerCase().includes(provider) && thistopic.toLowerCase().includes(topic)) {
+                mylist[i].classList.remove("no-display")
             }
-      
         }
+
+
+        console.log(type, provider, topic);
+
+        var mylist = formatText(type, provider, topic);
+        document.getElementById("current-filters").innerHTML = mylist;
+    };
+
+    function format(val) {
+        if (val == null) {
+            return ""
+        } else {
+            return val.toString().toLowerCase()
+        }
+    };
+
+    function formatText(type, provider, topic) {
+        var mylist = [],
+            current = '';
+        if (type == "" && provider == "" && topic == "") {
+            return "";
+        } else {
+            current = '<b>Current Filters: </b>';
+            if (type != "") {
+                mylist.push(type.toUpperCase())
+            };
+            if (provider != "") {
+                mylist.push(provider.toUpperCase())
+            };
+            if (topic != "") {
+                mylist.push(topic.toUpperCase())
+            };
+
+            return current+mylist.join(", ");
+        }
+
+}
+
+    function setValue(id, newvalue) {
+        var s = document.getElementById(id);
+        s.value = newvalue;
+    };
+
+    window.onload = function () {
+        var queryString = window.location.search,
+            urlParams = new URLSearchParams(queryString),
+            load_type = format(urlParams.get('type')),
+            load_prov = format(urlParams.get('provider')),
+            load_topic = format(urlParams.get('topic'));
+
+        console.log(load_type, load_prov, load_topic);
+        filterList(load_type, load_prov, load_topic);
+    }
 </script>
