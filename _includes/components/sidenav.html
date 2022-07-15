@@ -1,14 +1,26 @@
-
 {% assign link = include.link %}
-{% assign _href = link.href %}
+
+{% if page.layout_type == 'workshop' %}
+    {% assign _href = link.url %}
+    {% if forloop.first %}
+        {% assign _text = "Workshop Home" %}
+    {% else %}
+        {% assign _text = link.title %}
+    {% endif %}
+    <script>console.log("{{ _text }}")</script>
+{% else %}
+    {% assign _href = link.href %}
+    {% assign _text = link.text %}
+{% endif %}
+
 {% assign _current = false %}
-{% if link.href == page.url or link.href == page.permalink %}
+{% if _href == page.url or _href == page.permalink %}
 {% assign _current = true %}
 {% endif %}
 <li class="usa-sidenav__item">
-    <a href="{% if link.external == true %}{{ link.href }}{% else %}{{ link.href | relative_url }}{% endif %}" {% if
+    <a href="{% if link.external == true %}{{ _href }}{% else %}{{ _href | relative_url }}{% endif %}" {% if
         _current %} class="usa-current" {% endif %} {% if link.class %}class="{{ link.class }}" {% endif %}>
-        {{ link.text }}
+        {{ _text }}
     </a>
     {% if _current and page.subnav %}
     <ul class="usa-sidenav__sublist">

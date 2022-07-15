@@ -1,12 +1,13 @@
 ---
 
-title: "Session 0: Pre-meeting tech support for account logins and data uploads"
+title: "Pre-meeting Tech Support"
 author: Moe Richert
 excerpt: Please complete this pre-meeting checklist ahead of time if you plan to participate in any of the interactive follow-along tutorials (Sessions 2-5). Pre-meeting SCINet Account Login Assistance.
 categories: [2022 Geospatial Workshop]  
 provider: Geospatial Working Group
-type: workshop
+type: orientation
 tags: Geospatial
+layout: nav
 
 sessions:
   - session: 

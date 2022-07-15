@@ -22,7 +22,7 @@ class:
         <div class="grid-row grid-gap">
 
         {% assign featured_cal = site.workshops | where: 'future', 'show' %}
-        {% assign filtered_posts = featured_cal | where_exp: "post", "post.categories contains page.title" %}
+        {% assign filtered_posts = featured_cal | where_exp: "post", "post.categories contains page.title and post.type == 'workshop' " %}
 
 
         <div class="width-full margin-4">

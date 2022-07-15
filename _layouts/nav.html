@@ -14,6 +14,18 @@ main:
     {% assign pagelink = page.permalink %}
   {% endif %}
 
+  {% if page.layout_type == 'workshop' %}
+    <script>console.log("workshop")</script>
+
+    {% assign allevents = site.events | where: 'future', 'show' %}
+    {% assign allworkshops = site.workshops | where: 'future', 'show' %}
+    {% assign all_posts = allevents | concat: allworkshops %}
+
+    {% assign myset = all_posts | where_exp: "post", "post.categories == page.categories" %}
+
+    {% assign bc_sidenav = myset %}
+
+  {% else %}
     {% assign header = site.data.header %}
     {% assign _primary = header.primary.links %}
       {% assign primary_links = site.data.navigation[_primary] | default: _primary %}
@@ -43,12 +55,14 @@ main:
           {% endunless %}
         {% endfor %}
       {% endif %}
+  {% endif %}
 
 {% if page.sidenav_other %}
     {% assign sidenav = site.data.navigation[page.sidenav_other] | default: sidenav %}
 {% else %}
     {% assign sidenav = bc_sidenav %}
 {% endif %}
+
 
 
 <div class="grid-row grid-gap flex-align-start">
@@ -58,9 +72,11 @@ main:
     
     <main class="{{ layout.main.class }}{% if sidenav %} desktop:grid-col-9{% endif %}" id="main-content">
         {% if bc_sectionlink %}{% include components/breadcrumb.html %}{% else %}<nav class="usa-breadcrumb usa-breadcrumb--wrap"><div class="padding-y-2"></div></nav>{% endif %}
+        {% unless page.hide-title %}
         {% if page.title %}
             <h1 class="top-header">{{ page.title }}</h1>
         {% endif %}
+        {% endunless %}
         {{ content }}
     </main>
 </div>

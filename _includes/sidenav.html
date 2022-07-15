@@ -2,8 +2,8 @@
   <ul class="usa-sidenav">
     {% assign varsize = include.links.size %}
     {% if varsize > 2 %}
-    {% for link in include.links %}
-    {% include components/sidenav.html link=link %}
+    {% for _link in include.links %}
+    {% include components/sidenav.html link=_link %}
     {% endfor %}
     {% else %}
     {% include components/sidenav.html link=include.links %}

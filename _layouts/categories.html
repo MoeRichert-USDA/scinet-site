@@ -20,11 +20,16 @@ main:
     {% when "events" %}
       {% assign myposts = site.events %}
     {% when "workshops" %}
-      {% assign myposts = site.workshops %}
+        {% assign all_posts = site.workshops | where: 'future', 'show' %}
+        {% assign myposts = all_posts | where_exp: "post", "post.categories == page.categories and post.type == 'workshop' " %}
     {% else %}
       {% assign myposts = site.posts %}
       {% assign no_date_below = true %}
   {% endcase %}
+
+  {% if page.post_type %}
+  {% assign post_type = page.post_type %}
+  {% endif %}
   
   <ul class="usa-list usa-list--unstyled">
 {% if flow == 'reverse' %}

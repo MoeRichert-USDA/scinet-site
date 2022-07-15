@@ -33,11 +33,12 @@
                     {% endif %}
                     {{ post.title }}
                 {% else %}
-                    {% if no_date_below %}{{ post.date | date_to_string }} &middot {% endif %}{% if post.provider %}{{ post.provider }} &middot {% endif %}{{
+                    {% if no_date_below %}{{ post.date | date_to_string }} &middot {% endif %}{% if post.provider and page.type != 'itinerary' %}{{ post.provider }} &middot {% endif %}{{
                 post.title }}
                 {% endif %}
             </a>
         </h3>
+        {% unless page.type == 'itinerary' %}
         {% if excerpt_type == 'long' %}
         <p class="usa-collection__description">
             {{ post.excerpt }}
@@ -47,6 +48,7 @@
             {{ post.excerpt | truncatewords:25 }}
         </p>
         {% endif %}
+        {% endunless %}
         <ul class="usa-collection__meta" aria-label="More information">
             {% if post.sessions %}
             {% for session in post.sessions %}
@@ -138,7 +140,7 @@
 
 
         </ul>
-        {% if page.layout != 'workshop' %}
+        {% unless page.layout == 'workshop' or page.no-tags %}
         {% if post.tags or post.type %}
         <ul class="usa-collection__meta" aria-label="Tags">
             {% if post.type %}
@@ -152,7 +154,7 @@
         </ul>
 
         {% endif %}
-        {% endif %}
+        {% endunless %}
     </div>
 
 </li>

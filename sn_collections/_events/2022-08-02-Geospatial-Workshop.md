@@ -45,25 +45,13 @@ calendar:
   text-href: /registration
   button: "See the Full Calendar"
   href: /events/upcoming
-  alt-title: "Workshop Details"
-  alt-text: "This year's workshop has already passed.  You can still access the content from our workshop archive. All of the tutorials we covered during the workshop have been formatted such that you can follow along with them anytime on your own and at your own pace from our webpages."
-  alt-buttons:
-    - text: "View the available online training resources"
-      href: training/free-online-training
-    - text: "Add your name to the waitlist for future events"
-      href: https://forms.office.com/g/tVtE8wEgAt
-      external: true
-    - text: "Take a look at events we have hosted in the past"
-      href: /events/archive
-    - text: "Explore how our collaborators currently use SCINet"
-      href: /research/working-groups
 
 ended:
   header: Welcome!
   text: "If you are coming to this website after the workshop sessions have ended, welcome! All the tutorials we covered during the workshop have been formatted such that you can follow along with them anytime on your own and at your own pace from our webpages. Access session content, including all tutorials, using the “Session Archive” tabs at the very top of this homepage. If you run into any errors, feel free to notify the organizing committee so that we can correct the content. Thank you and happy learning!" 
   buttons:
     - text: Event Itinerary
-      href: /
+      href: /workshops/2022-00-Geospatial-Workshop-Itinerary
     - text: Workshop Archive
       href: /events/archive/?type=workshop&provider=geospatial working group
 
