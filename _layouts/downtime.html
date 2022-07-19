@@ -20,6 +20,15 @@ main:
     {% assign reverse = true %} 
     {% endif %} 
 
+    <br>
+    {% assign pnum = dis_posts | size %}
+    {% if pnum == 0 %}
+
+    
+    <h5>There are no planned outages to display at this time.</h5>
+    
+    {% else %}
+
     {% if page.show_table %}
 
     <div class="usa-table-container--scrollable" tabindex="0">
@@ -72,3 +81,5 @@ main:
     {% endfor %}
     {% endif %}
     </ul>
+
+    {% endif %}

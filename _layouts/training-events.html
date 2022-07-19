@@ -8,11 +8,13 @@ main:
 
   {{content}}
   
+{% assign post_type = 'calendar' %}
 
 {% if page.type == "future" %}
   {% assign all_events = site.events | where: 'future', 'show' %}
-  {% assign myevents = all_events | where_exp: "post", "post.date >= site.time" %}
-  {% assign post_type = 'calendar' %}
+
+  {% assign timeint = site.time | date: "%Y%m%d" | plus: 0 %}
+  {% assign myevents = all_events | where_exp: "post", "post.date >= site.time or post.end_date >= timeint" %}
   {% assign flow = 'normal' %}
 
 {% elsif page.type == "archive" %}
@@ -47,3 +49,4 @@ main:
   {% endfor %}
 {% endif %}
 </ul>
+

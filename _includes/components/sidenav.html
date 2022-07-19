@@ -1,0 +1,29 @@
+{% assign link = include.link %}
+
+{% if alt_nav %}
+    {% assign _href = link.url %}
+    {% if forloop.first %}
+        {% assign _text = "Workshop Home" %}
+    {% else %}
+        {% assign _text = link.title %}
+    {% endif %}
+{% else %}
+    {% assign _href = link.href %}
+    {% assign _text = link.text %}
+{% endif %}
+
+{% assign _current = false %}
+{% if _href == page.url or _href == page.permalink %}
+{% assign _current = true %}
+{% endif %}
+<li class="usa-sidenav__item">
+    <a href="{% if link.external == true %}{{ _href }}{% else %}{{ _href | relative_url }}{% endif %}" {% if
+        _current %} class="usa-current" {% endif %} {% if link.class %}class="{{ link.class }}" {% endif %}>
+        {{ _text }}
+    </a>
+    {% if _current and page.subnav %}
+    <ul class="usa-sidenav__sublist">
+        {% include components/subnav.html links=page.subnav %}
+    </ul>
+    {% endif %}
+</li>

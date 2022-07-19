@@ -5,14 +5,15 @@ class:
 ---
 
     <div class="grid-row sci-container" aria-label="Getting Started and Event Calendar">
-        <div class="desktop:grid-col-auto" aria-label="Getting Started">
+        <div class="desktop:grid-col-auto flex-sci-card" aria-label="Getting Started">
             {% include sci-card.html highlight = page.intro %}
         </div>
         <div class="desktop:grid-col-fill" aria-label="Calendar">
             <div class="grid-row grid-gap">
 
                 {% assign featured_cal = site.events | where: 'future', 'show' %}
-                {% assign filtered_posts = featured_cal | where_exp: "post", "post.date >= site.time" %}
+                {% assign timeint = site.time | date: "%Y%m%d" | plus: 0 %}
+                {% assign filtered_posts = featured_cal | where_exp: "post", "post.date >= site.time or post.end_date >= timeint" %}
                 {% assign pnum = filtered_posts | size %}
                 {% if pnum == 0 %}
                 <div class="width-full margin-6 text-center">

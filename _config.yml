@@ -64,6 +64,10 @@ collections:
   posts:
     output: true
     permalink: /:collection/:path/
+  workshops:
+    output: true
+    future: true
+    permalink: /:collection/:path/
 # collections:
 #   projects:
 #     output: true
@@ -99,6 +103,14 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+  - 
+    scope:
+      path: ""
+      type: "workshops"
+    values:
+      future: "show"
+      layout: "nav"
+      layout_type: "workshop"
 
 # allow posts with dates in the future to be published now
 future: true
