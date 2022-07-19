@@ -53,7 +53,7 @@ ended:
     - text: Event Itinerary
       href: /workshops/2022-00-Geospatial-Workshop-Itinerary
     - text: Workshop Archive
-      href: /events/archive/?type=workshop&provider=geospatial+working+group
+      href: /events/archive?type=workshop&provider=geospatial+working+group
 
 ---
 <br>
