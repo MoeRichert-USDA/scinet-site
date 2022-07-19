@@ -1,13 +1,12 @@
 {% assign link = include.link %}
 
-{% if page.layout_type == 'workshop' %}
+{% if alt_nav %}
     {% assign _href = link.url %}
     {% if forloop.first %}
         {% assign _text = "Workshop Home" %}
     {% else %}
         {% assign _text = link.title %}
     {% endif %}
-    <script>console.log("{{ _text }}")</script>
 {% else %}
     {% assign _href = link.href %}
     {% assign _text = link.text %}
