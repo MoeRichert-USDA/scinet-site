@@ -43,8 +43,8 @@ calendar:
   text: "<b>Please make sure to register separately for each session you plan on attending.</b> </br> 
   The Zoom join details are different for each session."
   text-href: /registration
-  button: "See the Full Calendar"
-  href: /events/upcoming
+  button: "Visit the Event Itinerary Page"
+  href: /workshops/2022-00-Geospatial-Workshop-Itinerary
 
 ended:
   header: Welcome!
