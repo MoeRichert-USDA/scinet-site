@@ -1,58 +1,64 @@
 ---
 
-title: "Geospatial Workshop"
-author: Moe Richert
-excerpt: Please complete this pre-meeting checklist ahead of time if you plan to participate in any of the interactive follow-along tutorials (Sessions 2-5). Pre-meeting SCINet Account Login Assistance.
-categories: [2022 Geospatial Workshop]  
-provider: Geospatial Working Group
-type: workshop
-tags: Geospatial
-end_date: 20220902  # always have two numbers for month and day  YYYYMMDD
+# IMPORTANT - Save in the EVENTS collection
 
-layout: workshop
+title: "2022 Geospatial Workshop" # workshop title 
+author: Author Name # page author
+excerpt: A short description for the event calendar # short excerpt
+categories: [2022 Geospatial Workshop]  # should match the workshop title - this must be unique to this specific workshop
+provider: Geospatial Working Group # workshop provider
+type: workshop # important
+tags: Geospatial # one-word tags for the filter, each separated by a space
 
-post_type: calendar
+end_date: 20220902  # YYYYMMDD # if the end date is different than the start date
+# always have two numbers for month and day
 
+layout: workshop # a layout exclusively for workshop home pages
+
+
+# Large format intro at top of Workshop Homepage
 hero:
+# image: /assets/img/hero.png # background image for large format intro
   callout:
-    alt: "Geospatial Research Workshop"
-    text: "Harnessing SCINet computational resources in geospatial data science to further sustainable and intensified agriculture"
-    image:
-      src: /geospatial.svg
-      alt: "Globe Image"
-  button:
+    alt: "Geospatial Research Workshop" # workshop title
+    text: "Harnessing SCINet computational resources in geospatial data science to further sustainable and intensified agriculture" # short and descriptive workshop explanation
+#    image: # if there is an svg associated with this working group - this is within the callout section
+#      src: /geospatial.svg # svg name
+#      alt: "Globe Image" # svg alt
+  button: # link back to the workshop provider's page
     href: /working-groups/geospatial
     text: Visit the Working Group
 
+notice: # this is a summary section if needed for your workshop
+  header: Welcome!
+  text: "If you are coming to this website after the workshop sessions have ended, welcome! All the tutorials we covered during the workshop have been formatted such that you can follow along with them anytime on your own and at your own pace from our webpages. Access session content, including all tutorials, using the “Session Archive” tabs at the very top of this homepage. If you run into any errors, feel free to notify the organizing committee so that we can correct the content. Thank you and happy learning!" 
+  buttons: 
+    - text: Event Itinerary
+      href: /workshops/2022-00-Geospatial-Workshop-Itinerary # if you have an itenerary page in the workshop collection, link it here
+    - text: Workshop Archive
+      href: /events/archive/?type=workshop&provider=geospatial%20working%20group # you can use ths url to prefilter the event archive
 
-intro:
+intro: # this is the first detailed section on the page.
   blurb:
-    title: "How to Participate"
+    title: "How to Participate" 
     text: "<b>All members of the working group as well as non-members from USDA ARS are welcome to participate!</b> We also welcome our University collaborators who have USDA SCINet accounts. 
     </br></br>
-    Please attend the general session of the working group (Session 1) and then pick and choose other sessions to attend based on your own interests and skill level."
-  card: 
+    Please attend the general session of the working group (Session 1) and then pick and choose other sessions to attend based on your own interests and skill level." 
+  card: # this is a shorter section with a link in the same divide
     title: "Get Started with SCINet"
     text: "For this workshop, you will need to have a SCINet account and be able to successfully log in. We recommend applying for an account at least two weeks prior to the first session"
-    button: Register for SCINet
-    href: /guide/quickstart
+    button: Register for SCINet # button text
+    href: /guide/quickstart # button link
 
 calendar:
   title: "Workshop Itinerary"
   text: "<b>Please make sure to register separately for each session you plan on attending.</b> </br> 
   The Zoom join details are different for each session."
-  text-href: /registration
+  text-href: /registration # if you want the previous text to be a link, add the url here
+#  text-href-external: true  # if the text link is external
   button: "Visit the Event Itinerary Page"
   href: /workshops/2022-00-Geospatial-Workshop-Itinerary
 
-notice:
-  header: Welcome!
-  text: "If you are coming to this website after the workshop sessions have ended, welcome! All the tutorials we covered during the workshop have been formatted such that you can follow along with them anytime on your own and at your own pace from our webpages. Access session content, including all tutorials, using the “Session Archive” tabs at the very top of this homepage. If you run into any errors, feel free to notify the organizing committee so that we can correct the content. Thank you and happy learning!" 
-  buttons:
-    - text: Event Itinerary
-      href: /workshops/2022-00-Geospatial-Workshop-Itinerary
-    - text: Workshop Archive
-      href: /events/archive/?type=workshop&provider=geospatial%20working%20group
 
 ---
 <br>

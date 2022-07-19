@@ -1,7 +1,7 @@
 ---
 
 title: SCINet Discussion Forum
-categories: [Announcements]
+
 excerpt: SCINet has launched a new discussion forum that replaces Basecamp.
 ---
 

@@ -47,10 +47,18 @@ main:
 
         </thead>
         {% for post in dis_posts %}
-        {% if post.outage.date %}
-        {% assign post_date = post.outage.date %}
+        {% assign postdate = post.date | date: "%m/%d/%Y" %}
+        {% if post.end_date %}
+        <script>console.log("{{ postdate }}")</script>
+            {% assign date_str = post.end_date | append: "" %}
+            {% assign yr = date_str | slice: 0, 4 %}
+            {% assign mon = date_str | slice: 4, 2 %}
+            {% assign day = date_str | slice: 6, 2 %}
+            {% assign end_date = mon | append: '/' | append: day | append: '/' | append: yr %}
+
+            {% assign post_date = postdate | append: ' - ' | append: end_date %}
         {% else %}
-        {% assign post_date = post.date | date: "%m/%d/%Y" %}
+        {% assign post_date = postdate %}
         {% endif %}
         {% assign post_date_val = post.date | date: "%Y%m%d" | plus: 0 %}
         <tr>

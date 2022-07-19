@@ -7,8 +7,8 @@
 {% assign typeclass = "usa-alert--error" %}
 {% when "success" %}
 {% assign typeclass = "usa-alert--success" %}
-{% else %}
-{% assign typeclass = usa-alert--info %}
+{% when "info" %}
+{% assign typeclass = "usa-alert--info" %}
 {% endcase %}
 
 <div

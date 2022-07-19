@@ -1,7 +1,6 @@
 ---
-title: Directory Available
-
-excerpt: We have a directory available for medium term usage which allows researchers to run multiple jobs against data in this directory over a 90 day period.
+title: test # title
+excerpt: We have a directory available for medium term usage which allows researchers to run multiple jobs against data in this directory over a 90 day period. # short description or excerpt
 ---
 
 

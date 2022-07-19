@@ -97,6 +97,7 @@ defaults:
     values:
       future: "show"
       layout: "post"
+      categories: [Announcements]
   -
     scope:
       path: ""

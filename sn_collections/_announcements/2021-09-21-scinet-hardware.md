@@ -1,7 +1,7 @@
 ---
 
 title: SCINet Network Hardware OS Updates
-categories: [Announcements]
+
 excerpt: More SCINet Network Hardware OS Updates.
 ---
 
