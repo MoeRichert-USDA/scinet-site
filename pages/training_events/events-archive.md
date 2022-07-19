@@ -1,6 +1,6 @@
 ---
 layout: training-events
-title: SCINet-funded Training Events Archive
+title: Events Archive
 permalink: /events/archive
 
 type: archive

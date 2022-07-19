@@ -1,5 +1,5 @@
 ---
-title: Upcoming SCINet Events 
+title: Upcoming Events 
 description: Advertise upcoming events
 permalink: /events/upcoming
 author: Moe Richert
