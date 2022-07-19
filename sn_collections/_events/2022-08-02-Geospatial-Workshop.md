@@ -21,7 +21,7 @@ hero:
       src: /geospatial.svg
       alt: "Globe Image"
   button:
-    href: /working-groups/geospatial
+    href: /research/working-groups/geospatial
     text: Visit the Working Group
 
 
