@@ -1,7 +1,7 @@
 ---
 
 title: galaxy.scinet.science is set to retire in Feb 2021
-categories: [Announcements]
+
 excerpt: Due to major refactoring, updates and policy changes we could not continue using the old database and are starting with a clean slate on galaxy.scinet.usda.gov .
 ---
 

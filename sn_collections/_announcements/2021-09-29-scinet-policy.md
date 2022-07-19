@@ -1,7 +1,7 @@
 ---
 
 title: Atlas Downtime
-categories: [Announcements]
+
 excerpt: The SCINetPolicies document in your home directory on Ceres provides an updated SCINet policy.
 ---
 

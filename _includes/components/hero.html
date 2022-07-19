@@ -1,7 +1,7 @@
 {% if hero %}
 <section class="usa-hero" {% if hero.image %} style="background-image: url({{ hero.image | relative_url}})" {% else %} style="background-image: none"{% endif %}
   aria-label="Introduction" ;>
-  <div class="grid-container {% if hero.container %} {{ hero.container }}{% endif %}">
+  <div class="grid-container {% unless hero.image %} full{% endunless %}">
     <div class="usa-hero__callout">
       {% if hero.callout %}
       {% if hero.callout.image %}

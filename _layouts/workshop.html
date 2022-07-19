@@ -4,11 +4,11 @@ main:
 class:
 ---
 
-{% if page.ended %}
-<div class="grid-row sci-container" aria-label="{{ page.ended.header }}">
+{% if page.notice %}
+<div class="grid-row sci-container" aria-label="{{ page.notice.header }}">
     <div class="grid-container">
         <div class="padding-2">
-            {% include components/summary.html summary = page.ended %}
+            {% include components/summary.html summary = page.notice %}
         </div>
     </div>
 </div>
@@ -22,19 +22,23 @@ class:
         <div class="grid-row grid-gap">
 
         {% assign featured_cal = site.workshops | where: 'future', 'show' %}
-        {% assign filtered_posts = featured_cal | where_exp: "post", "post.categories contains page.title and post.type == 'workshop' " %}
+        {% assign filtered_posts = featured_cal | where_exp: "post", "post.categories == page.categories and post.type == 'workshop' " %}
 
 
         <div class="width-full margin-4">
             <h1 class="site-preview-heading">{{ page.calendar.title }}</h1>
             {% if page.calendar.text %}
-            <div class="featured_posts">
+            <div class="{% if page.calendar.text-href %} featured_posts{% endif %}">
+                {% if page.calendar.text-href %}
                 <a
-                    href="{% if page.calendar.text-href %}{{ page.calendar.text-href }}{% else %}{{ page.calendar.text-href | relative_url }}{% endif %}">
+                    href="{% if page.calendar.text-href-external %}{{ page.calendar.text-href }}{% else %}{{ page.calendar.text-href | relative_url }}{% endif %}">
+                    {% endif %}
                     <div class="usa-card__container padding-2">
                         {{ page.calendar.text }}
                     </div>
+                    {% if page.calendar.text-href %}
                 </a>
+                {% endif %}
             </div>
             {% endif %}
             <ul class="usa-list usa-list--unstyled">

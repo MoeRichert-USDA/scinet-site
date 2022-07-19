@@ -12,7 +12,6 @@ layout: categories
 collect: workshops
 
 no-tags: true
-no-year: true
 
 hide-title: true
 

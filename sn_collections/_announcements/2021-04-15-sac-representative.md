@@ -1,7 +1,7 @@
 ---
 
 title: SAC Northeast Area Representitive
-categories: [Announcements]
+
 excerpt: The SCINet Scientific Advisory Committee (SAC) is seeking a representative from the Northeast Area for a 3-year term. 
 ---
 

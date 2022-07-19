@@ -1,7 +1,7 @@
 {% assign post = include.post %}
 
 {% if post.categories contains page.title or post.type contains page.posttype or post.categories == page.categories %}
-  {% if page.no-year %}
+  {% if no-year %}
     {% if forloop.first %}<ul>{% endif %}
     {% include components/collection.html %}
     {% if forloop.last %}</ul>{% endif %}

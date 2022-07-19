@@ -1,7 +1,7 @@
 ---
 
 title: Ceres Down
-categories: [Announcements]
+
 excerpt: Connection Restored on 07-21-2021.
 ---
 

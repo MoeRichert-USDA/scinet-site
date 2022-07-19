@@ -8,6 +8,10 @@ main:
 
   {{ content }}
 
+  {% if page.no-year or page.type == "itinerary" %}
+    {% assign no-year = true %}
+  {% endif %}
+
   {% assign myfilter = page.collect %}
   {% case myfilter %}
     {% when "announcements" %}
