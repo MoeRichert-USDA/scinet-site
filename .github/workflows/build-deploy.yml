@@ -9,6 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      
+      - name: Create CNAME file
+        run: echo "scinet.usda.gov" > CNAME
 
       # Use GitHub Actions' cache to cache dependencies on servers
       - uses: ruby/setup-ruby@v1
@@ -18,12 +21,7 @@ jobs:
           # runs 'bundle install' and caches installed gems automatically
           bundler-cache: true
       # Use GitHub Deploy Action to build and deploy to Github
-      - uses: jeffreytse/jekyll-deploy-action@v0.4.0
+      - uses: helaili/jekyll-action@v2
         with:
-          provider: 'github'
-          token: ${{ secrets.GITHUB_TOKEN }} 
-          branch: 'gh-pages'         
-          jekyll_src: './'           
-          jekyll_cfg: '_config.yml'  
-          bundler_ver: '>=0'         
-          cname: 'scinet.usda.gov'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          target_branch: 'gh-pages'
