@@ -6,7 +6,9 @@ layout: page
 categories: [2024 SPEMW 2] 
 sidenav_link: /training/resources
 
-
+details:
+  - text: Session Recording
+    url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/EUtJOL3plRlDvUeC9EXLjqgBFniFLS4B76w4yWnOtDC4nw?e=vIHnzP
 ---
 
 # Managing packages and environments in Python
@@ -109,13 +111,13 @@ For the next exercise, we will use [Open OnDemand on Atlas](https://atlas-ood.hp
 1. From the Open OnDemand landing page, select "Interactive Apps" > "Jupyter". You will be taken to a page with multiple input fields to configure your Jupyter session. 
 1. Select the following inputs: 
     * Account: scinet_workshop1
-    * Queue: short--------Max Time: 2-00:00:00
-    * QOS: 400thread 
+    * Partition: atlas
+    * QOS: normal 14-00:00:00
     * Number of hours: 2
-    * Number of cores: 2
-    * Memory required: 8G
-    * Optional Slurm Arguments: \-\-reservation=scinet_workshop1
-    * Jupyter Notebook vs Lab: Lab
+    * Number of nodes: 1
+    * Number of tasks: 1
+    * Additional Slurm Parameters: \-\-reservation=workshop \-\-mem=8G
+    * Working Directory: /90daydata/shared/${USER}
 
 > **Exercise 4:** Using Open OnDemand, launch a new JupyterLab session and open a new Jupyter notebook using the default "Python 3" kernel. Paste the following into a code cell and run the code. What happens?
 
@@ -153,7 +155,7 @@ First, load the environment module for miniconda so that you have access to the 
 * On Ceres: `module load miniconda` or `ml load miniconda`.
 * On Atlas: `module load miniconda3` or `ml load miniconda3`.
 
-If you've not used `conda` before on the system, you will need to run `conda init`. By default, this will cause the conda "base" environment to automatically be activated every time you log in. This can be annoying! If you want to disable this, run `conda config --set auto_activate_base false`. (You can also undo _all_ changes made by `conda init` by running `conda init --reverse`.)
+If you've not used `conda` before on the system, you will need to run `conda init`. By default, this will cause the conda "base" environment to automatically be activated every time you log in. This can be annoying! If you want to disable this, run `conda config --set auto_activate_base false`. (You can also undo _all_ changes made by `conda init` by running `conda init --reverse`.) After running `conda init` for the first time, you will need to either exit your shell session and start a new one or run `source ~/.basrc`.
 
 Note: `mamba` is a drop-in replacement for `conda` that is generally faster and more robust. However, recent versions of `conda` have adopted code from the `mamba` project so that there is now less of a performance gap between the two. If `mamba` is available (`mamba` is currently available on Ceres but not on Atlas), you can simply replace `conda` with `mamba` in the commands below.
 
@@ -185,7 +187,7 @@ Note that a conda environment does not automatically include Python, so you will
 
 > **Exercise 5:** If you have not already done so, create a new conda environment called `conda_env`. Activate the environment and launch Python (`python`). The most recent version of Python available from the `conda-forge` channel is 3.12.6. What do you notice? Use `conda` to install the latest version of Python from `conda-forge` into your conda environment and verify that it works.
 
-Conda provides an alternative way to manage Python packages. Although you can still use `pip` from within a conda environment, doing so can introduce a variety of complications, and the [official recommendation](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html#installing-non-conda-packages) is to use `conda` to manage Python packages whenever possible.
+Conda provides an alternative way to manage Python packages. Although you can still use `pip` from within a conda environment, doing so can introduce a variety of complications, and the [official recommendation](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html#installing-non-conda-packages) is to use `conda` to manage Python packages within a conda environment whenever possible.
 
 > **Exercise 6:** Modify your conda environment so that you can run the Python script you created for Exercise 1.
 
