@@ -1,24 +1,24 @@
 ---
-title: SCINet Storage
-description: Guide to storage options on SCINet HPC clusters
+title: Storage Locations
+description: Guide to storage options on SCINet infrastructure
+excerpt: There are multiple places to store data on Ceres, Atlas, and Juno that all serve different purposes. 
 # author: Marina Kraeva
-categories: [Data]
+categories: [Storage]
 
 subnav:
-  - title: Quotas
-    url: '#quotas'
-  - title: Changing file permissions
-    url: '#changing-file-permissions'
-  - title: Home Directories
-    url: '#home-directories'
-  - title: Project Directories
-    url: '#project-directories'
-  - title: Large Short-term Storage
-    url: '#large-short-term-storage'
-  - title: Temporary Local Node Storage
-    url: '#temporary-local-node-storage'
-  - title: Juno Archive Storage
-    url: '#juno-archive-storage'
+  - title: Cluster Storage
+    subnav:
+      - title: Home Directories
+      - title: Project Directories
+        url: '#project-directories'
+      - title: Large Short-term Storage
+        url: '#large-short-term-storage'
+      - title: Temporary Local Node Storage
+        url: '#temporary-local-node-storage'
+  - title: Juno Permanent Storage
+    url: '#juno-permanent-storage'
+  - title: Improving Storage Management
+    url: '#improving-storage-management'
 
 
 
@@ -27,120 +27,47 @@ subnav:
 {% include images_path %}
 
 
+This guide provides detailed information about the storage options provided by SCINet and how to use them. <!--excerpt-->
+
+## Cluster Storage
+
+There are multiple places to store data on the Ceres and Atlas clusters that serve different purposes.
+These storage options are co-located with compute nodes and are best suited for files needed during computational work on the clusters. Co-located storage is not backed up and should not be relied on for long-term storage purposes (see [Juno](#juno-permanent-storage) below for long-term storage). 
+
+### Home Directories  
+
+Home directories (`/home/<scinet_username>`) are private directories that are only accessible to the user (and the system administrators when necessary). When a user logs into Ceres or Atlas, they automatically start in their home directory. 
+
+Home directories have 30 GB quotas and are intended to be mainly used for configuration and login files. For code, data, and software  Computations should be run from project directories in `/project` and `/90daydata`. Software installs that require a lot of space, such as virtual environments, should be done in [`/project`](#project-directories).
+
+### Project Directories
+
+Project directories are typically associated with ARS research projects. While it's possible to perform computational work on Ceres or Atlas using only home directories and [Large Short-term Storage](#large-short-term-storage) in `/90daydata/shared`, it is highly recommended to request a project directory. Having a project directory will allow you to install software packages in `/project` and keep important data on [Juno Permanent Storage](#juno-permanent-storage).
+
+**Directories in `/project` are not automatically backed up. Data that cannot be easily reproduced should be copied to Juno.**
 
 
 
+### Large Short-term Storage
 
-This document provides detailed information about the storage options provided by SCINet and how to use them.  For a simpler overview of suggested procedures for managing data on SCINet, please see [Managing Data on ARS HPC and Storage Infrastructure]({{ site.baseurl }}/guides/data/data-management).
+`/90daydata/shared` is open to all users on Ceres and Atlas. Anyone can create a directory in `/90daydata/shared` and put data which will be readable by everyone on the system unless file owner limits access using `chmod` command. 
 
+**Files older than 90 days will be automatically deleted.** This is permanent and the files cannot be recovered. Just like `/project` there is no backup for this space. Data that cannot be easily reproduced should be copied to [Juno](#juno-permanent-storage).  
 
-There are multiple places to store data on the Ceres and Atlas clusters that all serve different purposes. 
-
-<!--excerpt-->
-
-## Quotas
-
-Home directories, project directories in `/project` and on [Juno Archive Storage](#juno-archive-storage) have quotas. Home directories have 30GB quota. The default project directory quota in /project is set to 1TB. Note that quotas for project directories on Ceres and Atlas may differ.
-To see the current usage and quotas for your home and project directories on Ceres, as well as on Juno, issue the `my_quotas` command on the Ceres login node. On Atlas, issue "`/apps/bin/reportFSUsage -p proj1,proj2,proj3`", substituting proj# with project name(s).
-
-## Changing file permissions
-
-In Linux, access to the files is managed through the file permissions, attributes, and ownership. This ensures that only authorized users and processes can access files and directories. 
-
-Each file on a Linux system is associated with one user and one group. Files in /project and /90daydata on SCINet systems by default are associated with the project groups. 
-Each file is assigned with permission access rights for three different classes of users: the file owner, the group members, and others (everybody else). There are three file permissions types that apply to each class: read, write, and execute permissions.
-File permissions can be viewed using the `ls` command:
-```
-ls -l filename.txt
-```
-
-Having files in /project have group write permission would promote collaboration among project members. However, Globus and OnDemand do not allow to set this as default. To make behavior consistent among all SCINet services, the default is set so that the group members have read permissions but not write permissions to the files in the project directories owned by other project members. 
-Users can change the default behavior for files created within ssh sessions by setting umask for their accounts. Setting umask will not have effect on files created in OnDemand or when transfering data via Globus. File owners can add group write permissions for files and directories using chmod command, e.g.:
-```
-chmod -R g+w /project/<project_name>/<dir_name>
-```
-After doing so, other project members will be able to modify or delete files in `/project/<project_name>/<dir_name>`.
+{% include alert type="warning" title="Warning" text="If you download archived files, they may contain files with an access date from long ago. This date will still trigger deletion, so make sure that the files have a new access date. For example, when you untar a .tar or .tgz file, use the `-m` flag. If you use `rsync` to the space, do not use the `-a` flag, as that preserves date stamps." %}
 
 
-## Home Directories
+### Temporary Local Node Storage
 
-Home directories are private, they are only accessible to the user and the system administrators. When a user logs 
-into Ceres or Atlas, they are automatically logged into their home directory `/home/firstname.lastname`. 
+If faster data throughput is needed during a compute job, you can use the storage space on the disk drive on each of the compute nodes (1.5+ TB) by reading and writing to `$TMPDIR`. This is temporary storage that can be used only during the execution of your job. Only processes executing on a node have access to this space.  Multiple jobs running on the same node share this space, so an individual job may be able to use less than total available space. If all local space is needed for a job, request the whole node.
 
-Home directories have 30GB quotas and are intended to be mainly used for configuration and login files. Computations 
-should be run from project directories in `/90daydata` or in `/project`. Software installs that require a lot of space, 
-such as conda virtual environments, should be done in [`/project`](#project-directories).
-
-## Project Directories
-
-Project directories are usually associated with ARS Research Projects. While it's possible to run simulations on Ceres or Atlas using only home directories and [Large Short-term Storage](#large-short-term-storage) in `/90daydata/shared`, it is recommended to request a project directory. Having a project directory will allow to install software packages in /project and keep important data on [Juno Archive Storage](#juno-archive-storage).
-
-Please Note: Only full-time ARS employees are able to submit these requests. Any requests sent by other individuals will be declined. ORISE and other term USDA employees are not authorized to have their own project allocations, but they can be added to projects requested by PIs or Project Managers.
-
-To request a new project directory see [Request Project Storage]({{ site.baseurl }}/support/request#storage-request). Here is a direct link to the form (eAuthentication required) which includes submitting a Data Management Plan:
-
-[Request a project directory](https://forms.office.com/g/wD9rYarVyn){: .usa-button }
-
-To request a quota increase for an existing project see [Request Quota Increase](https://scinet.usda.gov/support/request#to-request-a-quota-increase-for-an-existing-scinet-project-allocation). Here is a direct link to the form (eAuthentication required). Please be aware that only a project manager or PI has the ability to request a quota increase for their projects. 
-
-[Request Project Quota Increase](https://forms.office.com/g/ntnKBzJiKx){: .usa-button .usa-button-big }
-
-Default quota for `/project/<project_name>` is set to 1TB. 
-
-
-Many software applications are available on the clusters as [modules]({{ site.baseurl }}/guides/software/modules), however sometimes 
-users need to install software by themselves. Since home directories have a small quota, it is recommended to install software, 
-such as Python, Perl, R packages and conda virtual environments in `/project/<project_name>`. 
-The [Conda Guide]({{ site.baseurl }}/guides/software/conda#example-2-installing-tensorflow-into-a-project-directory) provides instructions 
-on how to install conda virtual environments in `/project`, while 
-[Guide to Installing R, Python, and Perl Packages]({{ site.baseurl }}/guides/software/r-perl-python) has examples of
-installing packages in a project directory.
-
-Directories in /project are not automatically backed up. Data that cannot be easily reproduced should be manually copied to [Juno](#juno-archive-storage).
-
-Project directories are usually shared between group members working on the same project. Each project directory has a manager (usually the PI on the ARS project who requested the project directory). Project manager can give and revoke access to the project directory to other SCINet users either in FreeIPA or via command line on Ceres or Atlas:
-
-```
-ipa group-add-member proj-<project_name> --users=<scinet_username>
-ipa group-remove-member proj-<project_name> --users=<scinet_username>
-```
-
-**Note: When ssh-ing to the cluster from a connected site, you may need to issue “kinit” command and enter your SCINet password before issuing ipa commands above.**
- 
-After being added to the proj-<project_name> project group, users will be able to access `/project/<project_name>` and `/90daydata/<project_name>` both on Ceres and Atlas, as well as `/LTS/project/<project_name>` on Juno.
- 
-If you prefer using GUI, connect to [Ceres Open OnDemand](http://ceres-ood.scinet.usda.gov/). Under the "Interactive Apps" tab, you will launch a Desktop. Once active, open a browser window and navigate to FreeIPA [https://aws-ipa-0.scinet.usda.gov/](https://aws-ipa-0.scinet.usda.gov/). Login using your SCINet user name and password. Then click on “Groups” and search for your project. After clicking on the project group (group-<project_name>), you will see the list of users in the group. To add new member(s) click on “+Add”, this will open a pop-up window where you can search for the user. After selecting user name click on “>”. Once the user name appears on the right side under “Prospective”, click on “Add” button in the bottom right corner of the pop-up window. To revoke user access, check-mark next to the user name and click on “Delete” button.
-
-
-## Large Short-term Storage
-
-Since project directories in `/project` have limited quotas, in most cases computations should be run from `/90daydata/<project_name>` which does 
-not have quota. However, files with an access time (atime) older than 90 days will be automatically deleted. This is permanent and the files cannot 
-be recovered. Just like `/project` there is no backup for this space. Data that cannot be easily reproduced should be manually copied to [Juno](#juno-archive-storage).
-
-`/90daydata/shared` is open to all users on Ceres and Atlas. Anyone can create a directory in `/90daydata/shared` and put data which will be readable 
-by everyone on the system unless file owner limits access using `chmod` command. Files older than 90 days will be automatically deleted.
-
-Warning: If you download archived files, they may contain files with an access date from long ago. This date will still trigger deletion, 
-so make sure that the files have a new access date. For example, when you untar a .tar or .tgz file, use the `-m` flag. If you use `rsync` to 
-the space, do not use the `-a` flag, as that preserves date stamps.
-
-## Temporary Local Node Storage
-
-One can use the storage on the disk drive on each of the compute nodes by reading and writing to `$TMPDIR` (1.5TB on most compute nodes).  This is temporary storage that can 
-be used only during the execution of your job. Only processes executing on a node have access to this space.  Multiple jobs running on the 
-same node share this space, so an individual job may be able to use less than total available space. If all local space is needed for a job, 
-request the whole node.
-
-To use this local storage the following workflow should be used.  These steps may be taken interactively (when salloc'd to a compute node) 
-or in batch-mode. In batch mode the copy commands below should be added to the job script.
+To use this local storage, the following workflow should be used.  These steps may be taken interactively (when using `salloc` or `srun`) or in batch mode. In batch mode, the copy commands below should be added to the job script.
 
 1.	Copy calculation input to the local filesystem, e.g., 
 ```
 cp /project/<project_name>/<input files> $TMPDIR
 ``` 
-where `<project_name>` is the name of your project directory and `<input files>` contains the folders/files to be used by your job (to copy the 
-whole folder use `-r` option).
+where `<project_name>` is the name of your project directory and `<input files>` contains the folders/files to be used by your job (to copy the whole folder, use `-r` option).
 
 2.	Run your code, getting input from files located in `$TMPDIR` and writing output to `$TMPDIR`
 
@@ -149,12 +76,14 @@ whole folder use `-r` option).
 cp $TMPDIR/<final results> /project/<project_name>/<final results>
 ```
 
-Note that files in `$TMPDIR` will disappear at the conclusion of your job.  Any data which is not copied out of `$TMPDIR` cannot be recovered 
-after your job has finished.
+Note that files in `$TMPDIR` will disappear at the conclusion of your job.  Any data which is not copied out of `$TMPDIR` cannot be recovered after your job has finished.
 
 This storage is useful for workflows that extensively use disk space reading and writing multiple small files.
 
+## Juno Permanent Storage
 
-# Juno Archive Storage
+Project directories are not meant to be used as a data archive. Data that cannot be easily reproduced should be manually backed up to Juno. Juno is a large, multi-petabyte ARS storage device at the National Agricultural Library in Maryland. For instructions on how to transfer data to and from Juno, see [our Data Transfer Guide](/guides/data/transfer).
 
-Project directories are not meant to be used as a data archive. Data that cannot be easily reproduced should be manually backed up to Juno. Juno is a large, multi-petabyte ARS storage device at the National Agricultural Library in Maryland. For instructions on how to transfer data to and from Juno, see [Managing Data on ARS HPC and Storage Infrastructure]({{ site.baseurl }}/guides/data/data-management)
+## Improving Storage Management 
+
+Many software applications are available on the clusters as [modules]({{ site.baseurl }}/guides/software/modules), however sometimes users need to install software by themselves. Since home directories have a small quota, it is recommended to install software, such as Python, Perl, R packages, and conda virtual environments in `/project/<project_name>`. The [Conda Guide](/guides/software/conda#example-2-installing-tensorflow-into-a-project-directory) provides instructions on how to install conda virtual environments in `/project`, while [Guide to Installing R, Python, and Perl Packages](/guides/software/r-perl-python) has examples of installing packages in a project directory.
