@@ -27,9 +27,9 @@ subnav:
 
 Microsoft's Visual Studio Code (VS Code) is a popular source-code editor and development environment with support for many different programming languages. 
 
-There are two main ways to use VS Code on SCINet clusters. One is to use the VS Code interactive application in Open OnDemand (OOD VS Code).  The second is to use the Microsoft "Remote – Tunnels” extension that connects to the cluster from your local VS Code session via a secure tunnel, allowing you to execute your code on the cluster from within your local VS Code session (local VS Code). <!--excerpt--> 
+There are two main methods to use VS Code on SCINet clusters. Method 1 is to use the VS Code interactive application in Open OnDemand (OOD VS Code).  Method 2 uses the Microsoft "Remote – Tunnels” extension that connects to the cluster from your local VS Code application on your computer to connect to a SCINet compute node via a secure tunnel.<!--excerpt--> 
 
-## VS Code in Open OnDemand
+## Method 1: VS Code in Open OnDemand
 (OOD VS Code)
 {:.subheader}
 
@@ -79,7 +79,7 @@ OOD VS Code stores your extensions in your home directory by default, which can 
 
 
 
-## Registered Tunnel for VS Code
+## Method 2: Registered Tunnel for VS Code
 (local VS Code)
 {:.subheader}
 
