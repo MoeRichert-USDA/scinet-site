@@ -16,6 +16,9 @@ layout_type: workshop
 sessions:
   - session:
     time: 1 – 5 PM ET
+    date: 2026-05-04
+    end_date: 2026-05-07
+    multiday: May 4, 6-7
     registration:
       url: https://forms.office.com/g/T2teMegYSW
 
