@@ -8,11 +8,11 @@ description: Reoccuring Translational Omics Working Group webinars and presentat
 provider: Omics Working Group
 registration: 
   text: "Join the Working Group"
-  url: https://forms.office.com/g/a7VFhG0AJD
+  url: https://forms.cloud.microsoft/pages/responsepage.aspx?id=5zZb7e4BvE6GfuA8-g1Gl2dRt5mRqe5GsSYTIQRNE7xUQkE2VlE4Vk9RQTkzU1I3MzlXWUlURzdGWC4u
 cal-titles: excerpt
 maincalendar: true
 
-excerpt: To receive an invitation to upcoming webinars, fill out the [Translational Omics Working Group registration survey](https://forms.office.com/g/a7VFhG0AJD).
+excerpt: To receive an invitation to upcoming webinars, fill out the [Translational Omics Working Group registration survey]([https://forms.office.com/g/a7VFhG0AJD](https://forms.cloud.microsoft/pages/responsepage.aspx?id=5zZb7e4BvE6GfuA8-g1Gl2dRt5mRqe5GsSYTIQRNE7xUQkE2VlE4Vk9RQTkzU1I3MzlXWUlURzdGWC4u)).
 
 #filter-archive: materials
 
@@ -174,7 +174,7 @@ sessions:
 
 ---
 
-To receive an invitation to upcoming webinars, fill out the [Translational Omics Working Group registration survey](https://forms.office.com/g/a7VFhG0AJD).
+To receive an invitation to upcoming webinars, fill out the [Translational Omics Working Group registration survey](https://forms.cloud.microsoft/pages/responsepage.aspx?id=5zZb7e4BvE6GfuA8-g1Gl2dRt5mRqe5GsSYTIQRNE7xUQkE2VlE4Vk9RQTkzU1I3MzlXWUlURzdGWC4u).
 
 The primary goal of the [Translational Omics Working Group](/research/working-groups/omics) is to foster collaboration, knowledge-sharing, and innovation among researchers and experts in diverse fields, including but not limited to genomics, bioinformatics, computational biology, and artificial intelligence (AI).
 
