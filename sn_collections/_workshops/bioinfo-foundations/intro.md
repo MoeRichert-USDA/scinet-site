@@ -107,7 +107,7 @@ Steps to prepare for the tutorial session:
 
 ## Tutorial Introduction
 
-In this tutorial, we will use the command line and bioinformatics tools to explore, manipulate and analyze the different types of biological data you will encounter in bioinformatics. We will also look at how to access data from public databases, conduct sequence searches using BLAST, explore HPC environments, learn how to schedule jobs using Slurm and discuss best practices for project organization.
+In this tutorial, we will use the command line and bioinformatics tools to explore, manipulate, and analyze the different types of biological data you will encounter in bioinformatics. We will also look at how to access data from public databases, conduct sequence searches using BLAST, explore HPC environments, learn how to schedule jobs using Slurm and discuss best practices for project organization.
 
 
 **Throughout the tutorial we will use the following command-line tools:**
@@ -129,7 +129,7 @@ In this tutorial, we will use the command line and bioinformatics tools to explo
 ### What Is an HPC System?
 
 * **Login node**:  
-  On ceres, when you first log in you are in the login node and in your home directory or folder. You can prepare your work while here.
+  On Ceres, when you first log in you are in the login node and in your home directory or folder. You can prepare your work while here.
 
   ```
   ceres $ pwd
@@ -168,7 +168,7 @@ In this tutorial, we will use the command line and bioinformatics tools to explo
   {:.copy-code}
 
 * **90daydata**:  
-  This is where you made your folder and work from today.
+  This is where you made your folder and where you will work from today.
 
   ```bash
   pwd
@@ -186,9 +186,9 @@ In this tutorial, we will use the command line and bioinformatics tools to explo
 ### Getting to know the command-line:
 
 What is the command line:
-* Text based intertace to interact with the CPU
-* The "interpreter" is the shell. The most common is `BASH`
-* No clicking only typing
+* Text based intertace to interact with the operating system (Linux, in the case of all supercomputers)
+* The "interpreter" is the shell. The most common is `bash`.
+* No clicking only typing.
 * Scripting and Automation
 * More control to you
 
@@ -307,7 +307,7 @@ Note: All logged-in users
   ```
   {:.copy-code}
 
-* We can also move a file from one location to another or also to rename the file
+* We can also move a file from one location to another or rename the file
   The `mv` command is used to rename and move files.
 
   ```
@@ -317,7 +317,7 @@ Note: All logged-in users
   {:.copy-code}
 
 * Danger Zone: We can delete/remove a file or folder using `rm`.
-  There is no recycle bin or trash can from where you can restore the file
+  There is no recycle bin or trash can from where you can restore the file!
   
   ```
   rm test1.txt
@@ -352,17 +352,17 @@ Note: All logged-in users
   {:.copy-code}
 
   ```
-  ls -lh# Human-readable file sizes 
+  ls -lh # Human-readable file sizes 
   ```
   {:.copy-code}
 
   ```
-  ls -t # list files sorted by time; most recent first
+  ls -t # List files sorted by time; most recent first
   ```
   {:.copy-code}
 
   ```
-  ls -tr # sorted by time; most recent last
+  ls -tr # Sorted by time; most recent last
   ```
   {:.copy-code}
 
@@ -444,7 +444,7 @@ FASTA files contain a single-line description and ID followed by one or more lin
    ```
    {:.copy-code}  
 
-1. For a scrollable preview of the file we can use less:  
+1. For a scrollable view of the file we can use less:  
 
    ```bash
    less files/ GCF_000001735.4_TAIR10.1_genomic.fna
@@ -1583,12 +1583,12 @@ apptainer version
 
 ## Part 7: Parallelization of simple tasks
 
-Some analyses take a long time because it is running on a single processor and there is a lot of data that needs processing. A problem is consider trivially parallelizable if the data can be chunked into pieces and processed separately.
+Some analyses take a long time because they run on a single processor and must process lots of data. A problem is considered "trivially parallelizable" if the data can be chunked into pieces and each piece processed independently.
 
 Examples of data that can be trivially parallelized include:
-* When each line of a file can be processed individually
-* Each chromosome of a genome can be processed individually
-* Each scaffold of an assembly can be processed individually
+* When each line of a file can be processed independently
+* Each chromosome of a genome can be processed independently
+* Each scaffold of an assembly can be processed independently
 
 Examples of problems that are trivially parallelizable
 * Zipping or unzipping 10s to 100s of files
@@ -1596,7 +1596,7 @@ Examples of problems that are trivially parallelizable
 * Aligning raw sequencing data files of many samples to a genome
 
 Examples of problems that are not trivially parallelizable
-* Genome assembly is not trivially parallelizable because the first step requires alignment of each read to each other read in order to find which ones are similar and should be joined (assembled). Take a subset of the reads would result in a bunch of small poor assemblies.
+* Genome assembly is not trivially parallelizable because the first step requires alignment of each read to each other read in order to find which ones are similar and should be joined (assembled). Taking a subset of the reads would result in a bunch of small, poor assemblies.
 
 GNU parallel can be used on trivially parallelizable problems
 One tool that we use to parallelize a bioinformatics problem is GNU parallel. It is “a shell tool for executing jobs in parallel using one or more compute nodes”. GNU parallel helps you run jobs that you would have otherwise run sequentially one by one or in a loop. You can check the [GNU parallel website](https://www.gnu.org/software/parallel/) to determine how to install parallel on your cluster and/or learn how to use it. On ceres, we have parallel versions 20230222 and 20240822, we can use either of those.
