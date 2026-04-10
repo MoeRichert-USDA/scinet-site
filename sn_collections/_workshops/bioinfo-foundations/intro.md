@@ -33,14 +33,29 @@ prerequisites:
 #    url: https://usdagcc.sharepoint.com/:v:/s/REE-ARS-SCINetOffice/ESK-aPDg0b5Ptb_4i3qL3qwB45qRO-G3XB-7vE1lFYio8g
 
 subnav:
-  - title: Pre-Workshop Instructions
-  - title: Tutorial Introduction
-  - title: File Formats
-    url: '#exploring-bioinformatics-file-formats'
-  - title: Public Databases
-    url: '#exploring-public-repositoriesdatabases'
-  - title: BLAST
-  - title: Sources
+  - title: Pre-Workshop Instructions
+  - title:  Tutorial Setup      
+    url:  '#tutorial-setup-instructions' 
+  - title:  Tutorial Introduction
+  - title:  Intro to HPC      
+    url:  '#part-1-a-practical-introduction-to-high-performance-computing-hpc-for-bioinformatics'
+  - title:  File Formats    
+    url:  '#part-2-exploring-bioinformatics-file-formats'
+  - title:  Public Repositories   
+    url:  '#part-3-exploring-public-repositories-databases' 
+  - title:  BLAST   
+    url:  '#part-4-blast'
+  - title:  SLURM   
+    url:  '#part-5-slurm-command-demo-essential-hpc-job-management'
+  - title:  Modules and Environments      
+    url:  '#part-6-modules-and-environments'
+  - title:  Parallelization   
+    url:  '#part-7-parallelization-of-simple-tasks'
+  - title:  Project Management    
+    url:  '#part-8-project-management-in-bioinformatics-and-genomics'
+  - title:  Sources
+
+
 ---
 
 This workshop is designed for researchers who are new to bioinformatics or who may want a refresher of the basics. Participants will be introduced to biological sequence data, file formats, command-line tools for navigating these file formats, sequence databases, and an overview of HPC environments used in modern genomics research. <!--excerpt-->
@@ -118,13 +133,28 @@ In this tutorial, we will use the command line and bioinformatics tools to explo
 
   ```
   ceres $ pwd
-  /home/$USER
   ```
   {:.copy-code}
 
+
+  /home/$USER
+
   You can navigate to your folder, list your files and check file sizes
 * **Compute nodes**: Where jobs are executed.
-  * Request resources on a compute node by running the following command. 
+  * Request resources on a compute node by using `srun`: 
+
+    ```
+    srun --reservation= -A  -t  -N  -c  --mem  --pty bash
+    ```
+    
+    Options:
+    * --reservation: name of the reservation if available
+    * -A: account
+    * -t: time/duration
+    * -N: number of nodes
+    * -c: number of CPUs per node
+    * --mem: memory
+    * --pty bash: pseudoterminal (opening an interactive node) 
 
  
 * **Storage system**:  
@@ -141,8 +171,8 @@ In this tutorial, we will use the command line and bioinformatics tools to explo
   This is where you made your folder and work from today.
 
   ```bash
-  ceres $ pwd
-  # /90daydata/shared/sivanandan.chudalayandi/intro_bioinformatics/
+  pwd
+  cd /90daydata/shared/$USER/intro_bioinformatics/
   ```
   {:.copy-code}
 
@@ -150,8 +180,6 @@ In this tutorial, we will use the command line and bioinformatics tools to explo
 
   ```bash
   ssh nal-dtn.scinet.usda.gov
-  # Last login: Wed Apr 16 14:24:55 2025 from 199.245.99.3
-  # [$USER@nal-dtn-0 ~]$ 
   ```
   {:.copy-code}
 
@@ -169,25 +197,31 @@ You can ask the shell to print a character
 {:.copy-code}
 ```
 echo "How are you?"
-# the quotes above aren't strictly needed but it is safer with quotes
 ```
+
+Note: The quotes above aren't strictly needed but it is safer with quotes
 
 Date time calendar:
 
 {:.copy-code}
 ```bash
-date
-#Wed Apr 16 19:52:14 CDT 2025
+date 
+```
+Fri Apr 10 10:17:48 CDT 2026
 
+{:.copy-code}
+```bash
 cal
-#     April 2025     
-#Su Mo Tu We Th Fr Sa
-#       1  2  3  4  5
-# 6  7  8  9 10 11 12
-#13 14 15 16 17 18 19
-#20 21 22 23 24 25 26
-#27 28 29 30    
+```
 
+```
+  April 2026     
+Su Mo Tu We Th Fr Sa
+          1  2  3  4
+ 5  6  7  8  9 10 11
+12 13 14 15 16 17 18
+19 20 21 22 23 24 25
+26 27 28 29 30
 ```
 
 On the HPC, you are one among many users. You can ask the interpreter:
@@ -195,33 +229,51 @@ On the HPC, you are one among many users. You can ask the interpreter:
 {:.copy-code}
 ```
 whoami
-# $USER (your first name.last name)
-
-who
-# All logged-in users
 ```
-
-**Demo**: Navigate to a directory, view files.
-Some basic navigation
+Note: $USER (your first name.last name)
 
 {:.copy-code}
 ```
-pwd
-# prints the working directory
-# /90daydata/shared/$USER/intro_bioinformatics/ (this is the full path)
-
-# We can also change directories
-# go one directory "above" 
-cd ..
-# come back to previous directory by using full path or relative path
-cd /90daydata/shared/$USER/intro_bioinformatics/ # FULL path
-cd intro_bioinformatics
-
-# go home 
-
-cd ~ # tilde the shortcut to go home
-cd /home/$USER # the full path
+who
 ```
+Note: All logged-in users
+
+**Demo**: 
+
+* Navigate to a directory, view files.
+  Some basic navigation
+
+  * Print the working directory:
+
+    ```
+    pwd
+    ```
+    {:.copy-code}
+
+    Note: /90daydata/shared/$USER/intro_bioinformatics/ (this is the full path)
+
+  * We can also change directories:
+    * One directory "above":
+
+      ```
+      cd ..
+      ```
+      {:.copy-code}
+
+    * Go back to the previous directory by using full path: 
+
+      ```
+      cd /90daydata/shared/$USER/intro_bioinformatics/ # FULL path
+      ```
+      {:.copy-code}
+
+    * To navigate back to the home directory: 
+
+      ```
+      cd ~
+      cd /home/$USER
+      ```
+      {:.copy-code}
 
 
 * Create a test file and write something to it  
@@ -247,7 +299,7 @@ cd /home/$USER # the full path
   ```
   {:.copy-code}
 
-* Copy one directory to another directory
+* Copy one directory to another directory  
   ***Note:*** *the flag -r stands for recursive, the command will fail without "-r"*
   
   ```bash
@@ -269,7 +321,15 @@ cd /home/$USER # the full path
   
   ```
   rm test1.txt
+  ```
+  {:.copy-code}
+
+  ```
   rm -r folder2 # use the recursive (-r) flag
+  ```
+  {:.copy-code}
+
+  ```
   rmdir folder2 # use rmdir
   ```
   {:.copy-code}
@@ -278,10 +338,30 @@ cd /home/$USER # the full path
   
   ```
   ls  # List files and directories in the current directory 
+  ```
+  {:.copy-code}
+
+  ```
   ls -l # Long format listing with more details 
+  ```
+  {:.copy-code}
+
+  ```
   ls -a # Show hidden files too 
+  ```
+  {:.copy-code}
+
+  ```
   ls -lh# Human-readable file sizes 
+  ```
+  {:.copy-code}
+
+  ```
   ls -t # list files sorted by time; most recent first
+  ```
+  {:.copy-code}
+
+  ```
   ls -tr # sorted by time; most recent last
   ```
   {:.copy-code}
@@ -290,8 +370,20 @@ cd /home/$USER # the full path
   
   ```
   cat Arabidopsis.gtf     # Display entire file 
+  ```
+  {:.copy-code}
+
+  ```
   less Arabidopsis.gtf    # View file page by page 
+  ```
+  {:.copy-code}
+
+  ```
   head -5 Arabidopsis.gtf  # View first 5 lines 
+  ```
+  {:.copy-code}
+
+  ```
   tail -5 Arabidopsis.gtf  # View last 5 lines 
   ```
   {:.copy-code}
@@ -364,7 +456,10 @@ FASTA files contain a single-line description and ID followed by one or more lin
 How would you view only the last 2 lines?" %}
 
 
+<ol class="usa-process-list">
+<li class="usa-process-list__item" markdown=1>
 
+{:.usa-process-list__heading}
 #### Counting the number of sequences with `grep`:  
 
 `grep` is a search tool that is commonly used to find lines that match a pattern.  
@@ -373,13 +468,19 @@ In a FASTA file, each sequence begins with a header line that starts with `>`.
 
 So, first let us find those matching lines: 
 
+```
 `grep "^>" files/GCF_000001735.4_TAIR10.1_genomic.fna`
+```
+{:.copy-code}
 
 This may return many lines depending on the size of the file. 
 
 One way to limit the output is to use a pipe: `|`. A `|` sends the output from one command into another. 
 
+```
 `grep "^>" files/GCF_000001735.4_TAIR10.1_genomic.fna | head`
+```
+{:.copy-code}
 
 Note: The first command finds all the lines that start with `>` and `head`` then takes that output and shows only the first few lines. 
 
@@ -398,6 +499,10 @@ grep -c "^>" files/GCF_000001735.4_TAIR10.1_genomic.fna
 
 {% include alert no_icon=true type="success" title="You try:" text="Pick another fasta file in the directory and count the number of sequences." %}
 
+</li>
+<li class="usa-process-list__item" markdown=1>
+
+{:.usa-process-list__heading}
 #### Determine sequence lengths with `bioawk`:  
 
 <div class="bg-primary-lighter padding-3 margin-3 radius-md" markdown="1"> 
@@ -444,6 +549,9 @@ You try: Print only sequence names
 {% include alert no_icon=true type="info" title="Discussion Questions:" text="<ul><li>Why is it important to look at sequence lengths?</li>
 <li>What could the sequence header information be used for in analysis downstream?</li></ul>" %}
 
+</li>
+</ol>
+
 
 ### Exploring FastQ files
 FastQ files are similar to fasta files, but also contain the quality scores of the sequence data. 
@@ -458,6 +566,10 @@ Quality scores indicate the confidence of the base call by the sequencer.
 - Quality scores are encoded as American Standard Code for Information Interchange (ASCII) characters. 
 - Different types of encodings are available and vary across sequencing technologies 
 
+<ol class="usa-process-list">
+<li class="usa-process-list__item" markdown=1>
+
+{:.usa-process-list__heading}
 #### Phred quality score \(Q\) calculation: 
 
 $Q= -10 \log_{10}(P)$
@@ -506,6 +618,10 @@ bioawk -c fastx '{print $name, length($seq), $qual}' files/SRR4420293_1.fastq | 
 
 ***Note:*** *The pipe `|` in the line of code above is taking the output of the command on the left and using it as the input for the command on the right.*
 
+</li>
+<li class="usa-process-list__item" markdown=1>
+
+{:.usa-process-list__heading}
 #### Counting reads with `bioawk`
 
 Bioawk allows us to count reads directly instead of counting lines. 
@@ -530,7 +646,10 @@ bioawk -c fastx '{sum += length($seq)} END {print sum/NR} files/SRR4420293_1.fas
 	  
 
 
+</li>
+<li class="usa-process-list__item" markdown=1>
 
+{:.usa-process-list__heading}
 #### Other ways to count the number of reads: 
 
 * **Count lines using wc:**
@@ -573,10 +692,12 @@ bioawk -c fastx '{sum += length($seq)} END {print sum/NR} files/SRR4420293_1.fas
     -  `$((....))`: Do integer math directly in Bash:
     - `echo`: prints the result    
 
+</li>
+</ol>
 
 {% include alert no_icon=true type="success" title="You try:" text="Count reads in the FASTQ file using <code>grep</code>" %}
 
-** Reflection:**
+**Reflection:**
 1. Which method is easier?
 1. Which method helps with understanding the file structure better?
 
@@ -588,6 +709,10 @@ A VCF file has three main parts:
 - single header line: starts with single # and describes columns in the data lines
 - data lines: sequence variation data
 
+<ol class="usa-process-list">
+<li class="usa-process-list__item" markdown=1>
+
+{:.usa-process-list__heading}
 #### Understanding the layout and structure of VCF files:
 
 * **View the header only** 
@@ -610,7 +735,10 @@ A VCF file has three main parts:
 
 {% include alert no_icon=true type="success" title="You try:" text="View the first 10 variant lines" %}
 
+</li>
+<li class="usa-process-list__item" markdown=1>
 
+{:.usa-process-list__heading}
 #### Inspecting columns in VCF files
 
 {% include table content="| Column No. | Name | Description |
@@ -624,6 +752,10 @@ A VCF file has three main parts:
 | 7 | FILTER | Pass/fail status |
 | 8 | INFO | Additional annotation |" %}
 
+</li>
+<li class="usa-process-list__item" markdown=1>
+
+{:.usa-process-list__heading}
 #### Extracting columns using `cut` 
 
 * The `cut` command can be used to extract specific columns/fields from a file.  
@@ -704,7 +836,8 @@ A VCF file has three main parts:
 
 {% include alert no_icon=true type="success" title="Discussion question:" text="What is the most common ALT allele?" %}
 
-
+</li>
+</ol>
 
 
 ### `bcftools` for VCF files:
@@ -724,6 +857,10 @@ For more format-aware exploration of VCF files, we will use `bcftools`. `bcftool
 | query | Extract custom fields from VCF |
 | stats | Generate VCF summary statistics |" %}
 
+<ol class="usa-process-list">
+<li class="usa-process-list__item" markdown=1>
+
+{:.usa-process-list__heading}
 #### Viewing a VCF file with `bcftools`
 
 {:.copy-code}
@@ -734,32 +871,42 @@ bcftools view files/chinook.vcf | head -n 20
 
 **How does this output compare to when we used `grep` earlier?**
 
+</li>
+<li class="usa-process-list__item" markdown=1>
+
+{:.usa-process-list__heading}
 #### Extracting fields with `bcftools query`
 
 We can use the bcftools query command to inspect columns similar to how we used cut, but instead of calling column numbers we can use the column name:  
 
-##### Extract the INFO field
+* **Extract the INFO field**
 
-{:.copy-code}
-```bash
-bcftools query -f '%INFO\n' files/chinook.vcf | head 
-```
-##### Extract the chromosome names
+  ```bash
+  bcftools query -f '%INFO\n' files/chinook.vcf | head 
+  ```
+  {:.copy-code}
 
-{:.copy-code}
-```bash
-bcftools query -f '%CHROM\n' files/chinook.vcf | head 
-```
-##### Extract the quality scores
+* **Extract the chromosome names**
 
-{:.copy-code}
-```bash
-bcftools query -f '%QUAL\n' files/chinook.vcf | head 
-```
+  ```bash
+  bcftools query -f '%CHROM\n' files/chinook.vcf | head 
+  ```
+  {:.copy-code}
+
+* **Extract the quality scores**
+
+  ```bash
+  bcftools query -f '%QUAL\n' files/chinook.vcf | head 
+  ```
+  {:.copy-code}
 
 You try: 
 - extract the ATL values
 
+</li>
+<li class="usa-process-list__item" markdown=1>
+
+{:.usa-process-list__heading}
 #### Counting the total number of variants
 
 {:.copy-code}
@@ -769,6 +916,10 @@ bcftools view -H files/chinook.vcf| wc -l
 
 Note: -H skips the header lines
 
+</li>
+<li class="usa-process-list__item" markdown=1>
+
+{:.usa-process-list__heading}
 #### Filtering variants
 
   * By quality: 
@@ -786,21 +937,20 @@ Note: -H skips the header lines
     If we want to remove the headers, what can we do here?
 
   * By variant type: 
+    * `-v snps`: keeps only SNPs  
+      `-H`: removes header lines
 
-    ```bash
-    bcftools view -v snps -H  files/chinook.vcf | less
-    ```
-    {:.copy-code}
+      ```bash
+      bcftools view -v snps -H  files/chinook.vcf | less
+      ```
+      {:.copy-code}
     
-    `-v snps`: keeps only SNPs
-    `-H`: removes header lines
+    * `-Oz`: output format a compressed vcf file
     
-    ```bash
-    bcftools view -v snps files/chinook.vcf -0z -o snps_only_bcf.vcf
-    ```
-    {:.copy-code}
-    
-    `-Oz`: output format a compressed vcf file
+      ```bash
+      bcftools view -v snps files/chinook.vcf -0z -o snps_only_bcf.vcf
+      ```
+      {:.copy-code}
 
   * By the number of reads supporting the variant (Depth): 
     
@@ -809,9 +959,8 @@ Note: -H skips the header lines
     ```
     {:.copy-code}
 
-  * Can we combine filters?
+  * Can we combine filters?  
     For example, what if we wanted to filter for QS >=1000 and depth >=30: 
-
       
     ```bash
     bcftools view -i 'QUAL > = 1000 && INFO/DP>30' -H files/chinook.vcf | less 
@@ -837,6 +986,8 @@ Note: -H skips the header lines
     plot-vcfstats -p stats_output stats_vcf.txt
     ```
 
+</li>
+</ol>
 
 {% include alert no_icon=true type="info" title="Discussion Questions:" text="<ul><li>Why is filtering by quality important?</li>
 <li>Why might SNPs be prioritized over other variant types?</li>
@@ -858,30 +1009,54 @@ A GTF (Gene Transfer Format) is a tab delimited text file. It describes genes an
 | **Custom Feature Extraction** | GTFs are parsed to extract specific features (e.g., all exons, all CDSs, or specific genes of interest). |" %}
 
 * Count the number of lines or characters in the file:
-  ```
+  
+  ```bash
   wc Arabidopsis.gtf
-  wc -l Arabdopsis.gtf  
-  ## Its a lot: 888100  24503892 272940122 Arabidopsis.gtf  
-  # Let's make a smaller file
-  head Arabidopsis.gtf > Arabidopsis_head.gtf  
-  # Now let's count again
-  wc Arabidopsis_head.gtf
-  #10  142 1607 Arabidopsis_head.gtf  
-  # Count only the number of lines
-  wc -l Arabidopsis_head.gtf
-  10
   ```
+  {:.copy-code}
+
+  ```bash
+  wc -l Arabdopsis.gtf
+  ```
+  {:.copy-code}
+
+  Note: Its a lot: 888100  24503892 272940122 Arabidopsis.gtf  
+
+  * Let's make a smaller file:
+
+    ```bash
+    head Arabidopsis.gtf > Arabidopsis_head.gtf 
+    ```
+    {:.copy-code}
+
+  * Now let's count again:
+    
+    ```bash
+    wc Arabidopsis_head.gtf
+    ```
+    {:.copy-code}
+
+    Output: #10  142 1607 Arabidopsis_head.gtf  
+
+  * Count only the number of lines:
+
+    ```bash
+    wc -l Arabidopsis_head.gtf
+    ```
+    {:.copy-code}
 
 * Count unique features
   
   ```
   grep -v '^#' Arabidopsis_head.gtf | cut -f3 | sort | uniq -c
-        1 CDS
-        2 exon
-        1 gene
-        1 transcript
   ```
   {:.copy-code}
+
+  Expected output: 
+  * 1 CDS
+  * 2 exon
+  * 1 gene
+  * 1 transcript
 
 * Extract only genes
   
@@ -915,7 +1090,11 @@ A GTF (Gene Transfer Format) is a tab delimited text file. It describes genes an
 * Make separate feature files
 
   ```
-  awk '$3=="CDS"' Arabidopsis_head.gtf > Arabidopsis_cds.gtf
+  awk '$3=="CDS"' Arabidopsis_head.gtf > Arabidopsis_cds.gtf  
+  ```
+  {:.copy-code}
+  
+  ```
   awk '$3=="exon"' Arabidopsis_head.gtf > Arbaidopsis_exons.gtf
   ```
   {:.copy-code}
@@ -1303,7 +1482,7 @@ module spider hisat
 
 ------------------------------------------------------------------------------------
   For detailed information about a specific "hisat2" package (including how to load the 
-modules) use the module's full name.
+modules) use the module's full name.  
   Note that names that have a trailing (E) are extensions provided by other modules.
   For example:
 
@@ -1502,7 +1681,7 @@ The syntax:
 
 We could use the same logic to uncompress the files.
 
-****Splitting a big job to make use of all the available cpus****
+**Splitting a big job to make use of all the available cpus**
 
 Lets assume we have a large file `test.fa`. Our aim is simply to count the lines in the fasta file.
 
@@ -1547,9 +1726,9 @@ Now using parallel we can take advantage of the 10 cpus and spread this job over
 ```
 parallel -a test.fa --pipepart --block -1  time wc -l
 ```
-****Note:
-i) `-a` option means input is read from a file            
-ii)`--pipepart`: pipe parts of a file****
+***Note:***
+1. `-a` option means input is read from a file            
+1. `--pipepart`: pipe parts of a file
 
 
 ```
@@ -1610,7 +1789,7 @@ Notice we use less time with each block being counted by each cpu. The longest t
 
 
 
-## Part 8: Project Management in Bioinformatics and Genomics:
+## Part 8: Project Management in Bioinformatics and Genomics
 
 Project management through proper directory organization is clear and intuitive for beginners as well as experts. Proper documentation saves a lot of time and reduces potential for errors down the line.
 
