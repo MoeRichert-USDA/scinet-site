@@ -462,8 +462,7 @@ grep "^>" files/GCF_000001735.4_TAIR10.1_genomic.fna | head -n 2
 Note: The first command finds all the lines that start with `>` and `head`` then takes that output and shows only the first few lines. 
 
 
-You try: 
-Modify the command to show only the first 5 matches.
+{% include alert no_icon=true type="success" title="You try:" text="Modify the command to show only the first 5 matches." %}
 
 Now instead of printing the matches - let us count them to figure out the number of sequences in the file:
 
@@ -610,8 +609,7 @@ bioawk -c fastx 'END {print NR}' files/SRR4420293_1.fastq
   - `NR` - a built in variable in `bioawk` that stands for the number of records/reads
   - `END`: end of the file
 
-You try:
-Count the number of reads in SRR4420294_1.fastq
+{% include alert no_icon=true type="success" title="You try:" text="Count the number of reads in SRR4420294_1.fastq" %}
 
 **What's the average read length?** 
 
@@ -877,8 +875,7 @@ We can use the bcftools query command to inspect columns similar to how we used 
   ```
   {:.copy-code}
 
-You try: 
-- extract the ATL values
+{% include alert no_icon=true type="success" title="You try:" text="Extract the ATL values." %}
 
 </li>
 <li class="usa-process-list__item" markdown=1>
