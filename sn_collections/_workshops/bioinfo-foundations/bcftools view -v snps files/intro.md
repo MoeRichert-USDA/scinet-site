@@ -129,7 +129,7 @@ In this tutorial, we will use the command line and bioinformatics tools to explo
 ### What Is an HPC System?
 
 * **Login node**:  
-  On Ceres, when you first log in you are in the login node and in your home directory or folder. You can prepare your work while here.
+  On Ceres, when you first log in you are in the login node and in your home directory or folder. You can prepare your work while here. (Note that if you followed the tutorial setup instructions above, you will no longer be on a login node at this point - you will be on a compute node.)
 
   ```
   pwd
@@ -137,11 +137,9 @@ In this tutorial, we will use the command line and bioinformatics tools to explo
   {:.copy-code}
 
 
-  /home/$USER
-
   You can navigate to your folder, list your files and check file sizes
 * **Compute nodes**: Where jobs are executed.
-  * Request resources on a compute node by using `srun`: 
+  * Request an interactive (shell) session on a compute node by using `srun`: 
 
     ```
     srun --reservation= -A  -t  -N  -c  --mem  --pty bash
@@ -176,30 +174,23 @@ In this tutorial, we will use the command line and bioinformatics tools to explo
   ```
   {:.copy-code}
 
-* **Long term storage: JUNO**
+### Getting to know the command line:
 
-  ```bash
-  ssh nal-dtn.scinet.usda.gov
-  ```
-  {:.copy-code}
-
-### Getting to know the command-line:
-
-What is the command line:
-* Text based intertace to interact with the operating system (Linux, in the case of all supercomputers)
+What is the command line?
+* Text-based interface to interact with the operating system (Linux, in the case of all supercomputers).
 * The "interpreter" is the shell. The most common is `bash`.
-* No clicking only typing.
-* Scripting and Automation
-* More control to you
+* No clicking; only typing.
+* Excellent for scripting and automation.
+* More control to you.
 
-You can ask the shell to print a character
+You can ask the shell to print a character or string of text:
 
 {:.copy-code}
 ```
 echo "How are you?"
 ```
 
-Note: The quotes above aren't strictly needed but it is safer with quotes
+Note: The quotes above aren't strictly needed but it is safer with quotes.
 
 Date time calendar:
 
@@ -207,21 +198,10 @@ Date time calendar:
 ```bash
 date 
 ```
-Fri Apr 10 10:17:48 CDT 2026
 
 {:.copy-code}
 ```bash
 cal
-```
-
-```
-  April 2026     
-Su Mo Tu We Th Fr Sa
-          1  2  3  4
- 5  6  7  8  9 10 11
-12 13 14 15 16 17 18
-19 20 21 22 23 24 25
-26 27 28 29 30
 ```
 
 On the HPC, you are one among many users. You can ask the interpreter:
@@ -230,13 +210,13 @@ On the HPC, you are one among many users. You can ask the interpreter:
 ```
 whoami
 ```
-Note: $USER (your first name.last name)
+Note: $USER is a special variable that contains your username (typically first name.last_name on SCINet).
 
 {:.copy-code}
 ```
 who
 ```
-Note: All logged-in users
+Note: Shows all logged-in users.
 
 **Demo**: 
 
@@ -250,8 +230,6 @@ Note: All logged-in users
     ```
     {:.copy-code}
 
-    Note: /90daydata/shared/$USER/intro_bioinformatics/ (this is the full path)
-
   * We can also change directories:
     * One directory "above":
 
@@ -260,7 +238,7 @@ Note: All logged-in users
       ```
       {:.copy-code}
 
-    * Go back to the previous directory by using full path: 
+    * You can move to a directory by using a full path: 
 
       ```
       cd /90daydata/shared/$USER/intro_bioinformatics/ # FULL path
@@ -279,8 +257,7 @@ Note: All logged-in users
 * Create a test file and write something to it  
   
   ```
-  touch test.txt
-  echo "hello, this is $USER" >>test.txt
+  echo "hello, this is $USER" >> test.txt
   ```
   {:.copy-code}
 
@@ -316,8 +293,8 @@ Note: All logged-in users
   ```
   {:.copy-code}
 
-* Danger Zone: We can delete/remove a file or folder using `rm`.
-  There is no recycle bin or trash can from where you can restore the file!
+* **Danger Zone:** We can delete/remove a file or folder using `rm`.
+  There is no recycle bin or trashcan from where you can restore the file!
   
   ```
   rm test1.txt
@@ -542,7 +519,7 @@ bioawk -c fastx '{print $name, length($seq)}' files/GCF_000001735.4_TAIR10.1_gen
 
 ***Note:*** *The `{}` is telling bioawk to perform the action provided on each line/record*
 
-You try: Print only sequence names 
+{% include alert no_icon=true type="success" title="You try:" text="Print only sequence names." %}
 
 {% include alert no_icon=true type="success" title="You try:" text="How would you modify the command above to print sequences with lengths longer than 400,000 bp?" %}
 
