@@ -132,7 +132,7 @@ In this tutorial, we will use the command line and bioinformatics tools to explo
   On Ceres, when you first log in you are in the login node and in your home directory or folder. You can prepare your work while here.
 
   ```
-  ceres $ pwd
+  pwd
   ```
   {:.copy-code}
 
@@ -163,7 +163,7 @@ In this tutorial, we will use the command line and bioinformatics tools to explo
   To check the size of your project space, we will use the commmand `du` - which will check the disk usage: 
   
   ```
-  `du -hs`
+  du -hs
   ```
   {:.copy-code}
 
@@ -416,7 +416,7 @@ FASTA files contain a single-line description and ID followed by one or more lin
      * how do I move to a new location?: `cd`
        
        ```bash
-       cd /90daydata/shared/$USER/intro_bioinformatics/files
+       cd /90daydata/shared/$USER/intro_bioinformatics
        ```
        {:.copy-code}
 
@@ -469,7 +469,7 @@ In a FASTA file, each sequence begins with a header line that starts with `>`.
 So, first let us find those matching lines: 
 
 ```
-`grep "^>" files/GCF_000001735.4_TAIR10.1_genomic.fna`
+grep "^>" files/GCF_000001735.4_TAIR10.1_genomic.fna
 ```
 {:.copy-code}
 
@@ -478,7 +478,7 @@ This may return many lines depending on the size of the file.
 One way to limit the output is to use a pipe: `|`. A `|` sends the output from one command into another. 
 
 ```
-`grep "^>" files/GCF_000001735.4_TAIR10.1_genomic.fna | head`
+grep "^>" files/GCF_000001735.4_TAIR10.1_genomic.fna | head -n 2
 ```
 {:.copy-code}
 
@@ -948,7 +948,7 @@ Note: -H skips the header lines
     * `-Oz`: output format a compressed vcf file
     
       ```bash
-      bcftools view -v snps files/chinook.vcf -0z -o snps_only_bcf.vcf
+      bcftools view -v snps files/chinook.vcf -Oz -o snps_only_bcf.vcf
       ```
       {:.copy-code}
 
