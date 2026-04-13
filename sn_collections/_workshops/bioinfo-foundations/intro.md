@@ -741,7 +741,7 @@ A VCF file has three main parts:
   {:.copy-code}
 
   `-f1-: extracts field 1
-  * You try: extract columns 2 and 5. 
+  {% include alert no_icon=true type="success" title="You try:" text="Extract columns 2 and 5." %}
 
 * Let's remove the header:  
 
@@ -937,7 +937,12 @@ Note: -H skips the header lines
     For example, what if we wanted to filter for QS >=1000 and depth >=30: 
       
     ```bash
-    bcftools view -i 'QUAL > = 1000 && INFO/DP>30' -H files/chinook.vcf | less 
+    bcftools view -i 'QUAL >= 1000 && INFO/DP>30' -H files/chinook.vcf > filtered_chinook.vcf
+    ```
+    {:.copy-code}
+
+    ```bash
+    grep -v "^#" filtered_chinook.vcf
     ```
     {:.copy-code}
 
