@@ -1434,7 +1434,7 @@ On Ceres, we have several software packages available as modules and also as iso
 
 ### Modules
 
-Load and the `blast+` module so that we can use BLAST software. Run `blastn` to check the version.
+Load the `blast+` module so that we can use BLAST software. Run `blastn` to check the version.
 
 {:.copy-code}
 ```
