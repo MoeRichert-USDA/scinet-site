@@ -1298,8 +1298,8 @@ Slurm ("Slurm" originally stood for "Simple Linux Utility for Resource Managemen
    
    ```bash
    sinfo
-   sinfo -p short
-   sinfo -p ceres
+   sinfo --partition=short
+   sinfo --partition=ceres
    ```
    {:.copy-code}
 
@@ -1342,7 +1342,7 @@ Slurm ("Slurm" originally stood for "Simple Linux Utility for Resource Managemen
 7. Specific Job History:
 
    ```bash
-   sacct -j <jobid>
+   sacct --jobs=<jobid>
    ```
    {:.copy-code}
 
@@ -1371,7 +1371,7 @@ Slurm ("Slurm" originally stood for "Simple Linux Utility for Resource Managemen
     Let's start another for one minute
 
     ```bash
-    salloc -A scinet_workshop2 -N1 -n2 -p ceres -t 00:01:00
+    salloc --account=scinet_workshop2 --nodes=1 --ntasks=2 --partition=ceres --time=00:01:00
     ```
     {:.copy-code}
 
@@ -1380,11 +1380,12 @@ Slurm ("Slurm" originally stood for "Simple Linux Utility for Resource Managemen
 
     ```bash
     #!/bin/sh 
-    #SBATCH -N 1
-    #SBATCH -n 8
-    #SBATCH -J blast
-    #SBATCH -o log/blast.o%j
-    #SBATCH -e log/blast.e%j
+    #SBATCH --nodes=1
+    #SBATCH --ntasks=8
+    #SBATCH --job-name=blast
+    #SBATCH --output=log/blast.o%j
+    #SBATCH --error=log/blast.e%j
+    
     cd $SLURM_SUBMIT_DIR
     scontrol show job ${SLURM_JOB_ID}
     export NT=/reference/data/NCBI/blast/2026-01-13/
@@ -1417,9 +1418,9 @@ Ceres Job [Script Generator:](https://scinet.usda.gov/support/ceres-job-script#c
 **EXERCISE**
 Submit the blastn job and monitor the run:
 
-1. Use `scontrol`
-2. You could `ssh` to the compute node on which the jobs is running
-3. While in the compute node, use `top` to monitor the run
+1. Use `scontrol`.
+2. You could `ssh` to the compute node on which the jobs is running.
+3. While in the compute node, use `top` to monitor the run.
 
 
 
