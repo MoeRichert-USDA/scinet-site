@@ -45,7 +45,7 @@ subnav:
     url:  '#part-3-exploring-public-repositories-databases' 
   - title:  BLAST   
     url:  '#part-4-blast'
-  - title:  SLURM   
+  - title:  Slurm   
     url:  '#part-5-slurm-command-demo-essential-hpc-job-management'
   - title:  Modules and Environments      
     url:  '#part-6-modules-and-environments'
@@ -1192,7 +1192,7 @@ There are two ways to get the SRR list:
 
 ## Part 4: BLAST
 
-The [NCBI blast website](https://blast.ncbi.nlm.nih.gov/Blast.cgi) is the most popular tool with the NCBI.
+The [NCBI blast website](https://blast.ncbi.nlm.nih.gov/Blast.cgi) is NCBI's most popular tool.
 
 {% include table content="| Tool | Query Type | Database Type | Description |
 | --- | --- | --- | --- |
@@ -1290,9 +1290,9 @@ blastn -query query.fa -db db -out results.txt -outfmt 6
 ```
 
 
-## Part 5: SLURM Command Demo: Essential HPC Job Management
+## Part 5: Slurm Command Demo: Essential HPC Job Management
 
-SLURM (Simple Linux Utility for Resource Management) is an open-source job scheduler widely used in high-performance computing (HPC) environments. It manages job allocation, job queuing, and resource scheduling on compute clusters. SLURM is responsible for distributing computational tasks across available nodes and optimizing resource usage, ensuring that jobs run efficiently according to the specified requirements (e.g., CPU cores, memory, and time). Users submit job scripts with resource requests, and SLURM handles the execution, monitoring, and completion of these jobs. It also provides commands like `sbatch` for submitting jobs, `squeue` for checking job status, and `scontrol` for querying job details. Here are some commonly used SLURM commands on HPC systems.
+Slurm ("Slurm" originally stood for "Simple Linux Utility for Resource Management") is an open-source job scheduler widely used in high-performance computing (HPC) environments. It manages job allocation, job queuing, and resource scheduling on compute clusters. Slurm is responsible for distributing computational tasks across available nodes and optimizing resource usage, ensuring that jobs run efficiently according to the specified requirements (e.g., CPU cores, memory, and time). Users submit job scripts with resource requests, and Slurm handles the execution, monitoring, and completion of these jobs. It also provides commands like `sbatch` for submitting jobs, `squeue` for checking job status, and `scontrol` for querying job details. Here are some commonly used Slurm commands on HPC systems.
 
 1. Check available partitions (queues)
    
@@ -1353,21 +1353,21 @@ SLURM (Simple Linux Utility for Resource Management) is an open-source job sched
    ```
    {:.copy-code}
 
-9. View the HPCs SLURM configuration:
+9. View the cluster's Slurm configuration:
 
    ```bash
    scontrol show config | less
    ```
    {:.copy-code}
 
-10. Determine Job efficiency (accurate only after job ends)
+10. Determine job efficiency (accurate only after job ends)
 
     ```bash
     seff <jobid>
     ```
     {:.copy-code}
 
-11. Interactive Job (we are already on a interactive node)
+11. Interactive job (we are already on a interactive node)
     Let's start another for one minute
 
     ```bash
@@ -1434,7 +1434,7 @@ On Ceres, we have several software packages available as modules and also as iso
 
 ### Modules
 
-Load and run `blast`, check version. Check if there is a module named `hisat2` and `samtools`
+Load and run the `blast+` module so that we can use BLAST software. Run `blastn` to check the version.
 
 {:.copy-code}
 ```
@@ -1444,6 +1444,8 @@ blastn -version
 #blastn: 2.15.0+
 # Package: blast 2.15.0, build Oct 19 2023 13:35:57
 ```
+
+Check if there are modules named `hisat2` and `samtools`.
 
 {:.copy-code}
 ```bash
@@ -1497,7 +1499,7 @@ e modules) use the module's full name.
 
 ### Conda Environments
 
-On Ceres, in order to run `conda`, we have load a module called `miniconda`
+On Ceres, in order to run `conda`, we have to load a module called `miniconda`. On Atlas, the module is called `miniconda3`.
 
 * Check your conda environment list
   
@@ -1564,21 +1566,24 @@ apptainer version
 
 Some analyses take a long time because they run on a single processor and must process lots of data. A problem is considered "trivially parallelizable" if the data can be chunked into pieces and each piece processed independently.
 
-Examples of data that can be trivially parallelized include:
-* When each line of a file can be processed independently
-* Each chromosome of a genome can be processed independently
-* Each scaffold of an assembly can be processed independently
+### What kinds of problems can be (easily) parallelized?
 
-Examples of problems that are trivially parallelizable
-* Zipping or unzipping 10s to 100s of files
-* Counting the number of lines in a large file
-* Aligning raw sequencing data files of many samples to a genome
+So, for example, a problem might be trivially parallelizable when:
+* Each line of a file can be processed independently.
+* Each chromosome of a genome can be processed independently.
+* Each scaffold of an assembly can be processed independently.
 
-Examples of problems that are not trivially parallelizable
+Here are some specific examples of such problems:
+* Zipping or unzipping 10s to 100s of files.
+* Counting the number of lines in a large file.
+* Aligning raw sequencing data files of many samples to a genome.
+
+Examples of problems that are not trivially parallelizable:
 * Genome assembly is not trivially parallelizable because the first step requires alignment of each read to each other read in order to find which ones are similar and should be joined (assembled). Taking a subset of the reads would result in a bunch of small, poor assemblies.
 
-GNU parallel can be used on trivially parallelizable problems
-One tool that we use to parallelize a bioinformatics problem is GNU parallel. It is “a shell tool for executing jobs in parallel using one or more compute nodes”. GNU parallel helps you run jobs that you would have otherwise run sequentially one by one or in a loop. You can check the [GNU parallel website](https://www.gnu.org/software/parallel/) to determine how to install parallel on your cluster and/or learn how to use it. On ceres, we have parallel versions 20230222 and 20240822, we can use either of those.
+### Using GNU parallel
+
+There are _many_ ways to implement parallel computing! GNU parallel is one option, and can be used on many trivially parallelizable problems, including in bioinformatics. GNU parallel is “a shell tool for executing jobs in parallel using one or more compute nodes”. You can check the [GNU parallel website](https://www.gnu.org/software/parallel/) to learn more about it. On Ceres, `parallel` is available as a module.
 
 Load the module and check the version:
 
@@ -1600,19 +1605,19 @@ please cite as described in 'parallel --citation'.
 
 ```
 
-We will be using COVID-19 data collated by New York Times github repository
+We will be using COVID-19 data collated by the New York Times and available in a GitHub repository.
 
 ```
 mkdir parallel_test
 
 wget https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv
 ```
-This is a comma separated file so let’s convert that to a tab delimitated file
+This is a comma-separated file so let’s convert that to a tab delimitated file
 
 ```
 cat us-counties.csv  | tr ',' '\t' > us-counties.txt
 ```
-As you can see, this data contains the county and state information about the pandemic over time.
+As you can see, this dataset contains the county and state information about the pandemic over time.
 
 ```
 head us-counties.txt 
@@ -1627,15 +1632,15 @@ date	county	state	fips	cases	deaths
 2020-01-25	Snohomish	Washington	53061	1	0
 2020-01-26	Maricopa	Arizona	04013	1	0
 ```
-Instead of one large file let’s separate this data by county-state
+Instead of one large file, let’s separate the data by county/state.
 
-Using sort and awk we can first sort the file by county/state and then using awk to print each line ($0) to a file named county-state.txt.
+Using `sort` and `awk` we can first sort the file by county/state and then use `awk` to print each line ($0) to a file named `county-state.txt`.
 
 ```
 sort -k 2,3 us-counties.txt | awk '{print $0 > $2"_"$3".txt"}'
 ```
 
-This will currently generate 3241 files (3243 including the two files we made first):
+This will currently generate 3,241 files (3,243 including the two files we made first):
 
 ```
 ls | wc -l
@@ -1643,7 +1648,7 @@ ls | wc -l
 
 ```
 
-Let's compress `gzip` the 3243 files in one go, this is a trivially prallelizable problem:
+Let's compress each of the 3,243 files using `gzip`. This is a trivially prallelizable problem!
 
 ```
 parallel -j 10 "gzip {}" ::: *.txt
@@ -1662,11 +1667,9 @@ We could use the same logic to uncompress the files.
 
 **Splitting a big job to make use of all the available cpus**
 
-Lets assume we have a large file `test.fa`. Our aim is simply to count the lines in the fasta file.
+Let's download a large fasta file, `test.fa`. Our aim is simply to count the lines in this fasta file.
 
-You can download this example trinity fasta file like this.
-
-* GNU-parallel
+You can download the example fasta file like this.
 
 ```
 cd parallel_test
@@ -1700,7 +1703,7 @@ sys     0m0.057s
 
 ```
 
-Now using parallel we can take advantage of the 10 cpus and spread this job over all the cpus;
+Now, using `parallel`, we can take advantage of multiple CPUs. We'll distribute our job across all available CPUs.
 
 ```
 parallel -a test.fa --pipepart --block -1  time wc -l
@@ -1764,13 +1767,13 @@ sys     0m0.003s
 
 ```
 
-Notice we use less time with each block being counted by each cpu. The longest time in this case is `0.026 seconds` compared to `1.237 seconds` when not making use of parallel.
+Notice we use less time with each block being counted by each cpu. The longest time in this case is `0.026 seconds` compared to `1.237 seconds` when not making use of `parallel`.
 
 
 
 ## Part 8: Project Management in Bioinformatics and Genomics
 
-Project management through proper directory organization is clear and intuitive for beginners as well as experts. Proper documentation saves a lot of time and reduces potential for errors down the line.
+Project management through careful directory organization is clear and intuitive for beginners as well as experts. Proper documentation saves a lot of time and reduces the potential for errors down the line.
 
 [Data Carpentry Project Organization and Management for Genomics curriculum:](https://datacarpentry.github.io/organization-genomics/01-tidiness.html)
 
