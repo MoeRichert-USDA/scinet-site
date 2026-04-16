@@ -1434,7 +1434,7 @@ On Ceres, we have several software packages available as modules and also as iso
 
 ### Modules
 
-Load and run the `blast+` module so that we can use BLAST software. Run `blastn` to check the version.
+Load and the `blast+` module so that we can use BLAST software. Run `blastn` to check the version.
 
 {:.copy-code}
 ```
@@ -1564,11 +1564,11 @@ apptainer version
 
 ## Part 7: Parallelization of simple tasks
 
-Some analyses take a long time because they run on a single processor and must process lots of data. A problem is considered "trivially parallelizable" if the data can be chunked into pieces and each piece processed independently.
+Some analyses take a long time because they run on a single processor and must process lots of data. Distributing the analysis among multiple CPUs can reduce the total time required, sometimes dramatically so!
 
 ### What kinds of problems can be (easily) parallelized?
 
-So, for example, a problem might be trivially parallelizable when:
+A problem is considered "trivially parallelizable" if the data can be chunked into pieces and each piece processed independently. So, for example, a problem might be trivially parallelizable when:
 * Each line of a file can be processed independently.
 * Each chromosome of a genome can be processed independently.
 * Each scaffold of an assembly can be processed independently.
