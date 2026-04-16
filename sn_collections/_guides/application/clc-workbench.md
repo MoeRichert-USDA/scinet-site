@@ -48,7 +48,7 @@ Step 1: Access Open OnDemand:
 Step 2: Launch CLC Genomics Workbench via Open OnDemand:
 
 * Return to the Open OnDemand dashboard and click on the "Interactive Apps" section.
- ![OpenOnDemand1]({{ images_path }}/clc/clc-ood1.jpg)
+  ![OpenOnDemand1]({{ images_path }}/clc/clc-ood1.jpg)
 
 * Look for the "CLC Genomics Workbench" app and click on it to launch the Workbench.
 
@@ -64,7 +64,7 @@ Step 3: Activating QDI License:
 
 * Upon launching CLC Workbench for the first time, users will be greeted with a “License Assistant” window. Select “Use QDI Licensing” and Click “Finish”. It will open a browser window and prompt for Email and Password that you created in the previous step. Upon successful authentication, it should return you to the CLC Workbench app. 
 
-![QDI Selection]({{ images_path }}/clc/CLC-QDI-selection.jpg)
+  ![QDI Selection]({{ images_path }}/clc/CLC-QDI-selection.jpg)
 
 * This needs to be done only once - subsequent app launches should automatically register your usage.
 
@@ -94,7 +94,7 @@ Step 4: Connecting to CLC Server:
 
 4.	Log in.
 
-![screenshot of CLC Genomics Workbench 22.0.2 software homescreen]({{ images_path }}/clc/CLC2.png)
+  ![screenshot of CLC Genomics Workbench 22.0.2 software homescreen]({{ images_path }}/clc/CLC2.png)
 
 After successful login, you should see a directory CLC-\<your project> in the top left window.
 
