@@ -36,7 +36,7 @@ In this workshop, participants will learn:
 title: "Genome Assembly"
 authors:
   - "Viswanathan Satheesh"
-  - "Rick Masonbrin"
+  - "Rick Masonbrink"
   - "Sivanandan Chudalayandi"
 date: "April 20, 22 and 23 2026"
 ---
