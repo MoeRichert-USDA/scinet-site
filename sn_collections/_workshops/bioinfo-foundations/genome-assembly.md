@@ -33,14 +33,15 @@ In this workshop, participants will learn:
 * Why genome assembly is often an iterative process, where you start with a draft and repeatedly improve upon it using techniques for scaffolding.  
 
 ---
-title: "Day 1: Data Preparation and Assembly"
+title: "Genome Assembly"
 authors:
   - "Viswanathan Satheesh"
+  - "Rick Masonbrink"
   - "Sivanandan Chudalayandi"
-date: "2026-04-20"
+date: "April 20, 22 and 23 2026"
 ---
 
-# Day 1: Sequencing Technologies, QC, and Profiling
+# Sequencing Technologies, QC, and Profiling
 
 Welcome to Day 1. During this session we will briefly review sequencing technologies, evaluate the quality of short and long-read data, estimate vital genome metrics using K-mers, and initiate the primary genome assembly step using `hifiasm`.
 
