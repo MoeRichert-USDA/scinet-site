@@ -32,6 +32,36 @@ In this workshop, participants will learn:
 * How to understand and improve a genome assembly
 * Why genome assembly is often an iterative process, where you start with a draft and repeatedly improve upon it using techniques for scaffolding.  
 
+## Tutorial Setup Instructions 
+
+Steps to prepare for the tutorial session: 
+
+* Log on to [Ceres Open OnDemand](http://ceres-ood.scinet.usda.gov/). For more information on login procedures for web-based SCINet access, see the [SCINet access user guide]({{site.baseurl}}/guides/access/web-based-login).
+* Open a command-line session by clicking on “Clusters” -> “Ceres Shell Access” on the top menu. This will open a new tab with a command-line session on Ceres’ login node.
+* Create a workshop working directory by running the following commands. Note: you do not have to edit the commands with your username as it will be determined by the $USER variable.
+
+  ```bash 
+  mkdir -p /90daydata/shared/$USER/genome_assembly
+  cd /90daydata/shared/$USER/genome_assembly
+  cp -r /project/scinet_workshop2/foundations_bioinf_2026/genome_assembly/* .
+  ```
+  {:.copy-code}
+
+* Launch VS Code:
+  * Under the Interactive Apps menu, select VS Code
+  * Specify the following input values on the page:
+    * Account: scinet_workshop2
+    * Queue: ceres
+    * QoS: 400thread
+    * Number of cores: 16
+    * Memory required: 64 G
+    * Number of hours: 5
+    * Optional Slurm Parameters: --reservation=foundations_workshop
+    * Working Directory:  /90daydata/shared/$USER/genome_assembly
+  * Click Launch. The screen will update to the *Interactive Sessions* page. When your VS Code session is ready, the top card will update from *Queued* to *Running* and a *Connect to VS Code* button will appear. Click *Connect to VS Code.*
+
+
+
 
 
 ## Sequencing Technologies, QC, and Profiling
