@@ -56,10 +56,20 @@ Steps to prepare for the tutorial session:
     * Number of cores: 16
     * Memory required: 64 G
     * Number of hours: 5
-    * Optional Slurm Parameters: --reservation=foundations_workshop
-    * Working Directory:  /90daydata/shared/$USER/genome_assembly
+    * Optional Slurm Parameters: `--reservation=foundations_workshop`
+    * Working Directory:  `/90daydata/shared/$USER/genome_assembly`
   * Click Launch. The screen will update to the *Interactive Sessions* page. When your VS Code session is ready, the top card will update from *Queued* to *Running* and a *Connect to VS Code* button will appear. Click *Connect to VS Code.*
-
+* Launch the Desktop on Ceres:
+  * Under the Interactive Apps menu, select Desktop
+  * Specify the following input values on the page:
+    * Account: scinet_workshop2
+    * Queue: ceres
+    * QoS: 400thread
+    * Number of cores: 2
+    * Memory required: 4G
+    * Number of hours: 5
+    * Optional Slurm Parameters
+  * Click Launch. The screen will update to the *Interactive Sessions* page. When your interactive Desktop session is ready, the top card will update from *Queued* to *Running* and a *Launch Desktop* button will appear. Click *Launch Desktop.*
 
 
 
