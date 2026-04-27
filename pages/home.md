@@ -35,7 +35,7 @@ hero:
 
 intro:
   blurb:
-    title: "What is SCINet?"
+    title: "SCINet is fun"
     text: "The SCINet initiative is an effort by the USDA <a href='https://www.ars.usda.gov/'>Agricultural Research Service (ARS)</a> to grow USDA’s research capacity by providing scientists with access to high-performance computing clusters, high-speed networking for data transfer, and training in scientific computing."
   card: 
     title: "Get Started with SCINet"
